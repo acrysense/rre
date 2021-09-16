@@ -1,0 +1,31 @@
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl1, $furl2, $furl3) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap;
+        src: local($fname), url($furl1) format('woff2'), url($furl2) format('woff'), url($furl3) format('embedded-opentype');
+    }
+}
+
+@include font('Circe', normal, 100, '../fonts/Circe/Circe-Thin.woff2', '../fonts/Circe/Circe-Thin.woff', '../fonts/Circe/Circe-Thin.eot');
+@include font('Circe', normal, 300, '../fonts/Circe/Circe-Light.woff2', '../fonts/Circe/Circe-Light.woff', '../fonts/Circe/Circe-Light.eot');
+@include font('Circe', normal, 400, '../fonts/Circe/Circe-Regular.woff2', '../fonts/Circe/Circe-Regular.woff', '../fonts/Circe/Circe-Regular.eot');
+@include font('Circe', normal, 700, '../fonts/Circe/Circe-Bold.woff2', '../fonts/Circe/Circe-Bold.woff', '../fonts/Circe/Circe-Bold.eot');
+@include font('Circe', normal, 800, '../fonts/Circe/Circe-Extrabold.woff2', '../fonts/Circe/Circe-Extrabold.woff', '../fonts/Circe/Circe-Extrabold.eot');
+
+// GOOGLE FONTS LOAD SECTION
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
+
+// OVERRIDES
+$container-max-widths: (
+    xxl: 1370px
+);
+
+
+// IMPORT SECTION
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Bootstrap Grid collection
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/swiper/swiper.scss'; // Swiper
+@import 'node_modules/simplebar/dist/simplebar'; // Simplebar

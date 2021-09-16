@@ -1,0 +1,132 @@
+// VARIABLES SECTION
+$circe: 'Circe', sans-serif; // Crce
+$ebgaramond: 'EB Garamond', serif; // EB Garamond
+$primary-font-size: 1.6rem; // Body font-size
+$primary-line-height: 1.5; // Body line-height
+$primary-color: #353535;
+$white-color: #FFFFFF;
+$red-color: #B01E23;
+$blue-color: #2F2355;
+$russia-color: #F8F7FE;
+$gray-color: #7E7E7E;
+$grey-color: #ADADAD;
+$light-gray-color: #EDEDED;
+$light-grey-color: #F5F5F5;
+
+$primary-background-color: #FAF9F8;
+$background-color: #EEECE9;
+$dark-background-color: #E9E3DA;
+$light-background-color: #E3D5C0;
+
+// COMMON DOCUMENT STYLES
+html {
+    font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+    font-family: $circe;
+    font-size: $primary-font-size;
+    line-height: $primary-line-height;
+    color: $primary-color;
+    background: $primary-background-color;
+}
+
+ul,
+ol,
+li {
+	display: block;
+	padding: 0;
+	margin: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    transition: all 0.35s;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+svg {
+    transition: all 0.35s;
+}
+
+// COMMON FOR PAGE ˆ
+.scroll-disabled {
+    overflow: hidden;
+}
+
+.visually-impaired {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13.5px 20px;
+    width: fit-content;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $grey-color;
+    background: $background-color;
+    &:hover {
+        color: $primary-color;
+        background: $dark-background-color;
+        .visually-impaired__icon {
+            color: $primary-color;
+        }
+    }
+    &__icon {
+        width: 22px;
+        height: 9px;
+        color: $grey-color;
+    }
+    &__text {
+        margin-left: 16px;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    width: fit-content;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background: $primary-background-color;
+    &:hover {
+        color: $white-color;
+        background: $red-color;
+        .btn__icon {
+            color: $white-color;
+        }
+    }
+    &__icon {
+        margin-top: -1px;
+        margin-left: 11px;
+        width: 12px;
+        height: 12px;
+        color: $grey-color;
+    }
+}
+.btn[download] {
+    .btn__icon {
+        transform: rotate(90deg);
+    }
+}

@@ -1,0 +1,46 @@
+header(class="header", id="header")
+    div(class="container") 
+        div(class="header__wrapper")
+            div(class="row")
+                 div(class="col-lg-3 col-7")
+                    a(href="#", class="logotype header__logotype") 
+                        img(src="img/dist/logotype.svg", alt="Русское Перестраховочное Общество")
+                 div(class="col-lg-2 offset-lg-7 col-5")
+                    div(class="header__controls") 
+                        a(href="#", class="visually-impaired header__btn") 
+                            svg(class="visually-impaired__icon")
+                                use(xlink:href="img/dist/sprite.svg#icon-eye-closed")
+                        div(class="header__languages")
+                            a(href="#", class="header__language header__language--active") 
+                                img(src="img/dist/sprite.svg#icon-russia", alt="Русский")
+                            a(href="#", class="header__language") 
+                                img(src="img/dist/sprite.svg#icon-english", alt="Английский")
+            div(class="row mt-3 align-items-center")
+                div(class="col-lg-4 col-md-8 col-8")
+                    h2(class="header__title") ДОРОГУ ОСИЛИТ ИДУЩИЙ
+                div(class="col-lg-8 offset-lg-0 col-md-1 offset-md-3 col-3 offset-1 d-flex justify-content-end")
+                    nav(class="nav")
+                        ul(class="nav__list")
+                            li
+                                a(href="#") О компании
+                                ul(class="submenu")
+                                    li 
+                                        a(href="#") О НАС
+                                    li 
+                                        a(href="#") История акционеров
+                                    li 
+                                        a(href="#") РАСКРЫТИЕ ИНФОРМАЦИИ
+                                    li 
+                                        a(href="#") НАША КОМАНДА
+                            li
+                                a(href="#") Перестрахование
+                            li
+                                a(href="#") Команда
+                            li
+                                a(href="#") Контакты
+                            li
+                                a(href="#") Поиск
+                    button(class="hamburger", aria-label="Меню")
+                        span(class="hamburger__inner")
+                        span(class="hamburger__inner")
+                        span(class="hamburger__inner")

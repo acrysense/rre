@@ -1,29 +1,43 @@
 .header {
     padding-top: 16px;
     &__wrapper {
-        position: relative;
-        padding-bottom: 6px;
-        &::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 5px;
-            background: $red-color;
+        &--bottom {
+            position: relative;
+            padding-bottom: 8px;
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 5px;
+                background: $red-color;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                //width: calc(100% - var(--width));
+                //height: 5px;
+                background: $blue-color;
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 1199px) {
+                padding-bottom: 14px;
+            }
         }
-        &::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: block;
-            //width: calc(100% - var(--width));
-            //height: 5px;
-            background: $blue-color;
+    }
+    &__logotype {
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            max-width: 235px;
+        }
+        @media screen and (max-width: 1199px) {
+            max-width: 147px;
         }
     }
     &__controls {
@@ -31,47 +45,33 @@
         align-items: center;
         justify-content: flex-end;
     }
-    &__languages {
-        display: flex;
-        align-items: center;
-        padding: 8.5px 12px;
-        margin-left: 8px;
-        background: $background-color;
-        transition: background 0.35s;
-        &:hover {
-            background: $dark-background-color;
-        }
-    }
-    &__language {
-        display: block;
-        overflow: hidden;
-        width: 29px;
-        height: 19px;
-        opacity: 0.2;
-        &:hover {
-            opacity: 1;
-        }
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        &--active {
-            opacity: 1;
-        }
-    }
-    &__language + &__language {
-        margin-left: 8px;
-    }
     &__title {
         font-size: 2.2rem;
         font-weight: 800;
         color: $red-color;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            font-size: 1.7rem;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 1.1rem;
+        }
+    }
+    &__btn {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+    &__languages {
+        margin-left: 8px;
     }
 }
 
 .nav {
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
+
     &__list {
         display: flex;
         align-items: center;
@@ -86,9 +86,11 @@
         position: relative;
         transition: all 0.35s;
         &:hover {
+            & > a {
+                color: $blue-color;
+            }
             .submenu {
                 visibility: visible;
-                //max-height: 100vh;
                 opacity: 1;
             }
         }
@@ -106,14 +108,13 @@
 
 .submenu {
     position: absolute;
-    bottom: -7px;
+    bottom: 0;
     transform: translateY(100%);
-    padding: 20px 12px 12px;
+    padding: 26px 12px 12px;
     visibility: hidden;
     overflow: hidden;
     opacity: 0;
     max-width: 171px;
-    //max-height: 0;
     width: max-content;
     background: $primary-background-color;
     border-bottom: 5px solid $blue-color;
@@ -133,13 +134,37 @@
     }
 }
 
+// search
+.search {
+    &__btn {
+        display: block;
+        padding: 0;
+        background: transparent;
+        border: 0;
+    }
+    &__icon {
+        width: 23px;
+        height: 23px;
+        color: $primary-color;
+
+
+        @media screen and (min-width: 1200px) {
+            display: none;
+        }
+        @media screen and (max-width: 767px) {
+            width: 17px;
+            height: 17px;
+        }
+    }
+}
+
 // hamburger
 .hamburger {
     position: relative;
     z-index: 100;
     display: inline-block;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 23px;
     min-width: 30px;
     height: 30px;
     font-size: 0;
@@ -155,14 +180,14 @@
         .hamburger__inner {
             background: $primary-color;
             &:first-child {
-                transform: rotate(-45deg) translateX(-50%);
+                transform: rotate(-45deg) translate(-50%, -2px);
             }
             &:nth-child(2) {
                 width: 0;
                 opacity: 0;
             }
             &:last-child {
-                transform: rotate(45deg) translateX(-50%);
+                transform: rotate(45deg) translate(-50%, 2px);
             }
         }
     }
@@ -184,53 +209,22 @@
         &:last-child {
             bottom: 6px;
         }
-    }
-}
 
-// media
-@media (min-width: 1200px) {
-    .hamburger {
+        @media screen and (max-width: 767px) {
+            width: 21px;
+            &:first-child {
+                top: 8px;
+            }
+            &:last-child {
+                bottom: 8px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
         display: none;
     }
-}
-
-@media (max-width: 1199px) {
-    .nav {
-        display: none;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-    .header {
-        &__title {
-            font-size: 1.7rem;
-        }
-    }
-    .header__logotype {
-        max-width: 235px;
-    }
-}
-
-@media (max-width: 767px) {
-    .header {
-        &__title {
-            font-size: 1rem;
-        }
-        &__btn {
-            display: none;
-        }
-        &__languages {
-            padding: 6px 8px;
-        }
-        &__language {
-            width: 18px;
-            height: 12px;
-        }
-        &__language + &__language {
-            margin-left: 4px;
-        }
-    }
-    .header__logotype {
-        max-width: 147px;
+    @media screen and (max-width: 767px) {
+        margin: 0 0 0 12px;
     }
 }

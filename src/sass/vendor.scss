@@ -23,6 +23,7 @@ $container-max-widths: (
     xxl: 1370px
 );
 
+$grid-gutter-width: 20px;
 
 // IMPORT SECTION
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Bootstrap Grid collection

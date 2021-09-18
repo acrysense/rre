@@ -11,21 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
 
-    // ALL LINKS SMOOTH SCROLL
-    const allLinks = document.querySelectorAll('a[href^="#"]')
-
-    if (allLinks) {
-        allLinks.forEach(item => {
-            item.addEventListener('click', (event) => {
-                event.preventDefault()
-        
-                if (item.getAttribute('href').length > 1) {
-                    smoothScroll(item.getAttribute('href').slice(1))
-                }
-            })
-        })
-    }
-
     // SELECT
     const selected = document.querySelectorAll('.select-box__selected')
     const optionsList = document.querySelectorAll('.select-box__option')
@@ -103,4 +88,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let navWidth = document.querySelector('.nav__list').getBoundingClientRect().width;
     document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `${navWidth}px`);
+
+    // HAMBURGER & MOBILE MENU
+
+    // MOBILE MENU
+    const hamburger = document.getElementById('hamburger-toggle')
+    //const mobileMenu = document.querySelector('.mobile-menu')
+
+    if (hamburger) {
+        hamburger.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            //if (hamburger.classList.contains('hamburger--active') && mobileMenu.classList.contains('mobile-menu--active')) {
+            if (hamburger.classList.contains('hamburger--active')) {
+                hamburger.classList.remove('hamburger--active')
+                //mobileMenu.classList.remove('mobile-menu--active')
+                document.body.classList.remove('scroll-disabled')
+            } else {
+                hamburger.classList.add('hamburger--active')
+                //mobileMenu.classList.add('mobile-menu--active')
+                document.body.classList.add('scroll-disabled')
+            }
+        })
+    }
 });

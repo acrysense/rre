@@ -11,6 +11,13 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            min-height: 318px;
+        }
+        @media screen and (max-width: 767px) {
+            min-height: 324px;
+        }
     }
 }
 
@@ -46,6 +53,13 @@
     &__body {
         padding: 42px 31.5px 30px;
         height: 100%;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            padding: 32px 17px;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 32px 17px;
+        }
     }
     &__title {
         position: relative;
@@ -66,6 +80,17 @@
             height: 2px;
             background: $primary-color;
         }
+        
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            padding-bottom: 27px;
+            margin-bottom: 27px;
+            font-size: 2.6rem;
+        }
+        @media screen and (max-width: 767px) {
+            padding-bottom: 23px;
+            margin-bottom: 23px;
+            font-size: 2.2rem;
+        }
     }
     &__subtitle {
         font-size: 2.6rem;
@@ -74,22 +99,55 @@
         b, strong {
             font-weight: bold;
         }
+        
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            font-size: 1.6rem;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 1.8rem;
+        }
     }
     &__description {
         min-height: 135px;
         font-size: 1.9rem;
         font-weight: normal;
+        
+        @media screen and (max-width: 767px) {
+            font-size: 1.4rem;
+        }
     }
     &__img {
         display: block;
         margin: 42px auto 0;
         max-width: 356px;
         width: 100%;
+        
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            max-width: 85%;
+        }
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+        }
     }
     &__inner {
         display: flex;
         justify-content: space-evenly;
         margin-top: 10px;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 32px;
+            &--background {
+                flex-direction: column;
+                .information__group {
+                    padding: 14px;
+                    max-width: 100%;
+                    background: $background-color;
+                }
+                .information__group + .information__group {
+                    margin-top: 6px;
+                }
+            }
+        }
     }
     &__group {
         max-width: 200px;
@@ -111,6 +169,10 @@
             height: 74px;
             background: $background-color;
         }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
     }
     &__text {
         display: block;
@@ -119,9 +181,26 @@
         b, strong {
             font-weight: bold;
         }
+
+        @media screen and (max-width: 767px) {
+            font-size: 1.2rem;
+            b, strong {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    &__text + &__text {
+        @media screen and (max-width: 767px) {
+            margin-top: 2px;
+        }
     }
     &__btn {
         margin: 0 auto 30px;
+
+        @media screen and (max-width: 767px) {
+            margin: 0 auto 25px;
+            max-width: calc(100% - 36px);
+        }
     }
     &__more {
         position: relative;
@@ -161,5 +240,3 @@
         }
     }
 }
-
-@import "media";

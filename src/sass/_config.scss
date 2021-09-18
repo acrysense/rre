@@ -100,6 +100,57 @@ svg {
     }
 }
 
+.languages {
+    display: flex;
+    align-items: center;
+    padding: 8.5px 12px;
+    width: fit-content;
+    background: $background-color;
+    transition: background 0.35s;
+    &:hover {
+        background: $dark-background-color;
+    }
+    &__btn {
+        display: block;
+        overflow: hidden;
+        width: 29px;
+        height: 19px;
+        opacity: 0.2;
+        &:hover {
+            opacity: 1;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &--active {
+            opacity: 1;
+        }
+    }
+    &__btn + &__btn {
+        margin-left: 8px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 6px 8px;
+        &--md {
+            .languages__btn {
+                width: 26px;
+                height: 17px;
+            }
+        }
+        &__btn {
+            width: 18px;
+            height: 12px;
+        }
+        &__btn + &__btn {
+            margin-left: 4px;
+        }
+    }
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -125,6 +176,7 @@ svg {
         color: $grey-color;
     }
 }
+
 .btn[download] {
     .btn__icon {
         transform: rotate(90deg);

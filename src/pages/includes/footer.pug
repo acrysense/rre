@@ -1,25 +1,26 @@
 footer(class="footer", id="footer")
     div(class="container") 
-        div(class="footer__wrapper")
-            div(class="row")
-                div(class="col-12")
-                    a(href="#", class="footer__up") Наверх
-            div(class="row") 
+        div(class="footer__wrapper footer__wrapper--top")
+            a(href="#", class="footer__up") 
+                span(class="footer__up--text") Наверх
+                svg(class="footer__up--icon")
+                            use(xlink:href="img/dist/sprite.svg#icon-top")
+        div(class="footer__wrapper footer__wrapper--bottom")
+            div(class="row align-items-end") 
                 div(class="col-lg-6 col-md-6 col-12")
                     div(class="footer__block")
                         a(href="#", class="logotype footer__logotype") 
                             img(src="img/dist/logotype.svg", alt="Русское Перестраховочное Общество")
                         div(class="footer__quotes") 
-                            p.
-                                Run the race to win<br>
-                                Дорогу осилит идущий<br>
-                                Давс хийвел уустал, ажил хийвел дуустал<br>
-                                Run the race to win<br>
-                                Дорогу осилит идущий<br>
-                                Давс хийвел уустал, ажил хийвел дуустал<br>
-                                Run the race to win<br>
-                                Дорогу осилит идущий<br>
-                                Run the race to win
+                            p Run the race to win
+                            p Дорогу осилит идущий
+                            p Давс хийвел уустал, ажил хийвел дуустал
+                            p Run the race to win
+                            p Дорогу осилит идущий
+                            p Давс хийвел уустал, ажил хийвел дуустал
+                            p Run the race to win
+                            p Дорогу осилит идущий
+                            p Run the race to win
                         div(class="footer__group") 
                             p(class="footer__copyright") © 2021 Russian Re
                             a(href="#", class="footer__copyright") Правила пользования сайтом
@@ -45,3 +46,12 @@ footer(class="footer", id="footer")
                         svg(class="visually-impaired__icon")
                             use(xlink:href="img/dist/sprite.svg#icon-eye-closed")
                         span(class="visually-impaired__text") Версия для слабовидящих
+        div(class="footer__wrapper footer__wrapper--mobile")
+            div(class="footer__group") 
+                p(class="footer__copyright") © 2021 Russian Re
+                a(href="#", class="footer__copyright") Правила пользования сайтом
+            div(class="languages languages--md")
+                a(href="#", class="languages__btn languages__btn--active") 
+                    img(src="img/dist/sprite.svg#icon-russia", alt="Русский")
+                a(href="#", class="languages__btn") 
+                    img(src="img/dist/sprite.svg#icon-english", alt="Английский")

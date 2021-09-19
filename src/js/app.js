@@ -11,10 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
 
-    // SELECT
-    const selected = document.querySelectorAll('.select-box__selected')
-    const optionsList = document.querySelectorAll('.select-box__option')
-
+    // CHECKER FOR CLOSE ELEMENTS
     const useItemChecker = (els, onClickOutside) => {
         const checkBodyClick = (e) => {
             let currentEl = e.target;
@@ -37,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return {setBodyChecker, removeBodyChecker}
     }
+
+    // SELECT
+    const selected = document.querySelectorAll('.select-box__selected')
+    const optionsList = document.querySelectorAll('.select-box__option')
     
     if (selected) {
         selected.forEach(item => {
@@ -81,32 +82,86 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // HEADER
-    document.querySelectorAll('.nav__list > li').forEach((item) => {
-        console.log(item.getBoundingClientRect().width)
-    })
+    // HEADER SEARCH
+    const navForm = document.querySelector('.nav__form')
+    const navInput = document.querySelector('.nav__input')
+    const navList = document.querySelector('.nav__list')
+    const navSearchBtn = document.querySelector('.nav__search')
 
-    let navWidth = document.querySelector('.nav__list').getBoundingClientRect().width;
-    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `${navWidth}px`);
+    if (navSearchBtn && navList && navForm) {
+        const close = () => {
+            navList.classList.remove('nav__list--hidden')
+            navForm.classList.remove('nav__form--active')
+            navSearchBtn.classList.remove('nav__search--active')
+            document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `0px`);
+        }
+        const itemChecker = useItemChecker([navSearchBtn.parentNode.parentNode.parentNode], close)
+
+        navSearchBtn.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            if (!navList.classList.contains('nav__list--hidden')) {
+                if (navInput.value.length > 0) {
+                    navSearchBtn.classList.add('nav__search--active')
+                }
+
+                navList.classList.add('nav__list--hidden')
+                navForm.classList.add('nav__form--active')
+                itemChecker.setBodyChecker()
+            }
+        })
+    }
+
+    if (navInput) {
+        navInput.addEventListener('input', () => {
+            if (navInput.value.length > 0) {
+                navSearchBtn.classList.add('nav__search--active')
+            } else {
+                navSearchBtn.classList.remove('nav__search--active')
+            }
+        })
+    }
+
+    // NAV ITEM HOVER
+    const navItems = document.querySelectorAll('.nav__list > li')
+    let navItemsWidth = 0
+    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `0px`);
+
+    if (navItems) {
+        navItems.forEach((item, i) => {
+            item.addEventListener('mouseover', () => {
+                navItemsWidth = 0
+                for (let j = i + 1; j < navItems.length; j++) {
+                    navItemsWidth += (document.querySelectorAll('.nav__list > li')[j].getBoundingClientRect().width) + 42 // margin: 42px
+                }
+                document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth}px`);
+            })
+    
+            item.addEventListener('mouseout', () => {
+                if (navList && navForm && navList.classList.contains('nav__list--hidden') && navForm.classList.contains('nav__form--active')) {
+                    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `100%`);
+                } else {
+                    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `0px`);
+                }
+            })
+        })
+    }
 
     // HAMBURGER & MOBILE MENU
-
-    // MOBILE MENU
     const hamburger = document.getElementById('hamburger-toggle')
-    //const mobileMenu = document.querySelector('.mobile-menu')
+    const mobileMenu = document.querySelector('.mobile-menu')
 
     if (hamburger) {
         hamburger.addEventListener('click', (event) => {
             event.preventDefault()
 
-            //if (hamburger.classList.contains('hamburger--active') && mobileMenu.classList.contains('mobile-menu--active')) {
-            if (hamburger.classList.contains('hamburger--active')) {
+            if (hamburger.classList.contains('hamburger--active') && mobileMenu.classList.contains('mobile-menu--active')) {
                 hamburger.classList.remove('hamburger--active')
-                //mobileMenu.classList.remove('mobile-menu--active')
+                mobileMenu.classList.remove('mobile-menu--active')
                 document.body.classList.remove('scroll-disabled')
             } else {
                 hamburger.classList.add('hamburger--active')
-                //mobileMenu.classList.add('mobile-menu--active')
+                mobileMenu.classList.add('mobile-menu--active')
                 document.body.classList.add('scroll-disabled')
             }
         })

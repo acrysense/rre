@@ -182,3 +182,26 @@ svg {
         transform: rotate(90deg);
     }
 }
+
+.input {
+    display: block;
+    appearance: none;
+    padding: 7px 20px 6px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: normal;
+    color: $primary-color;
+    background: $background-color;
+    border: 0;
+    border-radius: 0;
+    transition: all 0.35s;
+    &::placeholder {
+        color: $gray-color;
+    }
+    &:hover {
+        background: $dark-background-color;
+    }
+    &:focus {
+        outline: none;
+    }
+}

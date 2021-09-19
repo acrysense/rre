@@ -1,9 +1,10 @@
 .header {
+    position: relative;
     padding-top: 16px;
     &__wrapper {
         &--bottom {
             position: relative;
-            padding-bottom: 8px;
+            padding-bottom: 11px;
             &::before {
                 content: '';
                 position: absolute;
@@ -22,9 +23,10 @@
                 bottom: 0;
                 left: 0;
                 display: block;
-                //width: calc(100% - var(--width));
-                //height: 5px;
+                width: var(--width);
+                height: 5px;
                 background: $blue-color;
+                transition: all 0.4s ease-in-out;
             }
 
             @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -72,6 +74,20 @@
         display: none;
     }
 
+    &__form {
+        position: absolute;
+        right: 87px;
+        bottom: -4px;
+        max-width: 632px;
+        width: 100%;
+        transform: translateY(-5px) rotateX(90deg);
+        opacity: 0;
+        transition: all 0.35s;
+        &--active {
+            transform: translateY(0) rotateX(0);
+            opacity: 1;
+        }
+    }
     &__list {
         display: flex;
         align-items: center;
@@ -81,34 +97,43 @@
                 opacity: 0;
             }
         }
-    }
-    li {
-        position: relative;
-        transition: all 0.35s;
-        &:hover {
-            & > a {
-                color: $blue-color;
-            }
-            .submenu {
-                visibility: visible;
-                opacity: 1;
+        & > li {
+            position: relative;
+            transition: all 0.35s;
+            &:hover {
+                & > a {
+                    color: $blue-color;
+                }
+                .submenu {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
+        & > li + li {
+            margin-left: 42px;
+        }
+        & > li > a {
+            position: relative;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     }
-    li + li {
-        margin-left: 42px;
-    }
-    a {
-        position: relative;
-        font-size: 1.7rem;
-        font-weight: bold;
-        text-transform: uppercase;
+    &__search {
+        &--active {
+            color: $red-color;
+            &:hover {
+                color: $red-color;
+            }
+        }
     }
 }
 
 .submenu {
     position: absolute;
     bottom: 0;
+    z-index: 1;
     transform: translateY(100%);
     padding: 26px 12px 12px;
     visibility: hidden;
@@ -119,11 +144,11 @@
     background: $primary-background-color;
     border-bottom: 5px solid $blue-color;
     transition: all 0.35s;
-    li + li {
+    & > li + li {
         margin-top: 10px;
         margin-left: 0;
     }
-    a {
+    & > li > a {
         font-size: 1.2rem;
         font-weight: bold;
         text-transform: uppercase;
@@ -226,5 +251,73 @@
     }
     @media screen and (max-width: 767px) {
         margin: 0 0 0 12px;
+    }
+}
+
+// mobile menu
+.mobile-menu {
+    //position: fixed;
+    //top: 92.41px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1001;
+    transform-origin: right top;
+    transform: translateY(100%) scale(0);
+    visibility: hidden;
+    padding: 0 10px 6px;
+    height: calc(100vh - 92.41px);
+    height: calc((var(--vh, 1vh) * 100) - 92.41px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: $primary-background-color;
+    transition: all 0.3s ease-in-out;
+    &--active {
+        transform: translateY(100%) scale(1);
+        visibility: visible;
+        opacity: 1;
+    }
+    &__list {
+        border-bottom: 2px solid $background-color;
+        & > li > a {
+            padding: 27px 0 21px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        & > li + li {
+            border-top: 2px solid $background-color;
+        }
+    }
+    &__sublist {
+        padding-bottom: 34px;
+        & > li > a {
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            color: $grey-color;
+            width: 100%;
+        }
+        & > li + li {
+            margin-top: 26px;
+        }
+    }
+    &__languages {
+        margin: 34px auto;
+    }
+    &__quotes {
+        margin: 0 auto;
+        text-align: center;
+        & > p {
+            font-family: $ebgaramond;
+            font-size: 1.4rem;
+            font-weight: normal;
+            line-height: 172%;
+            color: $light-background-color;
+        }
     }
 }

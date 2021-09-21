@@ -10,10 +10,11 @@
 }
 
 @include font('Circe', normal, 100, '../fonts/Circe/Circe-Thin.woff2', '../fonts/Circe/Circe-Thin.woff', '../fonts/Circe/Circe-Thin.eot');
+@include font('Circe', normal, 200, '../fonts/Circe/Circe-ExtraLight.woff2', '../fonts/Circe/Circe-ExtraLight.woff', '../fonts/Circe/Circe-ExtraLight.eot');
 @include font('Circe', normal, 300, '../fonts/Circe/Circe-Light.woff2', '../fonts/Circe/Circe-Light.woff', '../fonts/Circe/Circe-Light.eot');
 @include font('Circe', normal, 400, '../fonts/Circe/Circe-Regular.woff2', '../fonts/Circe/Circe-Regular.woff', '../fonts/Circe/Circe-Regular.eot');
 @include font('Circe', normal, 700, '../fonts/Circe/Circe-Bold.woff2', '../fonts/Circe/Circe-Bold.woff', '../fonts/Circe/Circe-Bold.eot');
-@include font('Circe', normal, 800, '../fonts/Circe/Circe-Extrabold.woff2', '../fonts/Circe/Circe-Extrabold.woff', '../fonts/Circe/Circe-Extrabold.eot');
+@include font('Circe', normal, 800, '../fonts/Circe/Circe-ExtraBold.woff2', '../fonts/Circe/Circe-ExtraBold.woff', '../fonts/Circe/Circe-ExtraBold.eot');
 
 // GOOGLE FONTS LOAD SECTION
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');

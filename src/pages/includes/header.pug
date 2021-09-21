@@ -21,8 +21,6 @@ header(class="header", id="header")
                     h2(class="header__title") ДОРОГУ ОСИЛИТ ИДУЩИЙ
                 div(class="col d-flex justify-content-end")
                     nav(class="nav")
-                        form(action="#", class="nav__form")
-                            input(type="text", class="nav__input input", placeholder="Найдите объявления, документы, сотрудников")
                         ul(class="nav__list")
                             li
                                 a(href="#") О компании
@@ -42,45 +40,57 @@ header(class="header", id="header")
                             li
                                 a(href="#") Контакты
                             li
-                                a(href="#", class="nav__search") Поиск
-                    button(class="search__btn", aria-label="Поиск")
-                        svg(class="search__icon")
+                                a(href="#", class="search-btn") Поиск
+                    button(class="search-btn", aria-label="Поиск")
+                        svg(class="search-btn__icon")
                             use(xlink:href="img/dist/sprite.svg#icon-search")
                     button(class="hamburger", id="hamburger-toggle", aria-label="Меню")
                         span(class="hamburger__inner")
                         span(class="hamburger__inner")
                         span(class="hamburger__inner")
-        div(class="mobile-menu")
-            ul(class="mobile-menu__list")
-                li
-                    a(href="#") О компании
-                    ul(class="mobile-menu__sublist")
-                        li 
-                            a(href="#") О нас
-                        li 
-                            a(href="#") История акционеров
-                        li 
-                            a(href="#") Раскрытие информации
-                        li 
-                            a(href="#") Наша команда
-                li
-                    a(href="#") Перестрахование
-                li
-                    a(href="#") Команда
-                li
-                    a(href="#") Контакты
-            div(class="languages languages--md mobile-menu__languages")
-                a(href="#", class="languages__btn languages__btn--active") 
-                    img(src="img/dist/sprite.svg#icon-russia", alt="Русский")
-                a(href="#", class="languages__btn") 
-                    img(src="img/dist/sprite.svg#icon-english", alt="Английский")
-            div(class="mobile-menu__quotes") 
-                p Run the race to win
-                p Дорогу осилит идущий
-                p Давс хийвел уустал, ажил хийвел дуустал
-                p Run the race to win
-                p Дорогу осилит идущий
-                p Давс хийвел уустал, ажил хийвел дуустал
-                p Run the race to win
-                p Дорогу осилит идущий
-                p Run the race to win
+
+div(class="mobile-menu")
+    ul(class="mobile-menu__list")
+        li
+            a(href="#", class="mobile-menu__dropdown") О компании
+            ul(class="mobile-menu__sublist")
+                li 
+                    a(href="#") О нас
+                li 
+                    a(href="#") История акционеров
+                li 
+                    a(href="#") Раскрытие информации
+                li 
+                    a(href="#") Наша команда
+        li
+            a(href="#") Перестрахование
+        li
+            a(href="#") Команда
+        li
+            a(href="#") Контакты
+    div(class="languages languages--md mobile-menu__languages")
+        a(href="#", class="languages__btn languages__btn--active") 
+            img(src="img/dist/sprite.svg#icon-russia", alt="Русский")
+        a(href="#", class="languages__btn") 
+            img(src="img/dist/sprite.svg#icon-english", alt="Английский")
+    div(class="mobile-menu__quotes") 
+        p Run the race to win
+        p Дорогу осилит идущий
+        p Давс хийвел уустал, ажил хийвел дуустал
+        p Run the race to win
+        p Дорогу осилит идущий
+        p Давс хийвел уустал, ажил хийвел дуустал
+        p Run the race to win
+        p Дорогу осилит идущий
+        p Run the race to win
+
+div(class="header-search")
+    div(class="container")
+        div(class="header-search__top")
+            form(action="#", class="header-search__form")
+                input(type="text", class="header-search__input input", placeholder="ПОИСК ПО САЙТУ")
+
+        div(class="header-search__wrapper")
+            a(href="#", class="header-search__btn") СМОТРЕТЬ ВСЕ РЕЗУЛЬТАТЫ ПОИСКА
+
+div(class="overlay")

@@ -1,6 +1,11 @@
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1002;
     padding-top: 16px;
+    background: $primary-background-color;
     &__wrapper {
         &--bottom {
             position: relative;
@@ -74,20 +79,6 @@
         display: none;
     }
 
-    &__form {
-        position: absolute;
-        right: 87px;
-        bottom: -4px;
-        max-width: 632px;
-        width: 100%;
-        transform: translateY(-5px) rotateX(90deg);
-        opacity: 0;
-        transition: all 0.35s;
-        &--active {
-            transform: translateY(0) rotateX(0);
-            opacity: 1;
-        }
-    }
     &__list {
         display: flex;
         align-items: center;
@@ -110,11 +101,9 @@
                 }
             }
         }
-        & > li + li {
-            margin-left: 42px;
-        }
         & > li > a {
             position: relative;
+            padding: 0 21px;
             font-size: 1.7rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -160,18 +149,15 @@
 }
 
 // search
-.search {
-    &__btn {
-        display: block;
-        padding: 0;
-        background: transparent;
-        border: 0;
-    }
+.search-btn {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: 0;
     &__icon {
         width: 23px;
         height: 23px;
         color: $primary-color;
-
 
         @media screen and (min-width: 1200px) {
             display: none;
@@ -179,6 +165,39 @@
         @media screen and (max-width: 767px) {
             width: 17px;
             height: 17px;
+        }
+    }
+}
+
+.header-search {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1003;
+    background: #000;
+    display: none;
+    background: $primary-background-color;
+    &--active {
+        display: block;
+    }
+    &__top {
+        padding-top: 60px;
+    }
+    &__item + &__item {
+        border-top: 1px solid $background-color;
+    }
+    &__btn {
+        display: block;
+        padding: 28px 0;
+        width: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: $red-color;
+        &:hover {
+            color: $blue-color;
         }
     }
 }
@@ -256,25 +275,23 @@
 
 // mobile menu
 .mobile-menu {
-    //position: fixed;
-    //top: 92.41px;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    top: 0;
     right: 0;
     left: 0;
     z-index: 1001;
     transform-origin: right top;
-    transform: translateY(100%) scale(0);
+    transform: scale(0);
     visibility: hidden;
-    padding: 0 10px 6px;
-    height: calc(100vh - 92.41px);
-    height: calc((var(--vh, 1vh) * 100) - 92.41px);
+    padding: var(--height) 10px 6px;
+    height: calc(100vh);
+    height: calc((var(--vh, 1vh) * 100));
     overflow-x: hidden;
     overflow-y: auto;
     background: $primary-background-color;
     transition: all 0.3s ease-in-out;
     &--active {
-        transform: translateY(100%) scale(1);
+        transform: scale(1);
         visibility: visible;
         opacity: 1;
     }
@@ -292,7 +309,40 @@
             border-top: 2px solid $background-color;
         }
     }
+    &__dropdown {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            transform: translateY(-50%);
+            display: block;
+            width: 12px;
+            height: 2px;
+            background: $primary-color;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            transform: translateY(-50%);
+            display: block;
+            width: 12px;
+            height: 2px;
+            background: $primary-color;
+            transform: translateY(-50%) rotate(90deg);
+            transition: all 0.35s;
+        }
+        &--active {
+            &::before {
+                transform: translateY(-50%) rotate(0deg);
+            }
+        }
+    }
     &__sublist {
+        display: none;
         padding-bottom: 34px;
         & > li > a {
             font-size: 15px;
@@ -320,4 +370,18 @@
             color: $light-background-color;
         }
     }
+}
+
+// overlay
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba($primary-background-color, 0.95);
 }

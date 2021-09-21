@@ -165,10 +165,16 @@
         }
     }
     &__group {
-        //max-width: 200px;
-        max-width: 33.3333%;
+        max-width: 32%;
         width: 100%;
         text-align: center;
+    }
+    &__group + &__group {
+        margin-left: 2%;
+
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
     }
     &__progress {
         position: relative;

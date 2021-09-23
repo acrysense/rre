@@ -276,6 +276,11 @@
         .swiper-slide {
             width: 70%;
         }
+        .swiper-slide + .swiper-slide {
+            .ads__item {
+                justify-content: center;
+            }
+        }
         .swiper-button-next {
             position: absolute;
             top: 50%;
@@ -301,7 +306,7 @@
         .swiper-button-prev {
             position: absolute;
             top: 50%;
-            left: 8px;
+            left: -16px;
             z-index: 20;
             transform: translateY(-50%) rotate(180deg);
             transition: opacity 0.3s;

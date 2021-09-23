@@ -196,25 +196,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const ads = document.querySelector('.ads__slider')
     const adsSlider = document.querySelector('.ads__slider .swiper-container')
 
-    const mySwiperAds = new Swiper(adsSlider, {
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        breakpoints: {
-            1200: {
-                centeredSlidesBounds: true
+    if (ads && adsSlider) {
+        const mySwiperAds = new Swiper(adsSlider, {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            breakpoints: {
+                1200: {
+                    centeredSlidesBounds: true
+                },
             },
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    })
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
 
-    mySwiperAds.on('slideChange', function () {
-        if (mySwiperAds.activeIndex) {
-            ads.classList.add('ads__slider--before')
-        } else {
-            ads.classList.remove('ads__slider--before')
-        }
-    });
+        mySwiperAds.on('slideChange', function () {
+            if (mySwiperAds.activeIndex) {
+                ads.classList.add('ads__slider--before')
+            } else {
+                ads.classList.remove('ads__slider--before')
+            }
+        });
+    }
 });

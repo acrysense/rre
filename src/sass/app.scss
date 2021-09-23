@@ -241,6 +241,20 @@
     }
     &__slider {
         position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -24px;
+            transform: translateY(-50%);
+            z-index: 2;
+            display: block;
+            width: 130px;
+            height: 100%;
+            opacity: 0;
+            background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 33.85%, rgba(255, 255, 255, 0) 100%);
+            transition: opacity 0.3s;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -253,6 +267,12 @@
             height: 100%;
             background: linear-gradient(to left, #FFFFFF 0%, #FFFFFF 33.85%, rgba(255, 255, 255, 0) 100%);
         }
+        &--before {
+            &::before {
+                opacity: 1;
+            }
+        }
+
         .swiper-slide {
             width: 70%;
         }
@@ -278,6 +298,28 @@
                 color: $grey-color;
             }
         }
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            left: 8px;
+            z-index: 20;
+            transform: translateY(-50%) rotate(180deg);
+            transition: opacity 0.3s;
+            &:focus {
+                outline: none;
+            }
+            &:focus,
+            &:hover {
+                svg {
+                    color: $primary-color;
+                }
+            }
+            svg {
+                width: 16px;
+                height: 16px;
+                color: $grey-color;
+            }
+        }
         .swiper-button-disabled {
             opacity: 0;
         }
@@ -286,11 +328,13 @@
             margin-left: 24px;
         }
         @media screen and (min-width: 768px) and (max-width: 1199px) {
+            &::before,
             &::after {
                 width: 100px;
             }
         }
         @media screen and (max-width: 767px) {
+            &::before,
             &::after {
                 width: 67px;
             }

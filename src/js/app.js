@@ -184,19 +184,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // MARQUEE
     $('.marquee__wrapper').marquee({
-        //duration in milliseconds of the marquee
-        duration: 15000,
-        //gap in pixels between the tickers
+        duration: 9000,
         gap: 36,
-        //time in milliseconds before the marquee will start animating
-        delayBeforeStart: 0,
-        //'left' or 'right'
-        direction: 'left',
-        //true or false - should the marquee be duplicated to show an effect of continues flow
-        duplicated: true
+        pauseOnHover: true,
+        duplicated: true,
+        delayBeforeStart: 500,
+        startVisible: true
     });
 
     // SWIPER
+    const ads = document.querySelector('.ads__slider')
     const adsSlider = document.querySelector('.ads__slider .swiper-container')
 
     const mySwiperAds = new Swiper(adsSlider, {
@@ -209,6 +206,15 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         navigation: {
             nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     })
+
+    mySwiperAds.on('slideChange', function () {
+        if (mySwiperAds.activeIndex) {
+            ads.classList.add('ads__slider--before')
+        } else {
+            ads.classList.remove('ads__slider--before')
+        }
+    });
 });

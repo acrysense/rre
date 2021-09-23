@@ -14,13 +14,13 @@ html(lang="ru")
             div(class="container") 
                 div(class="main__img", style="background-image: url(img/dist/main-bg.jpg)")
 
-        div(class="information")
+        section(class="information")
             div(class="container") 
                 div(class="row") 
                     div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item")
+                        div(class="information__item top-line")
                             div(class="information__body") 
-                                h2(class="information__title") О компании
+                                h2(class="information__title title") О компании
                                 p(class="information__description") Основанное в 1992 году Русское перестраховочное общество сейчас динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями
                                 div(class="information__content")
                                     div(class="information__inner information__inner--background")
@@ -49,11 +49,11 @@ html(lang="ru")
                                     span Скачать буклет о компании
                                     svg(class="btn__icon")
                                         use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more") Подробнее
+                                a(href="#", class="information__more more-btn") Подробнее
                     div(class="col-lg-6 col-12 mb-4")  
-                        div(class="information__item")
+                        div(class="information__item top-line")
                             div(class="information__body") 
-                                h2(class="information__title") Финансовая отчетность
+                                h2(class="information__title title") Финансовая отчетность
                                 p(class="information__description") Русское перестраховочное общество обладает двумя рейтингами: международным от Рейтингового Агентства AM Best и национальным от российского кредитного Рейтингового Агентства АКРА
                                 div(class="information__content")
                                     div(class="information__inner")
@@ -70,11 +70,11 @@ html(lang="ru")
                                     span Скачать последний финансовый отчет
                                     svg.btn__icon
                                         use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more") Подробнее
+                                a(href="#", class="information__more more-btn") Подробнее
                     div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item")
+                        div(class="information__item top-line")
                             div(class="information__body") 
-                                h2(class="information__title") Перестрахование
+                                h2(class="information__title title") Перестрахование
                                 p(class="information__description").
                                     Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках<br><br>
                                     Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках
@@ -83,16 +83,57 @@ html(lang="ru")
                                     span Портфолио компании
                                     svg.btn__icon
                                         use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more") Подробнее
+                                a(href="#", class="information__more more-btn") Подробнее
                     div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item")
+                        div(class="information__item top-line")
                             div(class="information__body") 
-                                h2(class="information__title") Команда
+                                h2(class="information__title title") Команда
                                 p(class="information__description") Команда Русского перестраховочного общества – профессионалы высочайшего класса, имеющие богатый опыт и обширные знания в страховании и перестраховании, подкрепленный фундаментальными знаниями в сферах, соответствующих основным направлениям бизнеса Общества
                                 img(src="img/dist/command-img.png", alt="Команда", class="information__img")
                             div(class="information__bottom") 
-                                a(href="#", class="information__more") Подробнее
+                                a(href="#", class="information__more more-btn") Подробнее
         
+        section.maps 
+            .container
+                .maps__wrapper.top-line
+                    h2.maps__title.title Емкости
+                    .maps__img
+                        img(src="img/dist/maps.png", alt="Map")
+
+        .marquee 
+            .container 
+                .marquee__wrapper 
+                    p.marquee__description 
+                        span Дорогу осилит идущий
+                        span Run the race to win
+                        span Давс хийвел уустал, ажил хийвел дуустал
+
+        section.ads 
+            .container 
+                .ads__wrapper.top-line
+                    h2.maps__title.title Объявления
+                    .ads__slider 
+                        .swiper-container 
+                            .swiper-wrapper 
+                                .swiper-slide 
+                                    p.ads__item 
+                                        span 12 марта 2021 года 
+                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                                .swiper-slide 
+                                    p.ads__item 
+                                        span 12 марта 2021 года 
+                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                                .swiper-slide 
+                                    p.ads__item 
+                                        span 12 марта 2021 года 
+                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                        .swiper-controls
+                            .swiper-button-next
+                                    svg
+                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-right")
+
+                    a(href="#", class="ads__more more-btn") СМОТРЕТЬ ВСЕ ОБЪЯВЛЕНИЯ
+
         include includes/footer.pug
 
         script(src='js/vendor.min.js')

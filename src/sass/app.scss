@@ -26,30 +26,11 @@
 .information {
     margin-top: 32px;
     &__item {
-        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         background: $white-color;
-        border-top: 5px solid $red-color;
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: -5px;
-            left: 0;
-            z-index: 1;
-            width: 0;
-            height: 5px;
-            background: $blue-color;
-            transition: all 0.4s ease-in-out;
-        }
-        &:hover {
-            &::before {
-                width: 100%;
-            }
-        }
     }
     &__body {
         display: flex;
@@ -62,37 +43,6 @@
         }
         @media screen and (max-width: 767px) {
             padding: 32px 17px;
-        }
-    }
-    &__title {
-        position: relative;
-        padding-bottom: 35px;
-        margin-bottom: 35px;
-        font-family: $ebgaramond;
-        font-size: 3.2rem;
-        font-weight: normal;
-        text-align: center;
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: block;
-            width: 40px;
-            height: 2px;
-            background: $primary-color;
-        }
-        
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            padding-bottom: 27px;
-            margin-bottom: 27px;
-            font-size: 2.6rem;
-        }
-        @media screen and (max-width: 767px) {
-            padding-bottom: 23px;
-            margin-bottom: 23px;
-            font-size: 2.2rem;
         }
     }
     &__subtitle {
@@ -220,41 +170,151 @@
             max-width: calc(100% - 34px);
         }
     }
-    &__more {
+}
+
+// maps
+.maps {
+    margin-top: 20px;
+    &__wrapper {
+        padding: 24px 0 70px;
+        background: $white-color;
+    }
+    &__img {
+        margin: 90px auto 0;
+        width: 90%;
+    }
+}
+
+.marquee {
+    margin: 35px 0;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    &__wrapper {
         position: relative;
-        display: block;
-        padding: 24px 0;
-        width: 100%;
-        font-size: 1.4rem;
-        font-weight: bold;
-        letter-spacing: 0.09em;
-        text-align: center;
-        text-transform: uppercase;
-        color: $grey-color;
-        border-top: 2px solid $primary-background-color;
+        overflow: hidden;
+        &::before,
         &::after {
             content: '';
             position: absolute;
             top: 50%;
-            right: 23px;
             transform: translateY(-50%);
+            z-index: 1;
             display: block;
-            width: 14px;
-            height: 14px;
-            opacity: 0;
-            background-image: url(../img/dist/sprite.svg#icon-arrow-right);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            transition: all 0.4s;
+            width: 224px;
+            height: 62px;
         }
-        &:hover {
-            color: $primary-color;
-            background: $background-color;
-            border-top: 2px solid $background-color;
-            &::after {
-                opacity: 1;
+        &::before {
+            left: 0;
+            background: linear-gradient(to right, #FAF9F8 2.43%, rgba(250, 249, 248, 0) 96.46%);
+        }
+        &::after {
+            right: 0;
+            background: linear-gradient(to left, #FAF9F8 2.43%, rgba(250, 249, 248, 0) 96.46%);
+        }
+    }
+    &__description {
+        font-family: $ebgaramond;
+        font-size: 18px;
+        font-weight: normal;
+        color: $gray-color;
+        span {
+            display: inline-block;
+        }
+        span + span {
+            margin-left: 36px;
+        }
+    }
+}
+
+// ads
+.ads {
+    @media screen and (max-width: 767px) {
+        margin-top: 25px;
+    }
+
+    &__wrapper {
+        padding-top: 24px;
+        background: $white-color;
+    }
+    &__slider {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: block;
+            width: 130px;
+            height: 100%;
+            background: linear-gradient(to left, #FFFFFF 0%, #FFFFFF 33.85%, rgba(255, 255, 255, 0) 100%);
+        }
+        .swiper-slide {
+            width: 70%;
+        }
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            z-index: 20;
+            transform: translateY(-50%);
+            transition: opacity 0.3s;
+            svg {
+                width: 16px;
+                height: 16px;
+                color: $grey-color;
             }
         }
+        .swiper-button-disabled {
+            opacity: 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-left: 24px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            &::after {
+                width: 100px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            &::after {
+                width: 67px;
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: normal;
+        span {
+            color: $grey-color;
+        }
+        a {
+            margin-left: 6px;
+            color: $primary-color;
+            &:hover {
+                color: $red-color;
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            flex-direction: column;
+            text-align: center;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+    &__more {
+        margin-top: 40px;
     }
 }

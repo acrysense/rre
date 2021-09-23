@@ -73,6 +73,60 @@ svg {
     overflow: hidden;
 }
 
+.top-line {
+    position: relative;
+    border-top: 5px solid $red-color;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        z-index: 1;
+        width: 0;
+        height: 5px;
+        background: $blue-color;
+        transition: all 0.4s ease-in-out;
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+.title {
+    position: relative;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    font-family: $ebgaramond;
+    font-size: 3.2rem;
+    font-weight: normal;
+    text-align: center;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: $primary-color;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        padding-bottom: 27px;
+        margin-bottom: 27px;
+        font-size: 2.6rem;
+    }
+    @media screen and (max-width: 767px) {
+        padding-bottom: 23px;
+        margin-bottom: 23px;
+        font-size: 2.2rem;
+    }
+}
+
 .visually-impaired {
     display: flex;
     align-items: center;
@@ -147,6 +201,44 @@ svg {
         }
         &__btn + &__btn {
             margin-left: 4px;
+        }
+    }
+}
+
+.more-btn {
+    position: relative;
+    display: block;
+    padding: 24px 0;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $grey-color;
+    border-top: 2px solid $primary-background-color;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 23px;
+        transform: translateY(-50%);
+        display: block;
+        width: 14px;
+        height: 14px;
+        opacity: 0;
+        background-image: url(../img/dist/sprite.svg#icon-arrow-right);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: all 0.4s;
+    }
+    &:hover {
+        color: $primary-color;
+        background: $background-color;
+        border-top: 2px solid $background-color;
+        &::after {
+            opacity: 1;
         }
     }
 }

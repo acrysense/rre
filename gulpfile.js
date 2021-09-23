@@ -26,6 +26,7 @@ let paths = {
             'node_modules/inputmask/dist/inputmask.min.js',
             'node_modules/swiper/swiper-bundle.min.js',
             'node_modules/simplebar/dist/simplebar.min.js',
+            'node_modules/jquery.marquee/jquery.marquee.min.js',
         ],
         dest: baseDir + '/js',
     },

@@ -263,6 +263,15 @@
             z-index: 20;
             transform: translateY(-50%);
             transition: opacity 0.3s;
+            &:focus {
+                outline: none;
+            }
+            &:focus,
+            &:hover {
+                svg {
+                    color: $primary-color;
+                }
+            }
             svg {
                 width: 16px;
                 height: 16px;

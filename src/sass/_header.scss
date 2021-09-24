@@ -180,14 +180,14 @@
     right: 0;
     left: 0;
     z-index: 1003;
-    background: #000;
     display: none;
     background: $primary-background-color;
     &--active {
         display: block;
     }
     &__top {
-        padding-top: 60px;
+        padding-top: 72px;
+        border-bottom: 5px solid $blue-color;
     }
     &__item + &__item {
         border-top: 1px solid $background-color;

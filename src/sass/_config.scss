@@ -278,20 +278,17 @@ svg {
 .input {
     display: block;
     appearance: none;
-    padding: 7px 20px 6px;
+    padding: 10px 0;
     width: 100%;
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 17px;
+    font-weight: bold;
     color: $primary-color;
-    background: $background-color;
+    background: transparent;
     border: 0;
     border-radius: 0;
     transition: all 0.35s;
     &::placeholder {
-        color: $gray-color;
-    }
-    &:hover {
-        background: $dark-background-color;
+        color: $grey-color;
     }
     &:focus {
         outline: none;

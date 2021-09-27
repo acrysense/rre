@@ -529,9 +529,10 @@
             bottom: -2px;
             left: 0;
             display: block;
-            width: 100%;
+            width: calc(var(--width));
             height: 2px;
             background: $light-background-color;
+            transition: all 0.4s;
         }
     }
     &__item {
@@ -561,7 +562,9 @@
         }
     }
     &__item + &__item {
-        margin-left: 40px;
+        .anchors__link {
+            padding-left: 40px;
+        }
     }
     &__link {
         padding-bottom: 6px;
@@ -630,6 +633,7 @@
             min-height: 237px;
         }
         @media screen and (max-width: 767px) {
+            width: 100%!important;
             min-height: 113px;
         }
     }

@@ -129,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 
                 if (navItemsWidth > 0) {
-                    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth + 21}px`);
+                    headerBottom.style.setProperty('--width', `calc(100% - ${navItemsWidth + 21}px)`);
                 } else {
-                    document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth}px`);
+                    headerBottom.style.setProperty('--width', `calc(100% - ${navItemsWidth}px)`);
                 }
             })
     
@@ -223,31 +223,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ANCHORS ITEM HOVER
-    //const anchorsItems = document.querySelectorAll('.anchors__item')
+    const anchorsItems = document.querySelectorAll('.anchors__item')
 
-    //if (anchorsItems) {
-    //    anchorsItems.forEach((item, i) => {
-    //        item.addEventListener('mouseover', () => {
-    //            let navItemsWidth = 0
+    if (anchorsItems) {
+        anchorsItems.forEach((item, i) => {
+            item.addEventListener('mouseover', () => {
+                let anchorsItemsWidth = 0
 
-    //            for (let j = i + 1; j < navItems.length; j++) {
-    //                navItemsWidth += document.querySelectorAll('.nav__list > li')[j].getBoundingClientRect().width
-    //            }
+                console.log(i)
+                for (let j = 0; j <= i; j++) {
+                    anchorsItemsWidth += document.querySelectorAll('.anchors__item')[j].getBoundingClientRect().width
+                }
+                console.log(anchorsItemsWidth)
                 
-    //            if (navItemsWidth > 0) {
-    //                document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth + 21}px`);
-    //            } else {
-    //                document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth}px`);
-    //            }
-    //        })
+                if (anchorsItemsWidth > 0) {
+                    document.querySelector('.anchors__list').style.setProperty('--width', `calc(${anchorsItemsWidth}px)`);
+                } else {
+                    document.querySelector('.anchors__list').style.setProperty('--width', `calc(${anchorsItemsWidth}px)`);
+                }
+            })
     
-    //        item.addEventListener('mouseout', () => {
-    //            if (headerSearch && headerSearch.classList.contains('header-search--active')) {
-    //                headerBottom.style.setProperty('--width', `100%`);
-    //            } else {
-    //                headerBottom.style.setProperty('--width', `0px`);
-    //            }
-    //        })
-    //    })
-    //}
+            item.addEventListener('mouseout', () => {
+                document.querySelector('.anchors__list').style.setProperty('--width', `0px`);
+            })
+        })
+    }
 });

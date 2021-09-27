@@ -1,0 +1,48 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Карта сайта
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+
+            //- content
+            .content 
+                .container 
+                    h1 Карта сайта
+
+            //- site map
+            .site-map
+                .container 
+                    ul.site-map__list 
+                        li 
+                            a(href="main.html") Главная страница
+                        li 
+                            a(href="about-company.html") О компании
+                            ul
+                                li 
+                                    a(href="#") История акционеров
+                                li 
+                                    a(href="#") Раскрытие информации
+                                li 
+                                    a(href="#") Совет директоров
+                        li 
+                            a(href="#") Финансы
+                        li 
+                            a(href="#") Перестрахование
+
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

@@ -1,0 +1,77 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Карта сайта
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //-content
+            .content 
+                .container 
+                    h1 О компании
+
+            //- anchors
+            .anchors
+                .container 
+                    ul.anchors__list 
+                        li.anchors__item.anchors__item--active 
+                            a.anchors__link(href="#")
+                                b История компании
+                        li.anchors__item 
+                            a.anchors__link(href="#")
+                                b Акционеры
+                        li.anchors__item 
+                            a.anchors__link(href="#") 
+                                b Структура
+
+            //- about company
+            .about
+                .container 
+                    .about__wrapper 
+                        h2 История компании
+                        p.
+                            История Общества началась в 1992 году, когда инициативу команды отраслевых экспертов по созданию российского профессионального перестраховщика поддержали 32 Страховые Общества - члена Российского союза страховщиков. Мы дали имя Russian Re новому игроку рынка. Это имя должно было стать символом профессионализма и надежности. Мы четко осознали, что нам потребуется много лет, чтобы взрастить такую компанию, и пошли по этому пути.<br><br>
+                            В 1994 году Эдуард Федорович Рябинин, один из самых авторитетных специалистов по страхованию в России, обладающий 30-летним непревзойденным международным опытом, присоединился к команде и возглавил Совет директоров. Было представлено новое стратегическое видение нашего развития – создание российского перестраховщика с широким международным участием. Оно нашло поддержку ведущих международных страховых и Брокерских компаний, которые стали нашими акционерами.<br><br>
+                            В соответствии с тенденцией продолжающегося развития экономики на пространстве СНГ, руководство Общества решило сосредоточить андеррайтинг на неморских направлениях бизнеса и стать специализированным андеррайтером. Основные направления деятельности, связанные с имуществом, энергетикой и инжинирингом, составили 80% портфеля Общества. Создав основу для развития в рамках внутреннего рынка, Общество приняло решение о географической диверсификации портфеля и расширило свою деятельность за рубежом.<br><br>
+                            Сегодня Русское перестраховочное общество – динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями. Строгая дисциплина андеррайтинга, основной упор на рост прибыли, а не на рост выручки, и долгосрочные отношения с клиентами остаются нашими краеугольными камнями и позволяют нам продвигаться по выбранному пути.
+
+                    .about__wrapper 
+                        h2 Основные акционеры компании
+                        .shareholders
+                            .shareholders__wrapper 
+                                .shareholders__item(style="width: 22.30%") 
+                                    span.shareholders__value 22,30 %
+                                    p.shareholders__description Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland) 
+                                .shareholders__item(style="width: 22.50%") 
+                                    span.shareholders__value 22,50 %
+                                    p.shareholders__description Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
+                                .shareholders__item(style="width: 50.32%")  
+                                    span.shareholders__value 50,32 %
+                                    p.shareholders__description Руководство общества
+                            a(href="#", class="shareholders__btn btn btn--white") 
+                                span Перейти к истории акционеров
+                                svg(class="btn__icon")
+                                    use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+
+                    .about__wrapper 
+                        h2 Структура компании
+
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

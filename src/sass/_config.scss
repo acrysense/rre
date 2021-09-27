@@ -46,6 +46,34 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+h1 {
+    font-family: $ebgaramond;
+    font-size: 7.2rem;
+    font-weight: normal;
+    line-height: 1;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 5.6rem;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 3.4rem;
+    }
+}
+
+h2 {
+    font-family: $ebgaramond;
+    font-size: 4.8rem;
+    font-weight: normal;
+    line-height: 1;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 3.6rem;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 2.4rem;
+    }
+}
+
 p {
     margin: 0;
 }
@@ -252,6 +280,7 @@ svg {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
+    color: $primary-color;
     background: $primary-background-color;
     &:hover {
         color: $white-color;
@@ -259,6 +288,9 @@ svg {
         .btn__icon {
             color: $white-color;
         }
+    }
+    &--white {
+        background: $white-color;
     }
     &__icon {
         margin-top: -1px;
@@ -280,7 +312,7 @@ svg {
     appearance: none;
     padding: 10px 0;
     width: 100%;
-    font-size: 17px;
+    font-size: 1.7rem;
     font-weight: bold;
     color: $primary-color;
     background: transparent;

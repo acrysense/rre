@@ -5,167 +5,178 @@ html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Русское Перестраховочное Общество - Главная
+        //- styles
         link(rel="stylesheet", href="css/vendor.min.css")
         link(rel="stylesheet", href="css/app.min.css")
     body
+        //- header
         include includes/header.pug
 
-        div(class="main")
-            div(class="container") 
-                div(class="main__img", style="background-image: url(img/dist/main-bg.jpg)")
+        //- wrapper
+        .wrapper 
+            //- main
+            div(class="main")
+                div(class="container") 
+                    div(class="main__img", style="background-image: url(img/dist/main-bg.jpg)")
+            
+            //- information
+            section(class="information")
+                div(class="container") 
+                    div(class="row") 
+                        div(class="col-lg-6 col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") О компании
+                                    p(class="information__description") Основанное в 1992 году Русское перестраховочное общество сейчас динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями
+                                    div(class="information__content")
+                                        div(class="information__inner information__inner--background")
+                                            div(class="information__group")
+                                                div(class="information__progress")
+                                                    div(class="information__progress--value", style="height: 23.30%")
+                                                span(class="information__text")
+                                                    b 23,30%
+                                                span(class="information__text") Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland)
 
-        section(class="information")
-            div(class="container") 
-                div(class="row") 
-                    div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item top-line")
-                            div(class="information__body") 
-                                h2(class="information__title title") О компании
-                                p(class="information__description") Основанное в 1992 году Русское перестраховочное общество сейчас динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями
-                                div(class="information__content")
-                                    div(class="information__inner information__inner--background")
-                                        div(class="information__group")
-                                            div(class="information__progress")
-                                                div(class="information__progress--value", style="height: 23.30%")
-                                            span(class="information__text")
-                                                b 23,30%
-                                            span(class="information__text") Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland)
+                                            div(class="information__group")
+                                                div(class="information__progress")
+                                                    div(class="information__progress--value", style="height: 22.50%")
+                                                span(class="information__text")
+                                                    b 22,50%
+                                                span(class="information__text") Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
 
-                                        div(class="information__group")
-                                            div(class="information__progress")
-                                                div(class="information__progress--value", style="height: 22.50%")
-                                            span(class="information__text")
-                                                b 22,50%
-                                            span(class="information__text") Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
+                                            div(class="information__group")
+                                                div(class="information__progress")
+                                                    div(class="information__progress--value", style="height: 50.32%")
+                                                span(class="information__text")
+                                                    b 50,32%
+                                                span(class="information__text") Руководство <br>Общества
+                                div(class="information__bottom") 
+                                    a(href="#", class="information__btn btn", download) 
+                                        span Скачать буклет о компании
+                                        svg(class="btn__icon")
+                                            use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                    a(href="#", class="information__more more-btn") Подробнее
+                        div(class="col-lg-6 col-12 mb-4")  
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Финансовая отчетность
+                                    p(class="information__description") Русское перестраховочное общество обладает двумя рейтингами: международным от Рейтингового Агентства AM Best и национальным от российского кредитного Рейтингового Агентства АКРА
+                                    div(class="information__content")
+                                        div(class="information__inner")
+                                            div(class="information__group")
+                                                h3(class="information__subtitle")
+                                                    b B
+                                                h3(class="information__subtitle") AM Best
+                                            div(class="information__group")
+                                                h3(class="information__subtitle")
+                                                    b A+ (Ru)
+                                                h3(class="information__subtitle") Acra
+                                div(class="information__bottom") 
+                                    a(href="#", class="information__btn btn", download) 
+                                        span Скачать последний финансовый отчет
+                                        svg.btn__icon
+                                            use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                    a(href="#", class="information__more more-btn") Подробнее
+                        div(class="col-lg-6 col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Перестрахование
+                                    p(class="information__description").
+                                        Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках<br><br>
+                                        Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках
+                                div(class="information__bottom") 
+                                    a(href="#", class="information__btn btn", download) 
+                                        span Портфолио компании
+                                        svg.btn__icon
+                                            use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                    a(href="#", class="information__more more-btn") Подробнее
+                        div(class="col-lg-6 col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Команда
+                                    p(class="information__description") Команда Русского перестраховочного общества – профессионалы высочайшего класса, имеющие богатый опыт и обширные знания в страховании и перестраховании, подкрепленный фундаментальными знаниями в сферах, соответствующих основным направлениям бизнеса Общества
+                                    img(src="img/dist/command-img.png", alt="Команда", class="information__img")
+                                div(class="information__bottom") 
+                                    a(href="#", class="information__more more-btn") Подробнее
+            
+            //- maps
+            section.maps 
+                .container
+                    .maps__wrapper.top-line
+                        h2.maps__title.title Емкости
+                        .maps__list 
+                            .maps__item
+                                span.maps__mark(style="background: #E3D5C0;") 
+                                span.maps__name Africa
+                            .maps__item
+                                span.maps__mark(style="background: #E9E3DA;") 
+                                span.maps__name Asia Pacific
+                            .maps__item
+                                span.maps__mark(style="background: #EEECE9;")  
+                                span.maps__name CEE
+                            .maps__item
+                                span.maps__mark(style="background: #EDEDED;") 
+                                span.maps__name Latin America
+                            .maps__item
+                                span.maps__mark(style="background: #ECE2E2;") 
+                                span.maps__name MENA
+                            .maps__item
+                                span.maps__mark(style="background: #F8F6FE;") 
+                                span.maps__name Russia & CIS
+                            .maps__item
+                                span.maps__mark(style="background: #E3D5C0;") 
+                                span.maps__name Africa
+                            .maps__item
+                                span.maps__mark(style="background: #E9E3DA;") 
+                                span.maps__name Asia Pacific
+                        .maps__img
+                            img(src="img/dist/maps.png", alt="Map")
 
-                                        div(class="information__group")
-                                            div(class="information__progress")
-                                                div(class="information__progress--value", style="height: 50.32%")
-                                            span(class="information__text")
-                                                b 50,32%
-                                            span(class="information__text") Руководство <br>Общества
-                            div(class="information__bottom") 
-                                a(href="#", class="information__btn btn", download) 
-                                    span Скачать буклет о компании
-                                    svg(class="btn__icon")
-                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more more-btn") Подробнее
-                    div(class="col-lg-6 col-12 mb-4")  
-                        div(class="information__item top-line")
-                            div(class="information__body") 
-                                h2(class="information__title title") Финансовая отчетность
-                                p(class="information__description") Русское перестраховочное общество обладает двумя рейтингами: международным от Рейтингового Агентства AM Best и национальным от российского кредитного Рейтингового Агентства АКРА
-                                div(class="information__content")
-                                    div(class="information__inner")
-                                        div(class="information__group")
-                                            h3(class="information__subtitle")
-                                                b B
-                                            h3(class="information__subtitle") AM Best
-                                        div(class="information__group")
-                                            h3(class="information__subtitle")
-                                                b A+ (Ru)
-                                            h3(class="information__subtitle") Acra
-                            div(class="information__bottom") 
-                                a(href="#", class="information__btn btn", download) 
-                                    span Скачать последний финансовый отчет
-                                    svg.btn__icon
-                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more more-btn") Подробнее
-                    div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item top-line")
-                            div(class="information__body") 
-                                h2(class="information__title title") Перестрахование
-                                p(class="information__description").
-                                    Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках<br><br>
-                                    Русское перестраховочное общество – специализированный андеррайтер по имущественным, энергетическим и строительно-монтажным рискам, ориентированный на факультативный бизнес и развивающийся на Российском и международном рынках
-                            div(class="information__bottom") 
-                                a(href="#", class="information__btn btn", download) 
-                                    span Портфолио компании
-                                    svg.btn__icon
-                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-                                a(href="#", class="information__more more-btn") Подробнее
-                    div(class="col-lg-6 col-12 mb-4")
-                        div(class="information__item top-line")
-                            div(class="information__body") 
-                                h2(class="information__title title") Команда
-                                p(class="information__description") Команда Русского перестраховочного общества – профессионалы высочайшего класса, имеющие богатый опыт и обширные знания в страховании и перестраховании, подкрепленный фундаментальными знаниями в сферах, соответствующих основным направлениям бизнеса Общества
-                                img(src="img/dist/command-img.png", alt="Команда", class="information__img")
-                            div(class="information__bottom") 
-                                a(href="#", class="information__more more-btn") Подробнее
-        
-        section.maps 
-            .container
-                .maps__wrapper.top-line
-                    h2.maps__title.title Емкости
-                    .maps__list 
-                        .maps__item
-                            span.maps__mark(style="background: #E3D5C0;") 
-                            span.maps__name Africa
-                        .maps__item
-                            span.maps__mark(style="background: #E9E3DA;") 
-                            span.maps__name Asia Pacific
-                        .maps__item
-                            span.maps__mark(style="background: #EEECE9;")  
-                            span.maps__name CEE
-                        .maps__item
-                            span.maps__mark(style="background: #EDEDED;") 
-                            span.maps__name Latin America
-                        .maps__item
-                            span.maps__mark(style="background: #ECE2E2;") 
-                            span.maps__name MENA
-                        .maps__item
-                            span.maps__mark(style="background: #F8F6FE;") 
-                            span.maps__name Russia & CIS
-                        .maps__item
-                            span.maps__mark(style="background: #E3D5C0;") 
-                            span.maps__name Africa
-                        .maps__item
-                            span.maps__mark(style="background: #E9E3DA;") 
-                            span.maps__name Asia Pacific
-                    .maps__img
-                        img(src="img/dist/maps.png", alt="Map")
+            //- marquee
+            .marquee 
+                .container 
+                    .marquee__wrapper 
+                        p.marquee__description 
+                            span Дорогу осилит идущий
+                            span Run the race to win
+                            span Давс хийвел уустал, ажил хийвел дуустал
+                            span Дорогу осилит идущий
+                            span Run the race to win
+                            span Давс хийвел уустал, ажил хийвел дуустал
 
-        .marquee 
-            .container 
-                .marquee__wrapper 
-                    p.marquee__description 
-                        span Дорогу осилит идущий
-                        span Run the race to win
-                        span Давс хийвел уустал, ажил хийвел дуустал
-                        span Дорогу осилит идущий
-                        span Run the race to win
-                        span Давс хийвел уустал, ажил хийвел дуустал
+            //- ads
+            section.ads 
+                .container 
+                    .ads__wrapper.top-line
+                        h2.maps__title.title Объявления
+                        .ads__slider 
+                            .swiper-container 
+                                .swiper-wrapper 
+                                    .swiper-slide 
+                                        p.ads__item 
+                                            span 12 марта 2021 года 
+                                            a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                                    .swiper-slide 
+                                        p.ads__item 
+                                            span 12 марта 2021 года 
+                                            a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                                    .swiper-slide 
+                                        p.ads__item 
+                                            span 12 марта 2021 года 
+                                            a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                            .swiper-controls
+                                .swiper-button-prev
+                                    svg
+                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-right")
+                                .swiper-button-next
+                                    svg
+                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-right")
 
-        section.ads 
-            .container 
-                .ads__wrapper.top-line
-                    h2.maps__title.title Объявления
-                    .ads__slider 
-                        .swiper-container 
-                            .swiper-wrapper 
-                                .swiper-slide 
-                                    p.ads__item 
-                                        span 12 марта 2021 года 
-                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
-                                .swiper-slide 
-                                    p.ads__item 
-                                        span 12 марта 2021 года 
-                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
-                                .swiper-slide 
-                                    p.ads__item 
-                                        span 12 марта 2021 года 
-                                        a(href="#") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
-                        .swiper-controls
-                            .swiper-button-prev
-                                svg
-                                    use(xlink:href="img/dist/sprite.svg#icon-arrow-right")
-                            .swiper-button-next
-                                svg
-                                    use(xlink:href="img/dist/sprite.svg#icon-arrow-right")
+                        a(href="#", class="ads__more more-btn") СМОТРЕТЬ ВСЕ ОБЪЯВЛЕНИЯ
 
-                    a(href="#", class="ads__more more-btn") СМОТРЕТЬ ВСЕ ОБЪЯВЛЕНИЯ
+            //- footer
+            include includes/footer.pug
 
-        include includes/footer.pug
-
+        //- scripts
         script(src='js/vendor.min.js')
         script(src='js/app.min.js')

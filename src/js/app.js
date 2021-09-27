@@ -183,14 +183,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // MARQUEE
-    $('.marquee__wrapper').marquee({
-        duration: 9000,
-        gap: 36,
-        pauseOnHover: true,
-        duplicated: true,
-        delayBeforeStart: 500,
-        startVisible: true
-    });
+    if ($('.marquee__wrapper')) {
+        $('.marquee__wrapper').marquee({
+            duration: 9000,
+            gap: 36,
+            pauseOnHover: true,
+            duplicated: true,
+            delayBeforeStart: 500,
+            startVisible: true
+        });
+    }
 
     // SWIPER
     const ads = document.querySelector('.ads__slider')
@@ -219,4 +221,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // ANCHORS ITEM HOVER
+    //const anchorsItems = document.querySelectorAll('.anchors__item')
+
+    //if (anchorsItems) {
+    //    anchorsItems.forEach((item, i) => {
+    //        item.addEventListener('mouseover', () => {
+    //            let navItemsWidth = 0
+
+    //            for (let j = i + 1; j < navItems.length; j++) {
+    //                navItemsWidth += document.querySelectorAll('.nav__list > li')[j].getBoundingClientRect().width
+    //            }
+                
+    //            if (navItemsWidth > 0) {
+    //                document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth + 21}px`);
+    //            } else {
+    //                document.querySelector('.header__wrapper--bottom').style.setProperty('--width', `calc(100% - ${navItemsWidth}px`);
+    //            }
+    //        })
+    
+    //        item.addEventListener('mouseout', () => {
+    //            if (headerSearch && headerSearch.classList.contains('header-search--active')) {
+    //                headerBottom.style.setProperty('--width', `100%`);
+    //            } else {
+    //                headerBottom.style.setProperty('--width', `0px`);
+    //            }
+    //        })
+    //    })
+    //}
 });

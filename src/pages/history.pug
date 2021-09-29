@@ -1,0 +1,82 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - История акционеров
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    a.heading__link(href="about-company.html") Компания
+                    h1 История акционеров
+                    .content.heading__content 
+                        p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
+
+            //- anchors
+            .anchors
+                .container 
+                    ul.anchors__list#list-example 
+                        li.anchors__item.anchors__item--active 
+                            a.anchors__link(href="#1992")
+                                b 1992
+                        li.anchors__item 
+                            a.anchors__link(href="#1993")
+                                b 1993
+                        li.anchors__item 
+                            a.anchors__link(href="#1996") 
+                                b 1996
+                        li.anchors__item 
+                            a.anchors__link(href="#2001") 
+                                b 2001
+
+            //- articles
+            .articles 
+                .container 
+                    .articles__wrapper(data-spy="scroll", data-target="#list-example", data-offset="0")
+                        .articles__item#1992 
+                            .articles__left 
+                                h3.articles__title 1992
+                            .articles__right
+                                .content 
+                                    p «Русское перестраховочное общество» основано 18 декабря 1992 года по инициативе Российского союза страховщиков (РОСС). Компания была зарегистрирована как закрытое акционерное общество с капиталом 71,4 млн. рублей (около 100 тыс.долларов). Учредителями общества выступили 29 страховщиков, 5 финансовых компаний, банк и физические лица.
+                        .articles__item#1993
+                            .articles__left 
+                                h3.articles__title 1993
+                            .articles__right
+                                .content 
+                                    p Следующий год был богат событиями. Пост Председателя Совета Директоров занял Эдуард Рябинин, уставный капитал увеличился до 1,5 млрд. рублей (около 300 тыс. долларов), число акционеров возросло до 62.  Alte Leipziger Europa Beteiligungsgesellschaft AG (Германия) приобрела 10% акций, став первым иностранным акционером общества.
+                        .articles__item#1996
+                            .articles__left 
+                                h3.articles__title 1996
+                            .articles__right
+                                .content 
+                                    p Вскоре успешное развитие компании привлекло внимание и других международных финансовых организаций. В феврале 1996 года лидер страхового рынка США - компания American International Group Inc., приобрела 15% акций общества, став вторым по величине акционером, а вслед за ней такой же пакет акций был выкуплен Marsh&McLennan Risk Capital Holdings (США), инвестиционным подразделением крупнейшего в мире страхового брокера Marsh. В этом же году группа Alte Leipziger Europa Beteiligungsgesellschaft AG (Германия) увеличила свою долю до 15% (в 2001 году акции были переданы ERGO Europa Beteiligungsgesellschaft AG (Munich Re Group).
+                                    img(src="img/dist/image.png", alt="Изображение")
+                                    span Подпись к фото
+                        .articles__item#2001
+                            .articles__left 
+                                h3.articles__title 2001
+                            .articles__right
+                                .content 
+                                    p Вскоре успешное развитие компании привлекло внимание и других международных финансовых организаций. В феврале 1996 года лидер страхового рынка США - компания American International Group Inc., приобрела 15% акций общества, став вторым по величине акционером, а вслед за ней такой же пакет акций был выкуплен Marsh&McLennan Risk Capital Holdings (США), инвестиционным подразделением крупнейшего в мире страхового брокера Marsh. В этом же году группа Alte Leipziger Europa Beteiligungsgesellschaft AG (Германия) увеличила свою долю до 15% (в 2001 году акции были переданы ERGO Europa Beteiligungsgesellschaft AG (Munich Re Group).
+            
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

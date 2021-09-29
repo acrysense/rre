@@ -248,4 +248,16 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+    // ACCORDIONS
+    const accordionsTrigger = $('.accordions__trigger')
+
+    if (accordionsTrigger) {
+        accordionsTrigger.on('click', function (event) {
+            event.preventDefault()
+
+            $(this).toggleClass('accordions__trigger--active')
+            $(this).next().slideToggle()
+        })
+    }
 });

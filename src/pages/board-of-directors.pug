@@ -1,0 +1,102 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - История акционеров
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    a.heading__link(href="about-company.html") Компания
+                    h1 Совет директоров
+                    .content.heading__content 
+                        p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и&nbsp;автоматизации всего документооборота.
+
+            //- sticky content
+            .sticky
+                //- anchors
+                .anchors
+                    .container 
+                        ul.anchors__list#list-example 
+                            li.anchors__item.anchors__item--active 
+                                a.anchors__link(href="#1992")
+                                    b Совет директоров
+                            li.anchors__item 
+                                a.anchors__link(href="#1993")
+                                    b Консультативный Совет
+                            li.anchors__item 
+                                a.anchors__link(href="#1996") 
+                                    b Руководство
+
+                //- team
+                .team
+                    .container 
+                        .team__wrapper 
+                            h2.team__title Совет директоров
+                            .team__list
+                                h3.team__subtitle Председатель
+                                .row 
+                                    .col-lg-3.col-md-4.col-12.mb-5
+                                        a.team__item(href="#")
+                                            .team__img
+                                                .team__img--inner
+                                                    img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                            .team__body 
+                                                span.team__name Андрей Поляков
+                                                span.team__position Должность сотрудника
+                            .team__list
+                                h3.team__subtitle Члены совета директоров
+                                .row 
+                                    .col-lg-3.col-md-4.col-12.mb-5
+                                        a.team__item(href="#")
+                                            .team__img
+                                                .team__img--inner
+                                                    img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                            .team__body 
+                                                span.team__name Андрей Поляков
+                                                span.team__position Должность сотрудника
+                                    .col-lg-3.col-md-4.col-12.mb-5
+                                        a.team__item(href="#")
+                                            .team__img 
+                                                .team__img--inner
+                                                    img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                            .team__body 
+                                                span.team__name Андрей Поляков
+                                                span.team__position Должность сотрудника
+                                    .col-lg-3.col-md-4.col-12.mb-5
+                                        a.team__item(href="#")
+                                            .team__img 
+                                                .team__img--inner
+                                                    img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                            .team__body 
+                                                span.team__name Андрей Поляков
+                                                span.team__position Должность сотрудника
+                                    .col-lg-3.col-md-4.col-12.mb-5 
+                                        a.team__item(href="#")
+                                            .team__img 
+                                                .team__img--inner
+                                                    img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                            .team__body 
+                                                span.team__name Андрей Поляков
+                                                span.team__position Должность сотрудника
+
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

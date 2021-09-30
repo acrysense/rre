@@ -19,94 +19,96 @@ html(lang="ru")
             .heading 
                 .container 
                     h1 О компании
+            
+            //- sticky content
+            .sticky
+                //- anchors
+                .anchors
+                    .container 
+                        ul.anchors__list#about-list 
+                            li.anchors__item.anchors__item--active 
+                                a.anchors__link(href="#about-history")
+                                    b История компании
+                            li.anchors__item 
+                                a.anchors__link(href="#about-shareholders")
+                                    b Акционеры
+                            li.anchors__item 
+                                a.anchors__link(href="#about-structure") 
+                                    b Структура
 
-            //- anchors
-            .anchors
-                .container 
-                    ul.anchors__list 
-                        li.anchors__item.anchors__item--active 
-                            a.anchors__link(href="#")
-                                b История компании
-                        li.anchors__item 
-                            a.anchors__link(href="#")
-                                b Акционеры
-                        li.anchors__item 
-                            a.anchors__link(href="#") 
-                                b Структура
+                //- about company
+                .about(data-spy="scroll", data-target="#years-list", data-offset="0")
+                    .container 
+                        .about__wrapper.section-bordered#about-history 
+                            h2 История компании
+                            .content.about__content
+                                p История Общества началась в 1992 году, когда инициативу команды отраслевых экспертов по созданию российского профессионального перестраховщика поддержали 32 Страховые Общества - члена Российского союза страховщиков. Мы дали имя Russian Re новому игроку рынка. Это имя должно было стать символом профессионализма и надежности. Мы четко осознали, что нам потребуется много лет, чтобы взрастить такую компанию, и пошли по этому пути.
+                                p В 1994 году Эдуард Федорович Рябинин, один из самых авторитетных специалистов по страхованию в России, обладающий 30-летним непревзойденным международным опытом, присоединился к команде и возглавил Совет директоров. Было представлено новое стратегическое видение нашего развития – создание российского перестраховщика с широким международным участием. Оно нашло поддержку ведущих международных страховых и Брокерских компаний, которые стали нашими акционерами.
+                                p В соответствии с тенденцией продолжающегося развития экономики на пространстве СНГ, руководство Общества решило сосредоточить андеррайтинг на неморских направлениях бизнеса и стать специализированным андеррайтером. Основные направления деятельности, связанные с имуществом, энергетикой и инжинирингом, составили 80% портфеля Общества. Создав основу для развития в рамках внутреннего рынка, Общество приняло решение о географической диверсификации портфеля и расширило свою деятельность за рубежом.
+                                p Сегодня Русское перестраховочное общество – динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями. Строгая дисциплина андеррайтинга, основной упор на рост прибыли, а не на рост выручки, и долгосрочные отношения с клиентами остаются нашими краеугольными камнями и позволяют нам продвигаться по выбранному пути.
 
-            //- about company
-            .about
-                .container 
-                    .about__wrapper.section-bordered 
-                        h2 История компании
-                        .content.about__content
-                            p История Общества началась в 1992 году, когда инициативу команды отраслевых экспертов по созданию российского профессионального перестраховщика поддержали 32 Страховые Общества - члена Российского союза страховщиков. Мы дали имя Russian Re новому игроку рынка. Это имя должно было стать символом профессионализма и надежности. Мы четко осознали, что нам потребуется много лет, чтобы взрастить такую компанию, и пошли по этому пути.
-                            p В 1994 году Эдуард Федорович Рябинин, один из самых авторитетных специалистов по страхованию в России, обладающий 30-летним непревзойденным международным опытом, присоединился к команде и возглавил Совет директоров. Было представлено новое стратегическое видение нашего развития – создание российского перестраховщика с широким международным участием. Оно нашло поддержку ведущих международных страховых и Брокерских компаний, которые стали нашими акционерами.
-                            p В соответствии с тенденцией продолжающегося развития экономики на пространстве СНГ, руководство Общества решило сосредоточить андеррайтинг на неморских направлениях бизнеса и стать специализированным андеррайтером. Основные направления деятельности, связанные с имуществом, энергетикой и инжинирингом, составили 80% портфеля Общества. Создав основу для развития в рамках внутреннего рынка, Общество приняло решение о географической диверсификации портфеля и расширило свою деятельность за рубежом.
-                            p Сегодня Русское перестраховочное общество – динамично развивающаяся компания с прочными позициями на рынке, хорошо известная своей экспертизой, подкрепленной значительным андеррайтинговым опытом и обширными международными связями. Строгая дисциплина андеррайтинга, основной упор на рост прибыли, а не на рост выручки, и долгосрочные отношения с клиентами остаются нашими краеугольными камнями и позволяют нам продвигаться по выбранному пути.
+                        .about__wrapper.section-bordered#about-shareholders  
+                            h2 Основные акционеры компании
+                            .shareholders
+                                .shareholders__wrapper 
+                                    .shareholders__item(style="width: 22.30%") 
+                                        span.shareholders__value 22,30 %
+                                        p.shareholders__description Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland) 
+                                    .shareholders__item(style="width: 27.38%") 
+                                        span.shareholders__value 27,38 %
+                                        p.shareholders__description Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
+                                    .shareholders__item(style="width: 50.32%")  
+                                        span.shareholders__value 50,32 %
+                                        p.shareholders__description Руководство общества
+                                a(href="#", class="shareholders__btn btn btn--white") 
+                                    span Перейти к истории акционеров
+                                    svg(class="btn__icon")
+                                        use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
 
-                    .about__wrapper.section-bordered  
-                        h2 Основные акционеры компании
-                        .shareholders
-                            .shareholders__wrapper 
-                                .shareholders__item(style="width: 22.30%") 
-                                    span.shareholders__value 22,30 %
-                                    p.shareholders__description Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland) 
-                                .shareholders__item(style="width: 27.38%") 
-                                    span.shareholders__value 27,38 %
-                                    p.shareholders__description Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
-                                .shareholders__item(style="width: 50.32%")  
-                                    span.shareholders__value 50,32 %
-                                    p.shareholders__description Руководство общества
-                            a(href="#", class="shareholders__btn btn btn--white") 
-                                span Перейти к истории акционеров
-                                svg(class="btn__icon")
-                                    use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
-
-                    .about__wrapper.section-bordered  
-                        h2 Структура компании
-                        .structure
-                            .structure__wrapper 
-                                .structure__item 
-                                    span.structure__name Общее собрание акционеров
-                                .structure__item 
-                                    span.structure__name Совет директоров
-                                .structure__item.structure__item--dark 
-                                    span.structure__name Генеральный директор
-                                .structure__column
-                                    .structure__item.structure__item--dark 
-                                        span.structure__name Советник
-                                    .structure__item.structure__item--dark 
-                                        span.structure__name Актуарий
-                                .structure__column
-                                    .structure__item.structure__item--dark 
-                                        span.structure__name Заместитель генерального директора по андеррайтингу
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                .structure__column
+                        .about__wrapper.section-bordered#about-structure  
+                            h2 Структура компании
+                            .structure
+                                .structure__wrapper 
                                     .structure__item 
-                                        span.structure__name Название отдела
-                                    .structure__item.structure__item--light 
-                                        span.structure__name Департамент андеррайтинга
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                .structure__column
+                                        span.structure__name Общее собрание акционеров
+                                    .structure__item 
+                                        span.structure__name Совет директоров
                                     .structure__item.structure__item--dark 
-                                        span.structure__name Название отдела
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                    .structure__item.structure__item--light  
-                                        span.structure__name Департамент андеррайтинга
-                                .structure__column
-                                    .structure__item.structure__item--dark 
-                                        span.structure__name Название отдела
-                                .structure__column
-                                    .structure__item.structure__item--dark 
-                                        span.structure__name Название отдела
+                                        span.structure__name Генеральный директор
+                                    .structure__column
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Советник
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Актуарий
+                                    .structure__column
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Заместитель генерального директора по андеррайтингу
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                    .structure__column
+                                        .structure__item 
+                                            span.structure__name Название отдела
+                                        .structure__item.structure__item--light 
+                                            span.structure__name Департамент андеррайтинга
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                    .structure__column
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Название отдела
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                        .structure__item.structure__item--light  
+                                            span.structure__name Департамент андеррайтинга
+                                    .structure__column
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Название отдела
+                                    .structure__column
+                                        .structure__item.structure__item--dark 
+                                            span.structure__name Название отдела
 
             //- nav block
             include includes/nav-block.pug

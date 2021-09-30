@@ -230,11 +230,9 @@ document.addEventListener('DOMContentLoaded', function () {
             item.addEventListener('mouseover', () => {
                 let anchorsItemsWidth = 0
 
-                console.log(i)
                 for (let j = 0; j <= i; j++) {
                     anchorsItemsWidth += document.querySelectorAll('.anchors__item')[j].getBoundingClientRect().width
                 }
-                console.log(anchorsItemsWidth)
                 
                 if (anchorsItemsWidth > 0) {
                     document.querySelector('.anchors__list').style.setProperty('--width', `calc(${anchorsItemsWidth}px)`);

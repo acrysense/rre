@@ -1143,7 +1143,7 @@
 .team {
     margin-top: 20px;
     &__wrapper + &__wrapper {
-        margin-top: 130px;
+        margin-top: 100px;
     }
     &__title {
         margin-bottom: 30px;
@@ -1170,6 +1170,12 @@
     &__item {
         display: block;
         border-top: 5px solid $dark-background-color;
+        &:hover {
+            border-top: 5px solid $red-color;
+            .team__body {
+                background: $background-color;
+            }
+        }
     }
     &__img {
         position: relative;
@@ -1192,6 +1198,7 @@
         padding: 38.5px 10px;
         text-align: center;
         background: $white-color;
+        transition: all 0.4s;
     }
     &__name {
         display: block;

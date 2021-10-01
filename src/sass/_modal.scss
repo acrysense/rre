@@ -1,0 +1,96 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1010;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba($primary-color, 0.9);
+    transition: all 0.4s;
+    &--active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1011;
+    transform: translate(-50%, -150%);
+    visibility: hidden;
+    max-height: 70%;
+    width: 394px;
+    background: $white-color;
+    border-top: 5px solid $red-color;
+    transition: all 0.4s ease-in-out;
+    &--active {
+        visibility: visible;
+        transform: translate(-50%, -50%);
+    }
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        padding: 0;
+        width: 39px;
+        height: 39px;
+        background: rgba($primary-background-color, 0.18);
+        border: 0;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            .modal__close--icon {
+                color: $white-color;
+            }
+        }
+        &--icon {
+            width: 14px;
+            height: 14px;
+            color: $grey-color;
+        }
+    }
+    &__wrapper {
+        color: $primary-color;
+        background: $white-color;
+    }
+    &__content {
+        padding: 21px 42px 42px;
+        text-align: center;
+    }
+    &__title {
+        font-family: $ebgaramond;
+        font-size: 2.8rem;
+        font-weight: normal;
+    }
+    &__position {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: $gray-color;
+    }
+    &__link {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        font-size: 1.4rem;
+        font-weight: normal;
+        letter-spacing: 0.09em;
+        color: $primary-color;
+        border-bottom: 2px solid $dark-background-color;
+        &:hover {
+            border-bottom: 2px solid $red-color;
+        }
+    }
+    &__link + &__link {
+        margin-top: 10px;
+    }
+}

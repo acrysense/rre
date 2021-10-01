@@ -1,0 +1,114 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Наша команда
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    h1 Наша команда
+                    .content.heading__content 
+                        p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
+            
+            //- team
+            .team
+                .container 
+                    .team__wrapper.section-bordered 
+                        select.select.team__select
+                            option(value="0") Все сотрудники 
+                            option(value="1") Название отдела
+                            option(value="2") Название отдела
+                            option(value="3") Название отдела
+                            option(value="4") Название отдела
+                            option(value="5") Название отдела
+                            option(value="6") Название отдела
+                        </select>
+                        .team__list
+                            .row 
+                                .col-lg-3.col-md-4.col-12.mb-5
+                                    a.team__item(href="#")
+                                        .team__img
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5 
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5 
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5 
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5 
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                                .col-lg-3.col-md-4.col-12.mb-5 
+                                    a.team__item(href="#")
+                                        .team__img 
+                                            .team__img--inner
+                                                img(src="img/dist/ava.png", alt="Андрей Поляков")
+                                        .team__body 
+                                            span.team__name Андрей Поляков
+                                            span.team__position Должность сотрудника
+                        
+            
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+        
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

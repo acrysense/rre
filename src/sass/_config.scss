@@ -338,3 +338,133 @@ svg {
         outline: none;
     }
 }
+
+.select {
+    min-width: 330px;
+    width: fit-content;
+
+    @media screen and (max-width: 575px) {
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
+.ss-main .ss-single-selected {
+    padding: 10px 15px;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: $primary-color;
+    background: $background-color;
+    border: none;
+    border-radius: 0;
+    &:hover {
+        background: $dark-background-color;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-image: url(../img/dist/sprite.svg#icon-select);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: transform 0.25s;
+    }
+    &.ss-open-below {
+        &::after {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+    }
+    .placeholder {
+        line-height: $primary-line-height;
+    }
+}
+
+.ss-main .ss-single-selected .ss-arrow {
+    display: none;
+}
+
+.ss-main .ss-single-selected.ss-open-below + * {
+    margin-top: 1px;
+}
+
+.ss-main .ss-single-selected.ss-open-above + * {
+    transform: scale(1) translateY(-1px);
+}
+
+.ss-content .ss-search {
+    display: none;
+}
+
+.ss-content {
+    z-index: 99!important;
+    color: $gray-color;
+    background: $background-color;
+    border: 0;
+    border-radius: 0;
+}
+
+.ss-content .ss-list {
+    padding: 7px 15px;
+    max-height: 204px;
+}
+
+.ss-content .ss-list .ss-option {
+    position: relative;
+    padding: 7px 0;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: $gray-color;
+    transition: all 0.25s;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+        display: block;
+        width: 4px;
+        height: 16px;
+        transition: background 0.25s;
+    }
+}
+
+.ss-content .ss-list .ss-option.ss-disabled:not(.ss-option-selected) {
+    display: none;
+}
+
+.ss-content .ss-list .ss-option.ss-disabled {
+    font-weight: bold;
+    color: $primary-color;
+    background: none;
+    cursor: pointer;
+    &::before {
+        background: $red-color;
+    }
+    &:hover {
+        &::before {
+            background: $red-color;
+        }
+    }
+}
+
+.ss-content .ss-list .ss-option:hover, .ss-content .ss-list .ss-option.ss-highlighted {
+    color: $primary-color;
+    background: none;
+    &::before {
+        background: $dark-background-color;
+    }
+}
+
+.ss-arrow .arrow-down {
+    width: auto;
+    height: auto;
+    background: none;
+}

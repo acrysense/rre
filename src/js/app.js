@@ -48,51 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
         return {setBodyChecker, removeBodyChecker}
     }
 
-    // SELECT
-    const selected = document.querySelectorAll('.select-box__selected')
-    const optionsList = document.querySelectorAll('.select-box__option')
-    
-    if (selected) {
-        selected.forEach(item => {
-            const close = () => {
-                document.querySelectorAll('.select-box__container').forEach((child) => child.classList.remove('select-box__container--active'))
-                document.querySelectorAll('.select-box__selected').forEach((child) => child.classList.remove('select-box__selected--active'))
-            }
-            const itemChecker = useItemChecker([item.parentNode.parentNode.parentNode, ...selected], close)
+    // SLIM SELECT
+    const selectResidence = document.querySelectorAll('.select')
 
-            item.addEventListener('click', () => {
-                if (item.previousElementSibling.classList.contains('select-box__container--active')) {
-                    close()
-                }
-                else {
-                    close()
-                    item.previousElementSibling.classList.add('select-box__container--active')
-                    item.classList.add('select-box__selected--active')
-                    itemChecker.setBodyChecker()
-                }
+    if (selectResidence) {
+        selectResidence.forEach(function (el) {
+            new SlimSelect({
+                select: el
             })
-        });
-    }
-
-    if (optionsList) {
-        optionsList.forEach((option) => {
-            option.addEventListener('click', (event) => {
-                event.preventDefault()
-
-                if (!option.classList.contains('select-box__option--disabled')) {
-                    const activeOption = option.parentNode.querySelector('.select-box__option--active')
-                    if (activeOption != null) {
-                        activeOption.classList.remove('select-box__option--active')
-                    }
-
-                    option.parentNode.nextElementSibling.innerHTML = option.querySelector('label').innerHTML
-
-                    option.classList.add('select-box__option--active')
-                    option.parentNode.classList.remove('select-box__container--active')
-                    option.parentNode.nextElementSibling.classList.remove('select-box__selected--active')
-                }
-            });
-        });
+        })
     }
 
     // HEADER && HEADER SEARCH

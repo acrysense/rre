@@ -222,4 +222,6 @@ document.addEventListener('DOMContentLoaded', function () {
             $(this).next().slideToggle()
         })
     }
+
+    $('body').scrollspy({ target: '#years-list' })
 });

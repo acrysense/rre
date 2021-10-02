@@ -28,7 +28,7 @@ html(lang="ru")
                         .team__list
                             .row 
                                 .col-lg-3.col-md-4.col-12.mb-5
-                                    a.team__item(href="#")
+                                    a.team__item(href="#", data-toggle="modal", data-target="#exampleModal")
                                         .team__img
                                             .team__img--inner
                                                 img(src="img/dist/ava.png", alt="Андрей Поляков")
@@ -68,18 +68,32 @@ html(lang="ru")
             include includes/footer.pug
 
         //- modal
-        .modal
-            button.modal__close 
-                svg(class="modal__close--icon")
-                    use(xlink:href="img/dist/sprite.svg#icon-close")
-            .modal__wrapper 
-                .modal__img 
-                    img(src="img/dist/ava.png", alt="Андрей Поляков")
-                .modal__content 
-                    h3.modal__title Андрей Поляков
-                    span.modal__position Должность сотрудника
-                    a.modal__link(href="mailto:emukhina@russianre.ru") emukhina@russianre.ru
-                    a.modal__link(href="tel:+79154433322") +7 915 443 33 22
+        //-.modal#exampleModal
+        //-    button.modal__close 
+        //-        svg(class="modal__close--icon")
+        //-            use(xlink:href="img/dist/sprite.svg#icon-close")
+        //-    .modal__wrapper 
+        //-        .modal__img 
+        //-            img(src="img/dist/ava.png", alt="Андрей Поляков")
+        //-        .modal__content 
+        //-            h3.modal__title Андрей Поляков
+        //-            span.modal__position Должность сотрудника
+        //-            a.modal__link(href="mailto:emukhina@russianre.ru") emukhina@russianre.ru
+        //-            a.modal__link(href="tel:+79154433322") +7 915 443 33 22
+        .modal.fade#exampleModal(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog.modal-dialog-centered(role="document")
+                .modal-content
+                    button.modal__close(data-dismiss="modal" aria-label="Закрыть") 
+                        svg(class="modal__close--icon")
+                            use(xlink:href="img/dist/sprite.svg#icon-close")
+                    .modal__wrapper 
+                        .modal__img 
+                            img(src="img/dist/ava.png", alt="Андрей Поляков")
+                        .modal__content 
+                            h3.modal__title Андрей Поляков
+                            span.modal__position Должность сотрудника
+                            a.modal__link(href="mailto:emukhina@russianre.ru") emukhina@russianre.ru
+                            a.modal__link(href="tel:+79154433322") +7 915 443 33 22
         .modal-overlay 
 
         //- scripts

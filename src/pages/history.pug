@@ -8,7 +8,7 @@ html(lang="ru")
         //- styles
         link(rel="stylesheet", href="css/vendor.min.css")
         link(rel="stylesheet", href="css/app.min.css")
-    body
+    body(data-spy="scroll", data-target="#years-list", data-offset="50")
         //- header
         include includes/header.pug
 
@@ -30,22 +30,22 @@ html(lang="ru")
                     .container 
                         ul.anchors__list#years-list 
                             li.anchors__item.anchors__item--active 
-                                a.anchors__link(href="#1992")
+                                a.anchors__link.nav-link(href="#1992", data-scroll)
                                     b 1992
                             li.anchors__item 
-                                a.anchors__link(href="#1993")
+                                a.anchors__link.nav-link(href="#1993", data-scroll)
                                     b 1993
                             li.anchors__item 
-                                a.anchors__link(href="#1996") 
+                                a.anchors__link.nav-link(href="#1996", data-scroll) 
                                     b 1996
                             li.anchors__item 
-                                a.anchors__link(href="#2001") 
+                                a.anchors__link.nav-link(href="#2001", data-scroll) 
                                     b 2001
 
                 //- articles
                 .articles 
                     .container 
-                        .articles__wrapper(data-spy="scroll", data-target="#years-list", data-offset="0")
+                        .articles__wrapper
                             .articles__item#1992 
                                 .articles__left 
                                     h3.articles__title 1992

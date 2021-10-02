@@ -8,7 +8,7 @@ html(lang="ru")
         //- styles
         link(rel="stylesheet", href="css/vendor.min.css")
         link(rel="stylesheet", href="css/app.min.css")
-    body(data-spy="scroll", data-target="#years-list", data-offset="50")
+    body(data-spy="scroll")
         //- header
         include includes/header.pug
 
@@ -28,37 +28,37 @@ html(lang="ru")
                 //- anchors
                 .anchors
                     .container 
-                        ul.anchors__list#years-list 
-                            li.anchors__item.anchors__item--active 
-                                a.anchors__link.nav-link(href="#1992", data-scroll)
+                        ul.anchors__list#anchors-list 
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-1")
                                     b 1992
                             li.anchors__item 
-                                a.anchors__link.nav-link(href="#1993", data-scroll)
+                                a.anchors__link.nav-link(href="#section-2")
                                     b 1993
                             li.anchors__item 
-                                a.anchors__link.nav-link(href="#1996", data-scroll) 
+                                a.anchors__link.nav-link(href="#section-3") 
                                     b 1996
-                            li.anchors__item 
-                                a.anchors__link.nav-link(href="#2001", data-scroll) 
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-4") 
                                     b 2001
 
                 //- articles
                 .articles 
                     .container 
                         .articles__wrapper
-                            .articles__item#1992 
+                            .articles__item#section-1 
                                 .articles__left 
                                     h3.articles__title 1992
                                 .articles__right
                                     .content 
                                         p «Русское перестраховочное общество» основано 18 декабря 1992 года по инициативе Российского союза страховщиков (РОСС). Компания была зарегистрирована как закрытое акционерное общество с капиталом 71,4 млн. рублей (около 100 тыс.долларов). Учредителями общества выступили 29 страховщиков, 5 финансовых компаний, банк и физические лица.
-                            .articles__item#1993
+                            .articles__item#section-2
                                 .articles__left 
                                     h3.articles__title 1993
                                 .articles__right
                                     .content 
                                         p Следующий год был богат событиями. Пост Председателя Совета Директоров занял Эдуард Рябинин, уставный капитал увеличился до 1,5 млрд. рублей (около 300 тыс. долларов), число акционеров возросло до 62.  Alte Leipziger Europa Beteiligungsgesellschaft AG (Германия) приобрела 10% акций, став первым иностранным акционером общества.
-                            .articles__item#1996
+                            .articles__item#section-3
                                 .articles__left 
                                     h3.articles__title 1996
                                 .articles__right
@@ -67,7 +67,7 @@ html(lang="ru")
                                         .image-block
                                             img(src="img/dist/image.png", alt="Изображение")
                                             span Подпись к фото
-                            .articles__item#2001
+                            .articles__item#section-4
                                 .articles__left 
                                     h3.articles__title 2001
                                 .articles__right

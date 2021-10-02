@@ -1,0 +1,113 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Финансы
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body(data-spy="scroll")
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    h1 Финансы
+                    
+            //- sticky content
+            .sticky
+                //- anchors
+                .anchors
+                    .container 
+                        ul.anchors__list#anchors-list 
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-1")
+                                    b Рейтинги
+                            li.anchors__item 
+                                a.anchors__link.nav-link(href="#section-2")
+                                    b Ключевые показатели
+                            li.anchors__item 
+                                a.anchors__link.nav-link(href="#section-3") 
+                                    b Рост капитала 
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-4") 
+                                    b Учетная политика/ Аудит
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-5") 
+                                    b Отчетность
+
+                //- finance
+                .finance 
+                    .container 
+                        .finance__wrapper.section-bordered#section-1 
+                            h2 Рейтинги
+                            .information
+                                div(class="row") 
+                                    div(class="col-lg-6 col-12 mb-4")
+                                        div(class="information__item top-line")
+                                            div(class="information__body") 
+                                                h3(class="information__heading") A.M. Best
+                                                span(class="information__title title") bb+
+                                                p(class="information__description") 23.07.2020 рейтинговое агентство AM Best подтвердило рейтинг финансовой устойчивости B (Fair) и долгосрочный кредитный рейтинг "bb+" АО "Русское перестраховочное общество". Прогноз по обоим рейтингам стабильный. 
+                                            div(class="information__bottom") 
+                                                a(href="#", class="information__more more-btn") Подробнее
+                                    div(class="col-lg-6 col-12 mb-4")  
+                                        div(class="information__item top-line")
+                                            div(class="information__body") 
+                                                h3(class="information__heading") АКРА
+                                                span(class="information__title title") A+ (RU)
+                                                p(class="information__description") 28.05.2020 АКРА повысило кредитный рейтинг АО «Русское перестраховочное общество» до уровня А+(RU), изменив прогноз на «Стабильный». 
+                                            div(class="information__bottom") 
+                                                a(href="#", class="information__more more-btn") Подробнее
+                        
+                        .finance__wrapper.section-bordered#section-2 
+                            h2 Ключевые показатели
+                        .finance__wrapper.section-bordered#section-3 
+                            h2 Рост капитала
+                        .finance__wrapper.section-bordered.articles#section-4 
+                            h2 Учетная политика/ Аудит
+                            .articles__wrapper
+                                .articles__item 
+                                .articles__item 
+                                    .articles__left 
+                                        h3.articles__title.articles__title--sm Обеспечение финансовой прозрачности
+                                    .articles__right
+                                        .content 
+                                            p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
+                                            p С 2008 года аудитором «Русского перестраховочного общества» является один из мировых лидеров в этой области – компания АО «БДО-Юникон».
+                        .finance__wrapper.section-bordered.articles#section-5 
+                            h2 Отчетность
+                            .articles__wrapper
+                                .articles__item 
+                                .articles__item 
+                                    .articles__left 
+                                        h3.articles__title.articles__title--sm Годовая бухгалтерская (финансовая) отчетность
+                                    .articles__right
+                                        a(href="#", class="btn btn--white") 
+                                            span Смотреть документы
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                .articles__item
+                                    .articles__left 
+                                        h3.articles__title.articles__title--sm Финансовая отчетность по МСФО
+                                    .articles__right
+                                        a(href="#", class="btn btn--white") 
+                                            span Смотреть документы
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

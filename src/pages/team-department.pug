@@ -68,18 +68,6 @@ html(lang="ru")
             include includes/footer.pug
 
         //- modal
-        //-.modal#exampleModal
-        //-    button.modal__close 
-        //-        svg(class="modal__close--icon")
-        //-            use(xlink:href="img/dist/sprite.svg#icon-close")
-        //-    .modal__wrapper 
-        //-        .modal__img 
-        //-            img(src="img/dist/ava.png", alt="Андрей Поляков")
-        //-        .modal__content 
-        //-            h3.modal__title Андрей Поляков
-        //-            span.modal__position Должность сотрудника
-        //-            a.modal__link(href="mailto:emukhina@russianre.ru") emukhina@russianre.ru
-        //-            a.modal__link(href="tel:+79154433322") +7 915 443 33 22
         .modal.fade#exampleModal(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
             .modal-dialog.modal-dialog-centered(role="document")
                 .modal-content
@@ -94,7 +82,6 @@ html(lang="ru")
                             span.modal__position Должность сотрудника
                             a.modal__link(href="mailto:emukhina@russianre.ru") emukhina@russianre.ru
                             a.modal__link(href="tel:+79154433322") +7 915 443 33 22
-        .modal-overlay 
 
         //- scripts
         script(src='js/vendor.min.js')

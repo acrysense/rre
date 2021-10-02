@@ -4,11 +4,11 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Русское Перестраховочное Общество - История акционеров
+        title Русское Перестраховочное Общество - Совет директоров
         //- styles
         link(rel="stylesheet", href="css/vendor.min.css")
         link(rel="stylesheet", href="css/app.min.css")
-    body
+    body(data-spy="scroll")
         //- header
         include includes/header.pug
 
@@ -28,21 +28,21 @@ html(lang="ru")
                 //- anchors
                 .anchors
                     .container 
-                        ul.anchors__list#board-list 
-                            li.anchors__item.anchors__item--active 
-                                a.anchors__link(href="#")
+                        ul.anchors__list#anchors-list
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#section-1")
                                     b Совет директоров
                             li.anchors__item 
-                                a.anchors__link(href="#")
+                                a.anchors__link.nav-link(href="#section-2")
                                     b Консультативный Совет
                             li.anchors__item 
-                                a.anchors__link(href="#") 
+                                a.anchors__link.nav-link(href="#section-3") 
                                     b Руководство
 
                 //- team
                 .team
                     .container 
-                        .team__wrapper.section-bordered 
+                        .team__wrapper.section-bordered#section-1 
                             h2.team__title Совет директоров
                             .team__list
                                 h3.team__subtitle Председатель
@@ -90,7 +90,7 @@ html(lang="ru")
                                             .team__body 
                                                 span.team__name Андрей Поляков
                                                 span.team__position Должность сотрудника
-                        .team__wrapper.section-bordered 
+                        .team__wrapper.section-bordered#section-2 
                             h2.team__title Консультационный совет
                             .team__list
                                 .row 
@@ -126,7 +126,7 @@ html(lang="ru")
                                             .team__body 
                                                 span.team__name Андрей Поляков
                                                 span.team__position Должность сотрудника
-                        .team__wrapper.section-bordered 
+                        .team__wrapper.section-bordered#section-3 
                             h2.team__title Руководство
                             .team__list
                                 .row 

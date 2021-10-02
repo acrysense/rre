@@ -8,7 +8,7 @@ html(lang="ru")
         //- styles
         link(rel="stylesheet", href="css/vendor.min.css")
         link(rel="stylesheet", href="css/app.min.css")
-    body
+    body(data-spy="scroll")
         //- header
         include includes/header.pug
 
@@ -25,19 +25,19 @@ html(lang="ru")
                 //- anchors
                 .anchors
                     .container 
-                        ul.anchors__list#about-list 
-                            li.anchors__item.anchors__item--active 
-                                a.anchors__link(href="#about-history")
+                        ul.anchors__list#anchors-list  
+                            li.anchors__item
+                                a.anchors__link.nav-link(href="#about-history")
                                     b История компании
                             li.anchors__item 
-                                a.anchors__link(href="#about-shareholders")
+                                a.anchors__link.nav-link(href="#about-shareholders")
                                     b Акционеры
                             li.anchors__item 
-                                a.anchors__link(href="#about-structure") 
+                                a.anchors__link.nav-link(href="#about-structure") 
                                     b Структура
 
                 //- about company
-                .about(data-spy="scroll", data-target="#years-list", data-offset="0")
+                .about
                     .container 
                         .about__wrapper.section-bordered#about-history 
                             h2 История компании

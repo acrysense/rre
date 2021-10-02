@@ -186,9 +186,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ANCHORS ITEM HOVER
+    // ANCHORS && ITEM HOVER
+    const acnchors = document.querySelector('.anchors')
     const anchorsItems = document.querySelectorAll('.anchors__item')
 
+    if (acnchors) {
+        $('body').scrollspy({
+            target: '#anchors-list',
+            offset: Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height),
+        })
+    }
+    
     if (anchorsItems) {
         anchorsItems.forEach((item, i) => {
             item.addEventListener('mouseover', () => {
@@ -222,6 +230,4 @@ document.addEventListener('DOMContentLoaded', function () {
             $(this).next().slideToggle()
         })
     }
-
-    $('body').scrollspy({ target: '#years-list' })
 });

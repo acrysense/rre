@@ -1,0 +1,49 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Контакты
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body(data-spy="scroll")
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    h1 Контакты
+                    .content.heading__content 
+                        p Мы будем рады ответить на любой ваш вопрос.
+
+            //- contacts
+            .contacts
+                .container 
+                    .contacts__wrapper 
+                        .row 
+                            .col-lg-4 
+                                h3.contacts__title Офис в Москве
+                                .content 
+                                    p. 
+                                        105062, г. Москва, Russian RE бизнес центр, Лялин переулок, д. 19, корп. 1<br>
+                                        Режим работы: 9.30 – 18.00<br>
+                                        тел: +7 495 933 88 83<br>
+                                        email: russre@russianre.ru 
+                            .col-lg-8
+                                .contacts__map 
+
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

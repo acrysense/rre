@@ -1,0 +1,73 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Объявления
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    h1 Объявления
+
+            //- ads list
+            .ads-list
+                .container 
+                    .ads-list__wrapper 
+                        .ads-list__item 
+                            span.ads-list__date 21 марта 2021 года
+                            .ads-list__body 
+                                .ads-list__group 
+                                    a.ads-list__title(href="ads-page.html") Заголовок объявления
+                                    span.ads-list__date.ads-list__date--mobile 21 марта 2021 года
+                                    .content.ads-list__content 
+                                        p Offers a full range of property and casualty reinsurance products on either a direct or brokered basis. Our experienced and knowledgeable underwriters perform an in-depth analysis that enables us to use our capacity on many different types of structures and risk classes. 
+                                .ads-list__img 
+                                    img(src="img/dist/image-ads.png", alt="Заголовок объявления")
+                        .ads-list__item 
+                            span.ads-list__date 21 марта 2021 года
+                            .ads-list__body 
+                                .ads-list__group 
+                                    a.ads-list__title(href="ads-page.html") Заголовок объявления
+                                    span.ads-list__date.ads-list__date--mobile 21 марта 2021 года
+                                    .content.ads-list__content 
+                                        p Offers a full range of property and casualty reinsurance products on either a direct or brokered basis. Our experienced and knowledgeable underwriters perform an in-depth analysis that enables us to use our capacity on many different types of structures and risk classes. 
+                        .ads-list__item 
+                            span.ads-list__date 21 марта 2021 года
+                            .ads-list__body 
+                                .ads-list__group 
+                                    a.ads-list__title(href="ads-page.html") Заголовок объявления 
+                                    span.ads-list__date.ads-list__date--mobile 21 марта 2021 года
+                        .ads-list__item 
+                            span.ads-list__date 21 марта 2021 года
+                            .ads-list__body 
+                                .ads-list__group 
+                                    a.ads-list__title(href="ads-page.html") Заголовок объявления
+                                    span.ads-list__date.ads-list__date--mobile 21 марта 2021 года
+                                    .content.ads-list__content 
+                                        p Offers a full range of property and casualty reinsurance products on either a direct or brokered basis. Our experienced and knowledgeable underwriters perform an in-depth analysis that enables us to use our capacity on many different types of structures and risk classes. 
+                                .ads-list__img 
+                                    img(src="img/dist/image-ads.png", alt="Заголовок объявления")
+                    a.ads-list__more(href="#") ПОКАЗАТЬ ЕЩЕ
+                            
+
+
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

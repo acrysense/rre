@@ -1,0 +1,53 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Заголовок объявления
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body(data-spy="scroll")
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+            //- ads main
+            .ads-main 
+                .container 
+                    .ads-main__wrapper
+                        .ads-main__img 
+                            img(src="img/dist/image-ads.png", alt="")
+                        .heading.ads-main__body 
+                            a.heading__link(href="ads.html") Объявления
+                            h1 Заголовок объявления
+                            .content.heading__content 
+                                p Offers a full range of property and casualty reinsurance products on either a direct or brokered basis. Our experienced and knowledgeable underwriters perform an in-depth analysis that enables us to use our capacity on many different types of structures and risk classes.
+
+            //- articles
+            .articles 
+                .container 
+                    .articles__wrapper
+                        .articles__item
+                            .articles__left 
+                                h3.articles__title Заголовок
+                            .articles__right
+                                .content 
+                                    p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                    h3 Подзаголовок
+                                    p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                    .image-block
+                                        img(src="img/dist/image.png", alt="Изображение")
+                                        span Подпись
+            
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

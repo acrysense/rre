@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // MARQUEE
     if ($('.marquee__wrapper')) {
         $('.marquee__wrapper').marquee({
-            duration: 9000,
+            duration: 15000,
             gap: 36,
             pauseOnHover: true,
             duplicated: true,
@@ -296,14 +296,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         $(window).on('activate.bs.scrollspy', function(e, obj) {
-            if ($(window).width() <= 1023) {
-                let $this = $(`[href="${obj.relatedTarget}"]`);
-                
-                console.log($this.parent().position().left);
-                $('.anchors__list').animate({
-                    scrollLeft: $this.parent().position().left - 50
-                }, 100);
-            }
+            let $this = $(`[href="${obj.relatedTarget}"]`);
+
+            $this.removeClass('prev-active')
+            $this.parent().nextAll().children('a').removeClass('prev-active')
+            $this.parent().prevAll().children('a').addClass('prev-active')
+
+            $('.anchors__list').animate({
+                scrollLeft: $this.parent().position().left - 50
+            }, 100);
         });
     }
     
@@ -325,6 +326,22 @@ document.addEventListener('DOMContentLoaded', function () {
     
             item.addEventListener('mouseout', () => {
                 document.querySelector('.anchors__list').style.setProperty('--width', `0px`);
+            })
+        })
+    }
+
+    // STRUCTURE ITEM HOVER
+    const structureWrapper = document.querySelector('.structure__wrapper')
+    const structureItems = document.querySelectorAll('.structure__item')
+
+    if (structureItems) {
+        structureItems.forEach((item) => {
+            item.addEventListener('mouseover', () => {
+                structureWrapper.classList.add('structure__wrapper--hover')
+            })
+    
+            item.addEventListener('mouseout', () => {
+                structureWrapper.classList.remove('structure__wrapper--hover')
             })
         })
     }

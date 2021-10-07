@@ -23,6 +23,9 @@
             margin-bottom: 0;
         }
     }
+    p {
+        text-align: justify;
+    }
     h1, h2, h3, h4, h5, h6 {
         &:not(:first-child) {
             margin-top: 1em;
@@ -97,8 +100,10 @@
         justify-content: center;
         min-height: calc(100vh - var(--height));
     }
+    h1 {
+        padding-top: 12px;
+    }
     &__link {
-        margin-bottom: 12px;
         font-size: 16px;
         font-weight: normal;
         text-decoration: underline;
@@ -193,6 +198,7 @@
         min-height: 135px;
         font-size: 1.9rem;
         font-weight: normal;
+        text-align: justify;
         
         @media screen and (max-width: 991px) {
             min-height: auto;
@@ -559,7 +565,12 @@
 }
 
 .ads-list {
-    margin-top: 30px;
+    margin-top: 60px;
+
+    @media screen and (max-width: 767px) {
+        margin-top: 30px;
+    }
+
     &__item {
         display: flex;
         padding: 26px 32px;
@@ -804,19 +815,21 @@
             height: 2px;
             background: $background-color;
         }
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            display: block;
-            width: calc(var(--width));
-            height: 2px;
-            background: $light-background-color;
-            transition: all 0.4s;
-        }
 
+        @media screen and (hover: hover) {
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                display: block;
+                width: calc(var(--width));
+                height: 2px;
+                background: $light-background-color;
+                transition: all 0.4s;
+            }
+        }
         @media screen and (max-width: 767px) {
             margin: 0 -10px;
             padding: 0 10px;
@@ -881,9 +894,26 @@
             background: transparent;
             transition: background 0.35s;
         }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            transition: background 0.35s;
+        }
         b {
             font-weight: bold;
             text-transform: uppercase;
+        }
+        &.prev-active {
+            &::after {
+                background: $blue-color;
+            }
         }
         &.active {
             color: $blue-color;
@@ -978,6 +1008,7 @@
     }
     &__description {
         padding-top: 10px;
+        max-width: 250px;
         font-size: 2.2rem;
         font-weight: normal;
 
@@ -1011,6 +1042,11 @@
     &__wrapper {
         display: flex;
         flex-wrap: wrap;
+        &--hover {
+            .structure__item {
+                opacity: 0.55;
+            }
+        }
         & > .structure__item + .structure__item {
             &::before {
                 content: '';
@@ -1041,6 +1077,9 @@
         font-weight: normal;
         text-align: center;
         background: $background-color;
+        &:hover {
+            opacity: 1!important;
+        }
         &--dark {
             background: $dark-background-color;
         }

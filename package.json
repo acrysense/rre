@@ -29,6 +29,8 @@
 		"inputmask": "^5.0.5",
 		"jquery": "^3.6.0",
 		"jquery.marquee": "^1.6.0",
+		"leaflet": "^1.7.1",
+		"leaflet-gesture-handling": "^1.2.1",
 		"nouislider": "^15.2.0",
 		"simplebar": "^5.3.5",
 		"slim-select": "^1.27.0",

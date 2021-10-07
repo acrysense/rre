@@ -1,0 +1,37 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - 404
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body(data-spy="scroll")
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+
+            //- heading
+            .heading.heading--center 
+                .container 
+                    h1 Вы что-то ищете?
+                    .content.heading__content 
+                        p Приносим извинения — страница, которую Вы ищете, более не существует, или же был введен неверный адрес URL. Пожалуйста, проверьте его еще раз и попробуйте снова.
+                        a(href="main.html", class="btn btn--white") 
+                            span.btn__title Перейти на главную страницу
+                            svg.btn__icon
+                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

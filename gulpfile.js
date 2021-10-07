@@ -29,6 +29,8 @@ let paths = {
             'node_modules/slim-select/dist/slimselect.min.js',
             'node_modules/simplebar/dist/simplebar.min.js',
             'node_modules/jquery.marquee/jquery.marquee.min.js',
+            'node_modules/leaflet/dist/leaflet.js',
+            'node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js',
         ],
         dest: baseDir + '/js',
     },

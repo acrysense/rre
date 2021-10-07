@@ -132,8 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerBottom = document.querySelector('.header__wrapper--bottom')
     const headerSearchBtn = document.querySelectorAll('.search-btn')
     const headerSearch = document.querySelector('.header-search')
+    const headerSearchTop = document.querySelector('.header-search__top')
+    const headerSearchClose = document.querySelector('.header-search__close')
+    const overlay = document.querySelector('.overlay')
 
     document.documentElement.style.setProperty('--height', `${header.getBoundingClientRect().height}px`);
+    document.documentElement.style.setProperty('--search', `${headerSearchTop.getBoundingClientRect().height}px`);
     headerBottom.style.setProperty('--width', `0px`);
 
     if (headerSearchBtn) {
@@ -142,10 +146,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.preventDefault()
 
                 headerSearch.classList.add('header-search--active')
+                overlay.classList.add('overlay--active')
+                document.body.classList.add('scroll-disabled')
 
                 headerBottom.style.setProperty('--width', `100%`);
             })
         })
+    }
+
+    if (headerSearchClose) {
+        headerSearchClose.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            headerSearch.classList.remove('header-search--active')
+            overlay.classList.remove('overlay--active')
+            document.body.classList.remove('scroll-disabled')
+
+            headerBottom.style.setProperty('--width', `0`);
+        })
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            headerSearch.classList.remove('header-search--active')
+            overlay.classList.remove('overlay--active')
+            document.body.classList.remove('scroll-disabled')
+
+            headerBottom.style.setProperty('--width', `0`);
+        }
+        )
     }
 
     // NAV ITEM HOVER
@@ -261,8 +292,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (acnchors) {
         $('body').scrollspy({
             target: '#anchors-list',
-            offset: Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height),
-        })
+            offset: Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height + 2),
+        });
+
+        $(window).on('activate.bs.scrollspy', function(e, obj) {
+            if ($(window).width() <= 1023) {
+                let $this = $(`[href="${obj.relatedTarget}"]`);
+                
+                console.log($this.parent().position().left);
+                $('.anchors__list').animate({
+                    scrollLeft: $this.parent().position().left - 50
+                }, 100);
+            }
+        });
     }
     
     if (anchorsItems) {
@@ -297,5 +339,61 @@ document.addEventListener('DOMContentLoaded', function () {
             $(this).toggleClass('accordions__trigger--active')
             $(this).next().slideToggle()
         })
+    }
+
+    // LEAFLET MAPS
+    const mapsItem = document.querySelector('.contacts__map')
+    const accessToken = '9SeVpBO8XpK5PQfKxQEl8o3P735Af26zC1QVyQUhaI9sf8eMHQGP3rAys5hgFoxt';
+
+    if (mapsItem) {
+        const maps = [
+            {
+                id: 'contacts-map-1',
+                coordinates: [55.7672809,37.6697732],
+                zoom: 11,
+                instance: null  
+            },
+            {
+                id: 'contacts-map-2',
+                coordinates: [59.933184, 30.357286],
+                zoom: 11,
+                instance: null
+            },
+        ];
+    
+        maps.forEach(item => initMap(item))
+    
+        /**
+         * Init Map
+         * @param {*} item 
+         */
+        function initMap(item) {
+            item.instance = L.map(item.id, {
+                attributionControl: false,
+                gestureHandling: true,
+                gestureHandlingOptions: {
+                    duration: 2000,
+                    text: {
+                        touch: "Для перемещения карты проведите по ней двумя пальцами",
+                        scroll: "Используйте Ctrl + колесо мыши для масштабирования карты",
+                        scrollMac: "Используйте \u2318 + колесо мыши для масштабирования карты"
+                    }
+                }
+            }).setView(item.coordinates, 17);
+    
+            L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
+                attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                minZoom: 0,
+                maxZoom: 22,
+                subdomains: 'abcd',
+                accessToken
+            }).addTo(item.instance);
+    
+            // На карте появится <div/> с классом .map-marker, который нужно стилизовать через css обычным образом
+            let mapMarker = L.divIcon({className: 'map-marker'});
+    
+            L.marker(item.coordinates, { icon: mapMarker })
+                .addTo(item.instance);
+        }
     }
 });

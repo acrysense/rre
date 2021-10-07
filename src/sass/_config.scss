@@ -167,6 +167,14 @@ svg {
     }
 }
 
+.section-content + .section-content {
+    margin-top: 52px;
+    
+    @media screen and (max-width: 1199px) {
+        margin-top: 36px;
+    }
+}
+
 .visually-impaired {
     display: flex;
     align-items: center;
@@ -245,6 +253,13 @@ svg {
     }
 }
 
+.red-link {
+    color: $red-color;
+    &:hover {
+        color: $gray-color;
+    }
+}
+
 .more-btn {
     position: relative;
     display: block;
@@ -304,6 +319,15 @@ svg {
     &--white {
         background: $white-color;
     }
+    &--between {
+        justify-content: space-between;
+    }
+    &--icon-angle {
+        .btn__icon {
+            margin-top: 0;
+            transform: rotate(-45deg);
+        }
+    }
     &__icon {
         margin-top: -1px;
         margin-left: 11px;
@@ -316,6 +340,55 @@ svg {
 .btn[download] {
     .btn__icon {
         transform: rotate(90deg);
+    }
+}
+
+.nav-btn {
+    position: relative;
+    display: block;
+    padding: 19.5px;
+    min-height: 60px;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    background: $primary-background-color;
+    transition: none;
+    transition: background 0.35s;
+    &:hover {
+        background: $red-color;
+        span {
+            left: 19.5px;
+            transform: translate(0, -50%);
+            color: $white-color;
+        }
+        svg {
+            opacity: 1;
+        }
+    }
+    &--dark {
+        background: $dark-background-color;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: fit-content;
+        color: $primary-color;
+        transition: all 0.35s;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        right: 22.5px;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        opacity: 0;
+        color: $white-color;
     }
 }
 

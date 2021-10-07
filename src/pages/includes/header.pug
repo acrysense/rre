@@ -38,7 +38,7 @@ header(class="header", id="header")
                             li
                                 a(href="team.html") Команда
                             li
-                                a(href="#") Контакты
+                                a(href="contacts.html") Контакты
                             li
                                 a(href="#", class="search-btn") Поиск
                     button(class="search-btn", aria-label="Поиск")
@@ -89,8 +89,20 @@ div(class="header-search")
         div(class="header-search__top")
             form(action="#", class="header-search__form")
                 input(type="text", class="header-search__input input", placeholder="ПОИСК ПО САЙТУ")
-
+            button(class="header-search__close", aria-label="Закрыть")
+                svg(class="header-search__close--icon")
+                    use(xlink:href="img/dist/sprite.svg#icon-close")
         div(class="header-search__wrapper")
+            div(class="header-search__list")
+                div(class="header-search__item")
+                    span(class="header-search__help") Объявление
+                    a(href="#", class="header-search__link") Founded back in 1992 the Company nowadays is navigated by our major Shareholders.
+                div(class="header-search__item")
+                    span(class="header-search__help") Документ
+                    a(href="#", class="header-search__link") Название документа
+                div(class="header-search__item")
+                    span(class="header-search__help") Команда
+                    a(href="#", class="header-search__link") Андрей Поляков, Генеральный директор компании
             a(href="#", class="header-search__btn") СМОТРЕТЬ ВСЕ РЕЗУЛЬТАТЫ ПОИСКА
 
 div(class="overlay")

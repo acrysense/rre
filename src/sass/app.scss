@@ -60,7 +60,7 @@
 
 .content-link {
     font-weight: bold;
-    opacity: 0.4;
+    opacity: 0.5;
     color: $primary-color!important;
     &:hover {
         opacity: 1;
@@ -71,10 +71,10 @@
     &::after {
         content: '';
         display: inline-block;
-        margin-left: 4px;
+        margin-left: 2px;
         width: 12px;
         height: 12px;
-        opacity: 0.7;
+        opacity: 0.8;
         vertical-align: middle;
         background-image: url(../img/dist/sprite.svg#icon-arrow-more);
         background-repeat: no-repeat;
@@ -164,6 +164,20 @@
         }
         @media screen and (max-width: 767px) {
             padding: 32px 17px;
+        }
+    }
+    &__help {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: $grey-color;
+
+        @media screen and (max-width: 767px) {
+            font-size: 1.2rem;
         }
     }
     &__heading {
@@ -704,8 +718,39 @@
 }
 
 .ads-main {
-    padding-bottom: 40px;
-    border-bottom: 3px solid $background-color;
+    padding-bottom: 20px;
+    &--img {
+        margin-bottom: -200px;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            margin-bottom: -150px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-bottom: -40px;
+        }
+
+        .ads-main {
+            &__body {
+                transform: translateY(-200px);
+                max-width: 1024px;
+                min-height: 300px;
+                border-top: 5px solid $light-background-color;
+
+                @media screen and (max-width: 1199px) {
+                    max-width: 90%
+                }
+                @media screen and (min-width: 768px) and (max-width: 1199px) {
+                    transform: translateY(-150px);
+                    min-height: 280px;
+                }
+                @media screen and (max-width: 767px) {
+                    transform: translateY(-40px);
+                    padding-right: 12px;
+                    min-height: auto;
+                }
+            }
+        }
+    }
     &__img {
         width: 100%;
         min-height: 100%;
@@ -719,23 +764,10 @@
     &__body {
         position: relative;
         z-index: 1;
-        margin-top: -200px;
         padding-right: 34px;
-        padding-bottom: 10px;
-        max-width: 1024px;
+        padding-bottom: 20px;
         width: 100%;
         background: $primary-background-color;
-        border-top: 5px solid $light-background-color;
-
-        @media screen and (max-width: 1199px) {
-            max-width: 90%
-        }
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            margin-top: -160px;
-        }
-        @media screen and (max-width: 767px) {
-            margin-top: -50px;
-        }
     }
 }
 
@@ -1238,6 +1270,9 @@
 
 // articles
 .articles {
+    &__wrapper {
+        border-top: 3px solid $background-color;
+    }
     &__item {
         padding-top: 16px;
 
@@ -1262,6 +1297,10 @@
         @media screen and (max-width: 767px) {
             margin-top: 16px;
         }
+    }
+    &__body {
+        max-width: 990px;
+        width: 100%;
     }
     &__title {
         font-size: 2.2rem;
@@ -1586,7 +1625,7 @@
         @media screen and (min-width: 768px) and (max-width: 1199px) {
             margin-top: 42px;
         }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 992px) {
             display: flex;
             align-items: flex-start;
         }
@@ -1595,15 +1634,19 @@
         }
     }
     &__information {
+        position: sticky;
+        top: calc(var(--height) + 10px);
         margin-top: 0;
+        width: 100%;
+        .top-line {
+            border-top: 5px solid $dark-background-color;
+        }
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 992px) {
             margin-left: 60px;
+            max-width: 446px;
         }
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            margin-left: 20px;
-        }
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 991px) {
             margin-top: 50px;
         }
     }

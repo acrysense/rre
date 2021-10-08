@@ -1761,6 +1761,12 @@
     }
 }
 
+.map-marker {
+    width: 28px!important;
+    height: 28px!important;
+    background: $red-color;
+}
+
 // search page
 .search-page {
     padding-top: 18px;

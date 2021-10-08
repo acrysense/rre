@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 id: 'contacts-map-2',
-                coordinates: [59.933184, 30.357286],
+                coordinates: [43.1175126,131.89390420061744],
                 zoom: 11,
                 instance: null
             },
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         scrollMac: "Используйте \u2318 + колесо мыши для масштабирования карты"
                     }
                 }
-            }).setView(item.coordinates, 17);
+            }).setView(item.coordinates, 11);
     
             L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
                 attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',

@@ -287,12 +287,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ANCHORS && ITEM HOVER
     const acnchors = document.querySelector('.anchors')
+    const achorsList = document.getElementById('anchors-list')
     const anchorsItems = document.querySelectorAll('.anchors__item')
+    const offsetScrollSpy = acnchors ? Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height + 2) : Number(header.getBoundingClientRect().height + 2)
 
-    if (acnchors) {
+    if (achorsList) {
         $('body').scrollspy({
             target: '#anchors-list',
-            offset: Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height + 2),
+            offset: offsetScrollSpy,
         });
 
         $(window).on('activate.bs.scrollspy', function(e, obj) {

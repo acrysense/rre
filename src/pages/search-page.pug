@@ -19,7 +19,7 @@ html(lang="ru")
             .container 
                 span.search-page__help Результат поиска
                 form.search-page__form 
-                    input(type="text", class="search-page__input input", placeholder="Поисковый запрос")
+                    input(type="text", class="search-page__input input", placeholder="Поисковый запрос", value="Поисковый запрос")
 
             //- sticky content
             .sticky
@@ -28,7 +28,7 @@ html(lang="ru")
                     .container 
                         ul.anchors__list 
                             li.anchors__item
-                                a.anchors__link.nav-link(href="#") Все (29)
+                                a.anchors__link.nav-link.active(href="#") Все (29)
                             li.anchors__item 
                                 a.anchors__link.nav-link(href="#") Документы (9)
                             li.anchors__item 

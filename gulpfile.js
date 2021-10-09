@@ -31,6 +31,7 @@ let paths = {
             'node_modules/jquery.marquee/jquery.marquee.min.js',
             'node_modules/leaflet/dist/leaflet.js',
             'node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js',
+            'node_modules/chart.js/dist/chart.min.js',
         ],
         dest: baseDir + '/js',
     },

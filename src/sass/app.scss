@@ -28,7 +28,7 @@
     }
     h1, h2, h3, h4, h5, h6 {
         &:not(:first-child) {
-            margin-top: 1em;
+            margin-top: 2em;
         }
         margin-bottom: 1em;
     }
@@ -43,6 +43,9 @@
     h3, h4, h5, h6 {
         margin-bottom: 10px;
         font-size: 1em;
+    }
+    .image-block, .documents, blockquote, table {
+        margin: 2em 0;
     }
     blockquote {
         padding: 35px 40px;
@@ -141,6 +144,17 @@
             margin-top: 25px;
             font-size: 16px;
         }
+    }
+}
+
+.heading-text {
+    font-size: 24px;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 18px;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
     }
 }
 
@@ -888,7 +902,7 @@
                 }
             }
         }
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 1199px) {
             margin: 0 -10px;
             padding: 0 10px;
             overflow-x: auto;
@@ -1363,11 +1377,6 @@
         padding-top: 22px;
         border-top: 3px solid $primary-background-color;
     }
-    &__title {
-        margin-bottom: 3px;
-        font-size: 1.7rem;
-        font-weight: bold;
-    }
     &__link {
         position: relative;
         padding: 3px 0;
@@ -1397,6 +1406,10 @@
             &::before {
                 background: $red-color;
             }
+        }
+        &--main {
+            font-weight: bold;
+            color: $primary-color;
         }
     }
 }
@@ -1489,6 +1502,96 @@
         @media screen and (max-width: 767px) {
             font-size: 12px;
         }
+    }
+}
+
+// finance
+.finance {
+    &__title {
+        margin: 50px 0 16px;
+    }
+}
+
+// table indicators
+.table-indicators {
+    display: flex;
+    &__column {
+        max-width: 470px;
+        width: 100%;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            max-width: 233px;
+        }
+        @media screen and (max-width: 767px) {
+            max-width: 134px;
+        }
+    }
+    &__elem {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        min-height: 45.5px;
+        font-size: 1.7rem;
+        background: $white-color;
+        b, strong {
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 767px) {
+            min-height: 38px;
+            font-size: 1.2rem;
+        }
+    }
+    &__elem + &__elem {
+        margin-top: 3px;
+    }
+    &__scroll {
+        max-width: calc(100% - 470px);
+        width: 100%;
+        border-left: 3px solid $primary-background-color;
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 0;
+            height: 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            max-width: calc(100% - 233px);
+        }
+        @media screen and (max-width: 767px) {
+            max-width: calc(100% - 134px);
+        }
+    }
+    &__table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: -webkit-fill-available;
+        thead td {
+            font-weight: bold;
+        }
+        thead + tbody {
+            border-top: 3px solid $primary-background-color;
+        }
+    }
+    &__row {
+        td {
+            padding: 10px;
+            min-height: 45.5px;
+            font-size: 1.7rem;
+            white-space: nowrap;
+            background: $white-color;
+
+            @media screen and (max-width: 767px) {
+                min-height: 38px;
+                font-size: 1.2rem;
+            }
+        }
+        td + td {
+            border-left: 3px solid $primary-background-color;
+        }
+    }
+    &__row + &__row {
+        border-top: 3px solid $primary-background-color;
     }
 }
 
@@ -1725,9 +1828,15 @@
         @media screen and (min-width: 992px) {
             margin-left: 60px;
             max-width: 446px;
+            min-width: 446px;
         }
         @media screen and (max-width: 991px) {
             margin-top: 50px;
+        }
+    }
+    &__content {
+        @media screen and (min-width: 992px) {
+            font-size: 17.5px;
         }
     }
     &__content + &__btn {
@@ -1912,6 +2021,95 @@
         
         @media screen and (max-width: 767px) {
             font-size: 1.2rem;
+        }
+    }
+}
+
+// charts
+.charts {
+    margin-top: 75px;
+    padding: 30px 60px 30px 40px;
+    background: $white-color;
+    border-top: 5px solid $dark-background-color;
+    transition: all 0.4s;
+    &:hover {
+        border-top: 5px solid $light-background-color;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin-top: 45px;
+        padding: 24px 30px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-top: 25px;
+        padding: 14px 10px;
+    }
+
+    &__wrapper {
+        height: 520px;
+        canvas {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 300px;
+        }
+    }
+    &__title {
+        margin-bottom: 40px;
+        font-size: 2.2rem;
+        font-weight: bold;
+
+        @media screen and (max-width: 1023px) {
+            margin-bottom: 16px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 1.8rem;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.charts-legend {
+    margin-top: 28px;
+    padding-top: 40px;
+    border-top: 5px solid $primary-background-color;
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        padding-top: 28px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        li:first-child {
+            margin-left: 0!important;
+        }
+        li + li {
+            margin-left: 56px!important;
+        }
+        span {
+            margin-top: -2px;
+            width: 14px!important;
+            height: 14px!important;
+        }
+        p {
+            font-size: 1.7rem;
+            font-weight: normal;
+            color: $primary-color!important;
+
+            @media screen and (min-width: 768px) and (max-width: 1023px) {
+                font-size: 1.5rem;
+            }
+            @media screen and (max-width: 767px) {
+                font-size: 1rem;
+            }
         }
     }
 }

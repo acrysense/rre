@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function smoothScroll(eID) {
         let startY = currentYPosition();
-        let stopY = elmYPosition(eID);
+        let stopY = elmYPosition(eID) - 10;
         let anchorsPosition = document.querySelector('.anchors');
         if (anchorsPosition) {
             stopY = elmYPosition(eID) - Number(anchorsPosition.getBoundingClientRect().height);
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const acnchors = document.querySelector('.anchors')
     const achorsList = document.getElementById('anchors-list')
     const anchorsItems = document.querySelectorAll('.anchors__item')
-    const offsetScrollSpy = acnchors ? Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height + 2) : Number(header.getBoundingClientRect().height + 2)
+    const offsetScrollSpy = acnchors ? Number(header.getBoundingClientRect().height + acnchors.getBoundingClientRect().height + 12) : Number(header.getBoundingClientRect().height + 12)
 
     if (achorsList) {
         $('body').scrollspy({
@@ -415,4 +415,161 @@ document.addEventListener('DOMContentLoaded', function () {
                 .addTo(item.instance);
         }
     }
+
+    // CHART JS
+    const ctx = document.getElementById('myChart');
+    let ticksSize = (window.innerHeight >= 768) ? 15 : 10;
+    let ticksPaddingX = (window.innerHeight >= 768) ? 24 : 2;
+    let ticksPaddingY = (window.innerHeight >= 768) ? 14 : 8;
+
+    const labels = ['2016', '2017', '2018', '2019', '2020'];
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Profit after taxation',
+                data: [125000, 270000, 390000, 370000, 435000],
+                backgroundColor: [
+                    '#E3D5C0'
+                ],
+            },
+            {
+                label: 'Share capital and surplus',
+                data: [300000, 580000, 860000, 825000, 975000],
+                backgroundColor: [
+                    '#2F2355',
+                ],
+            },
+        ]
+    };
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            htmlLegend: {
+                // ID of the container to put the legend in
+                containerID: 'legend-container',
+            },
+            legend: {
+                display: false,
+            },
+        },
+        scales: {
+            x: {
+                //title: {
+                //    display: true,
+                //    text: 'единица изм-ия',
+                //    align: 'start',
+                //},
+                ticks: {
+                    color: '#ADADAD',
+                    padding: ticksPaddingX,
+                    font: {
+                        size: ticksSize
+                    },
+                    userCallback: tick => tick,
+                },
+                grid: {
+                    display: false,
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#ADADAD',
+                    padding: ticksPaddingY,
+                    font: {
+                        size: ticksSize
+                    },
+                    userCallback: tick => tick,
+                },
+                grid: {
+                    drawBorder: false
+                }
+            }
+        },
+    };
+
+    const getOrCreateLegendList = (chart, id) => {
+        const legendContainer = document.getElementById(id);
+        let listContainer = legendContainer.querySelector('ul');
+        
+        if (!listContainer) {
+            listContainer = document.createElement('ul');
+            listContainer.style.display = 'flex';
+            listContainer.style.flexDirection = 'row';
+            listContainer.style.margin = 0;
+            listContainer.style.padding = 0;
+        
+            legendContainer.appendChild(listContainer);
+        }
+        
+        return listContainer;
+    };
+      
+    const htmlLegendPlugin = {
+        id: 'htmlLegend',
+        afterUpdate(chart, args, options) {
+            const ul = getOrCreateLegendList(chart, options.containerID);
+        
+            // Remove old legend items
+            while (ul.firstChild) {
+                ul.firstChild.remove();
+            }
+        
+            // Reuse the built-in legendItems generator
+            const items = chart.options.plugins.legend.labels.generateLabels(chart);
+        
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.style.alignItems = 'center';
+                li.style.cursor = 'pointer';
+                li.style.display = 'flex';
+                li.style.flexDirection = 'row';
+                li.style.marginLeft = '10px';
+        
+                li.onclick = () => {
+                    const {type} = chart.config;
+                    if (type === 'pie' || type === 'doughnut') {
+                        // Pie and doughnut charts only have a single dataset and visibility is per item
+                        chart.toggleDataVisibility(item.index);
+                    } else {
+                        chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    }
+                    chart.update();
+                };
+        
+                // Color box
+                const boxSpan = document.createElement('span');
+                boxSpan.style.background = item.fillStyle;
+                boxSpan.style.borderColor = item.strokeStyle;
+                boxSpan.style.borderWidth = item.lineWidth + 'px';
+                boxSpan.style.display = 'inline-block';
+                boxSpan.style.height = '20px';
+                boxSpan.style.marginRight = '10px';
+                boxSpan.style.width = '20px';
+            
+                // Text
+                const textContainer = document.createElement('p');
+                textContainer.style.color = item.fontColor;
+                textContainer.style.margin = 0;
+                textContainer.style.padding = 0;
+                textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+            
+                const text = document.createTextNode(item.text);
+                textContainer.appendChild(text);
+            
+                li.appendChild(boxSpan);
+                li.appendChild(textContainer);
+                ul.appendChild(li);
+            });
+        }
+    };
+
+    const config = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options,
+        plugins: [htmlLegendPlugin],
+    });
 });

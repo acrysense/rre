@@ -88,6 +88,10 @@ a {
     }
 }
 
+blockquote {
+    margin: 0;
+}
+
 img {
     max-width: 100%;
 }
@@ -540,4 +544,42 @@ svg {
     width: auto;
     height: auto;
     background: none;
+}
+
+// SIMPLEBAR
+.simplebar-track {
+    top: 0;
+    bottom: auto;
+    transform: translateY(-100%);
+}
+.simplebar-track.simplebar-horizontal {
+    height: 7px;
+    background: $background-color;
+    background-clip: content-box;
+}
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+    top: 0;
+    height: 7px;
+}
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+    left: 0;
+    right: 0;
+}
+.simplebar-scrollbar {
+    &::before {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        background: $light-background-color;
+        border-radius: 0;
+    }
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+    top: 0;
+    bottom: 0;
+}
+.simplebar-scrollbar.simplebar-visible::before {
+    opacity: 1;
 }

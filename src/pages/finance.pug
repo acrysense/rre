@@ -68,8 +68,100 @@ html(lang="ru")
                         
                         .finance__wrapper.section-bordered#section-2 
                             h2 Ключевые показатели
+                            h3.finance__title Таблица ключевых финансовых показателей, тыс. руб.
+                            .table-indicators
+                                .table-indicators__column 
+                                    span.table-indicators__elem  
+                                    span.table-indicators__elem
+                                        b Net Written Premium
+                                    span.table-indicators__elem 
+                                        b Net Written Premium
+                                    span.table-indicators__elem 
+                                        b Net Written Premium
+                                    span.table-indicators__elem Loss Ratio
+                                    span.table-indicators__elem Combined Ratio
+                                .table-indicators__scroll(data-simplebar)
+                                    table.table-indicators__table
+                                        thead 
+                                            tr.table-indicators__row 
+                                                td 2020  
+                                                td 2019  
+                                                td 2018  
+                                                td 2017  
+                                                td 2016  
+                                                td 2015  
+                                                td 2014  
+                                        tbody 
+                                            tr.table-indicators__row 
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                            tr.table-indicators__row 
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                            tr.table-indicators__row 
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599  
+                                                td 1 881 599
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                                td 1 881 599 
+                                            tr.table-indicators__row 
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                            tr.table-indicators__row 
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                                                td 44,2%  
+                            .documents.documents--white
+                                .documents__wrapper 
+                                    a.documents__item(href="#")  
+                                        .documents__group 
+                                            svg(class="documents__icon")
+                                                use(xlink:href="img/dist/sprite.svg#icon-file")
+                                            span.documents__name Название документа.pdf
+                                        span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                        span.documents__text Автор: Сергей Борисов
+                                    a.documents__item(href="#")  
+                                        .documents__group 
+                                            svg(class="documents__icon")
+                                                use(xlink:href="img/dist/sprite.svg#icon-link")
+                                            span.documents__name Ссылка на страницу
+                                        span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                        span.documents__text http://www.russianre.ru/finance_rep/ra...
                         .finance__wrapper.section-bordered#section-3 
                             h2 Рост капитала
+                            .charts 
+                                h3.charts__title Название графика
+                                .charts__wrapper
+                                    canvas#myChart
+                                .charts-legend#legend-container 
+                                    ul.charts-legend__list 
+                                        li
+                                            span
+                                            p Text 1
+                                        li
+                                            span
+                                            p Text 2
                         .finance__wrapper.section-bordered.articles#section-4 
                             h2 Учетная политика/ Аудит
                             .articles__wrapper

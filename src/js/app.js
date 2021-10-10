@@ -127,6 +127,19 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // TABLE ELEM HEIGHT
+    const tableElems = document.querySelectorAll('.table-indicators__elem, .table-indicators__row > td');
+    let tableElemsBiggestHeight = 0;
+
+    if (tableElems) {
+        tableElems.forEach((item) => {
+            tableElemsBiggestHeight = item.getBoundingClientRect().height > tableElemsBiggestHeight ? item.getBoundingClientRect().height : tableElemsBiggestHeight;
+        })
+        tableElems.forEach((item) => {
+            item.style.height = tableElemsBiggestHeight + 'px';
+        })
+    }
+
     // HEADER && HEADER SEARCH
     const header = document.querySelector('.header')
     const headerBottom = document.querySelector('.header__wrapper--bottom')

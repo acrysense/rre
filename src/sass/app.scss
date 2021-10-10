@@ -1554,18 +1554,19 @@
         }
     }
     &__elem {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 10px;
         width: 100%;
-        min-height: 45.5px;
         font-size: 1.7rem;
+        line-height: 1;
         background: $white-color;
         b, strong {
             font-weight: bold;
         }
 
         @media screen and (max-width: 767px) {
-            min-height: 38px;
             font-size: 1.2rem;
         }
     }
@@ -1605,13 +1606,11 @@
         td {
             padding: 10px;
             min-width: 100px;
-            min-height: 45.5px;
             font-size: 1.7rem;
-            white-space: nowrap;
+            line-height: 1;
             background: $white-color;
 
             @media screen and (max-width: 767px) {
-                min-height: 38px;
                 font-size: 1.2rem;
             }
         }

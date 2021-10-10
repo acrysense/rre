@@ -432,11 +432,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 backgroundColor: [
                     '#E3D5C0'
                 ],
+                borderColor: [
+                    '#E3D5C0',
+                ],
             },
             {
                 label: 'Share capital and surplus',
                 data: [300000, 580000, 860000, 825000, 975000],
                 backgroundColor: [
+                    '#2F2355',
+                ],
+                borderColor: [
                     '#2F2355',
                 ],
             },
@@ -566,10 +572,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    const config = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: options,
-        plugins: [htmlLegendPlugin],
-    });
+    if (ctx) {
+        const config = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options,
+            plugins: [htmlLegendPlugin],
+        });
+    }
 });

@@ -44,7 +44,7 @@
         margin-bottom: 10px;
         font-size: 1em;
     }
-    .image-block, .documents, blockquote, table {
+    .image-block, .documents, .table-indicators, blockquote {
         margin: 2em 0;
     }
     blockquote {
@@ -53,6 +53,12 @@
         font-size: 2em;
         font-weight: normal;
         border-left: 10px solid $red-color;
+
+        @media screen and (max-width: 767px) {
+            padding: 10px 20px;
+            font-size: 1.3em;
+            border-left: 6px solid $red-color;
+        }
     }
     img, iframe {
         max-width: 677px;
@@ -179,6 +185,13 @@
 // information
 .information {
     margin-top: 32px;
+    &--mt {
+        margin-top: 56px;
+
+        @media screen and (max-width: 1199px) {
+            margin-top: 44px;
+        }
+    }
     &__item {
         display: flex;
         flex-direction: column;
@@ -1317,6 +1330,13 @@
 
 // articles
 .articles {
+    &--mt {
+        margin-top: 34px;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 10px;
+        }
+    }
     &__wrapper {
         &--line {
             border-top: 3px solid $background-color;
@@ -1340,8 +1360,15 @@
         }
     }
     &__right {
+        &--border {
+            padding-top: 12px;
+        }
+
         @media screen and (min-width: 768px) {
             width: 65%;
+            &--border {
+                border-top: 3px solid $background-color;
+            }
         }
         @media screen and (max-width: 767px) {
             margin-top: 16px;
@@ -1565,7 +1592,8 @@
     &__table {
         table-layout: fixed;
         border-collapse: collapse;
-        width: -webkit-fill-available;
+        min-width: 100%;
+        width: available;
         thead td {
             font-weight: bold;
         }
@@ -1576,6 +1604,7 @@
     &__row {
         td {
             padding: 10px;
+            min-width: 100px;
             min-height: 45.5px;
             font-size: 1.7rem;
             white-space: nowrap;

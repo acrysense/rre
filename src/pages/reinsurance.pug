@@ -1,0 +1,79 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Перестрахование
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    h1 Russian Re is a Specialized Property/Energy/Engineering Underwriter 
+                    .content.heading__content 
+                        p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
+            
+            //- information
+            section(class="information")
+                div(class="container") 
+                    div(class="row") 
+                        div(class="col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Portfolio structure by types of contracts
+                                    .shareholders
+                                        .shareholders__wrapper 
+                                            .shareholders__item(style="width: 90%") 
+                                                span.shareholders__value >90 %
+                                                p.shareholders__description Property Energy Engineering
+                                            .shareholders__item(style="width: 10%") 
+                                                span.shareholders__value <10 %
+                                                p.shareholders__description Motor SPPM Other
+                        div(class="col-lg-6 col-12 mb-4")  
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Portfolio structure by territories
+                                    .circle-charts
+                                        .circle-charts__wrapper 
+                                            img(src="img/dist/circle-charts-01.svg", alt="#")
+                                        .circle-charts__legend
+                                            ul.circle-charts__list 
+                                                li 
+                                                    span 
+                                                    p <b>60%</b> Obligatory
+                                                li 
+                                                    span 
+                                                    p <b>40%</b> Facultative
+                        div(class="col-lg-6 col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Retentions by lines of businesses
+                        div(class="col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Добро пожаловать! 
+                                    img(src="img/dist/command-img.png", alt="Команда", class="information__img")
+                                div(class="information__bottom") 
+                                    a(href="#", class="information__btn btn") 
+                                        span Департамент андеррайтинга
+                                        svg.btn__icon
+                                            use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

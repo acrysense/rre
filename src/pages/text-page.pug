@@ -24,7 +24,7 @@ html(lang="ru")
                         p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
 
                 //- articles
-                .articles 
+                .articles.articles--mt 
                     .container 
                         .articles__wrapper
                             .articles__item
@@ -50,7 +50,7 @@ html(lang="ru")
                                                     a.articles-nav__link.nav-link(href="#section-2-2") Подраздел
                                                 li.articles-nav__item 
                                                     a.articles-nav__link.nav-link(href="#section-2-3") Подраздел
-                                .articles__right
+                                .articles__right.articles__right--border
                                     .content 
                                         h2#section-1 Заголовок
                                         p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
@@ -62,6 +62,49 @@ html(lang="ru")
                                         .image-block
                                             iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
                                             span Подпись
+                                        .table-indicators
+                                            .table-indicators__column 
+                                                span.table-indicators__elem 
+                                                    b Заголовок
+                                                span.table-indicators__elem Текст
+                                                span.table-indicators__elem Текст
+                                                span.table-indicators__elem Текст
+                                            .table-indicators__scroll(data-simplebar)
+                                                table.table-indicators__table
+                                                    thead 
+                                                        tr.table-indicators__row 
+                                                            td 2020  
+                                                            td 2019  
+                                                            td 2018  
+                                                            td 2017  
+                                                            td 2016  
+                                                            td 2015  
+                                                            td 2014  
+                                                    tbody 
+                                                        tr.table-indicators__row 
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст 
+                                                            td Текст 
+                                                            td Текст 
+                                                        tr.table-indicators__row 
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст 
+                                                            td Текст 
+                                                            td Текст 
+                                                        tr.table-indicators__row 
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст
+                                                            td Текст 
+                                                            td Текст 
+                                                            td Текст 
                                         blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
                                         a(href="#", class="btn btn--white") 
                                             span.btn__title Переход на внутреннюю страницу

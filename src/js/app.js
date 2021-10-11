@@ -128,17 +128,56 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // TABLE ELEM HEIGHT
-    const tableElems = document.querySelectorAll('.table-indicators__elem, .table-indicators__row > td');
-    let tableElemsBiggestHeight = 0;
-
-    if (tableElems) {
-        tableElems.forEach((item) => {
-            tableElemsBiggestHeight = item.getBoundingClientRect().height > tableElemsBiggestHeight ? item.getBoundingClientRect().height : tableElemsBiggestHeight;
-        })
-        tableElems.forEach((item) => {
-            item.style.height = tableElemsBiggestHeight + 'px';
+    // Максимальная высота среди переданных элементов
+    function getMaxElementsHeight($elements) {
+        
+        let heights = $elements.map(function () {
+            return $(this).height();
+        }).get();
+        
+        return Math.max.apply(null, heights);
+    }
+    
+    // Основная функция   
+    function fixTableCellHeights($table) {
+        
+        const $stickyCol = $table.find('.table-indicators__column');
+        
+        $table.find('.table-indicators__row').each((index, row) => {
+            // Текущая строка
+            let $row = $(row);
+            
+            // Массив ячеек (в текущей строке + соответствующая ячейка в первой фикс-колонке)        
+            let $targetCols = $.merge($row.children('.table-indicators__elem'), $stickyCol.children('.table-indicators__elem').eq(index));
+            
+            //  Макисмальная высота среди них       
+            let maxCellHeight = getMaxElementsHeight($targetCols)
+            
+            // Устанавливаем
+            $targetCols.height(maxCellHeight)
+        
         })
     }
+ 
+    $('.table-indicators').each(function(index, table) {
+        fixTableCellHeights($(table));
+        
+        $(window).on('resize', function() {
+            fixTableCellHeights($(table));
+        })
+    
+    });
+    //const tableElems = document.querySelectorAll('.table-indicators__elem, .table-indicators__row > td');
+    //let tableElemsBiggestHeight = 0;
+
+    //if (tableElems) {
+    //    tableElems.forEach((item) => {
+    //        tableElemsBiggestHeight = item.getBoundingClientRect().height > tableElemsBiggestHeight ? item.getBoundingClientRect().height : tableElemsBiggestHeight;
+    //    })
+    //    tableElems.forEach((item) => {
+    //        item.style.height = tableElemsBiggestHeight + 'px';
+    //    })
+    //}
 
     // HEADER && HEADER SEARCH
     const header = document.querySelector('.header')

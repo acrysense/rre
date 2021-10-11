@@ -29,34 +29,83 @@ html(lang="ru")
                         div(class="col-12 mb-4")
                             div(class="information__item top-line")
                                 div(class="information__body") 
-                                    h2(class="information__title title") Portfolio structure by types of contracts
-                                    .shareholders
-                                        .shareholders__wrapper 
-                                            .shareholders__item(style="width: 90%") 
-                                                span.shareholders__value >90 %
-                                                p.shareholders__description Property Energy Engineering
-                                            .shareholders__item(style="width: 10%") 
-                                                span.shareholders__value <10 %
-                                                p.shareholders__description Motor SPPM Other
-                        div(class="col-lg-6 col-12 mb-4")  
+                                    h2(class="information__title title") Portfolio structure by lines of businesses
+                                    .structure-lines
+                                        .structure-lines__wrapper 
+                                            .structure-lines__item.structure-lines__item--main(style="width: 80%;") 
+                                                .structure-lines__block
+                                                span.structure-lines__value >90 %
+                                                p.structure-lines__description. 
+                                                    Property <br>
+                                                    Energy <br>
+                                                    Engineering
+                                            .structure-lines__item(style="width: 20%;") 
+                                                .structure-lines__block 
+                                                span.structure-lines__value <10 %
+                                                p.structure-lines__description. 
+                                                    Motor<br>
+                                                    SPPM<br>
+                                                    Other
+                        div(class="col-md-6 col-12 mb-4")  
                             div(class="information__item top-line")
                                 div(class="information__body") 
-                                    h2(class="information__title title") Portfolio structure by territories
+                                    h2(class="information__title title") Portfolio structure by types of contracts
                                     .circle-charts
                                         .circle-charts__wrapper 
                                             img(src="img/dist/circle-charts-01.svg", alt="#")
                                         .circle-charts__legend
                                             ul.circle-charts__list 
                                                 li 
-                                                    span 
+                                                    span(style="background: #E3D5C0;")  
                                                     p <b>60%</b> Obligatory
                                                 li 
-                                                    span 
+                                                    span(style="background: #E9E3DA;") 
                                                     p <b>40%</b> Facultative
-                        div(class="col-lg-6 col-12 mb-4")
+                        div(class="col-md-6 col-12 mb-4")
+                            div(class="information__item top-line")
+                                div(class="information__body") 
+                                    h2(class="information__title title") Portfolio structure by territories
+                                    .circle-charts
+                                        .circle-charts__wrapper 
+                                            img(src="img/dist/circle-charts-02.svg", alt="#")
+                                        .circle-charts__legend
+                                            ul.circle-charts__list 
+                                                li 
+                                                    span(style="background: #E3D5C0;")  
+                                                    p <b>60%</b> Russia and CIS
+                                                li 
+                                                    span(style="background: #E9E3DA;")  
+                                                    p <b>40%</b> Overseas
+                        div(class="col-12 mb-4")
                             div(class="information__item top-line")
                                 div(class="information__body") 
                                     h2(class="information__title title") Retentions by lines of businesses
+                                    .retentions-lines
+                                        .retentions-lines__wrapper 
+                                            .retentions-lines__item
+                                                .retentions-lines__left 
+                                                    span.retentions-lines__title.retentions-lines__title--mobile Domestic
+                                                    .retentions-lines__block(style="width: 90%;") 
+                                                        span.retentions-lines__title Domestic
+                                                    span.retentions-lines__value 58 000 000 EUR
+                                                .retentions-lines__center
+                                                    span.retentions-lines__name Facultative
+                                                .retentions-lines__right
+                                                    span.retentions-lines__title.retentions-lines__title--mobile Overseas
+                                                    .retentions-lines__block(style="width: 35%;") 
+                                                        span.retentions-lines__title Overseas
+                                                    span.retentions-lines__value EUR 20 000 000
+                                            .retentions-lines__item
+                                                .retentions-lines__left 
+                                                    span.retentions-lines__title.retentions-lines__title--mobile Domestic
+                                                    .retentions-lines__block(style="width: 25%;") 
+                                                    span.retentions-lines__value 6 000 000 EUR
+                                                .retentions-lines__center
+                                                    span.retentions-lines__name Treaty
+                                                .retentions-lines__right
+                                                    span.retentions-lines__title.retentions-lines__title--mobile Overseas
+                                                    .retentions-lines__block(style="width: 12%;") 
+                                                    span.retentions-lines__value EUR 2 000 000
                         div(class="col-12 mb-4")
                             div(class="information__item top-line")
                                 div(class="information__body") 

@@ -143,15 +143,15 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const $stickyCol = $table.find('.table-indicators__column');
         
-        $table.find('.table-indicators__row').each((index, row) => {
+        $table.find('.table-indicators__table').find('.table-indicators__row').each((index, row) => {
             // Текущая строка
             let $row = $(row);
             
             // Массив ячеек (в текущей строке + соответствующая ячейка в первой фикс-колонке)        
-            let $targetCols = $.merge($row.children('.table-indicators__elem'), $stickyCol.children('.table-indicators__elem').eq(index));
+            let $targetCols = $.merge($row.children('.table-indicators__elem'), $stickyCol.find('.table-indicators__row').eq(index).children());
             
             //  Макисмальная высота среди них       
-            let maxCellHeight = getMaxElementsHeight($targetCols)
+            let maxCellHeight = Math.round(getMaxElementsHeight($targetCols))
             
             // Устанавливаем
             $targetCols.height(maxCellHeight)

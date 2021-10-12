@@ -281,9 +281,12 @@
             font-size: 1.4rem;
         }
     }
+    &__description + &__img {
+        margin: 42px auto 0;
+    }
     &__img {
         display: block;
-        margin: 42px auto 0;
+        margin: 0 auto;
         max-width: 356px;
         width: 100%;
         
@@ -1842,9 +1845,6 @@
         top: calc(var(--height) + 10px);
         margin-top: 0;
         width: 100%;
-        .top-line {
-            border-top: 5px solid $dark-background-color;
-        }
 
         @media screen and (min-width: 992px) {
             margin-left: 60px;
@@ -2298,7 +2298,7 @@
 .retentions-lines {
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
     }
     &__item + &__item {
@@ -2320,15 +2320,24 @@
         }
     }
     &__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 33px;
         padding: 0 10px;
+        min-height: 65px;
         max-width: 170px;
         width: 100%;
         text-align: center;
 
         @media screen and (min-width: 768px) and (max-width: 1023px) {
+            margin-bottom: 36px;
+            min-height: 42px;
             max-width: 146px;
         }
         @media screen and (max-width: 767px) {
+            margin-bottom: 21px;
+            min-height: 25px;
             max-width: 68px;
         }
     }

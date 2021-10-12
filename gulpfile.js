@@ -23,7 +23,7 @@ let paths = {
     libs: {
         src: [
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
             'node_modules/inputmask/dist/inputmask.min.js',
             'node_modules/swiper/swiper-bundle.min.js',
             'node_modules/slim-select/dist/slimselect.min.js',

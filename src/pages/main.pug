@@ -102,41 +102,34 @@ html(lang="ru")
                             div(class="information__item top-line")
                                 div(class="information__body") 
                                     h2(class="information__title title") Название блока 
-                                    .maps
-                                        .maps__list 
-                                            .maps__item
-                                                span.maps__mark(style="background: #E3D5C0;") 
-                                                span.maps__name Africa
-                                            .maps__item
-                                                span.maps__mark(style="background: #E9E3DA;") 
-                                                span.maps__name Asia Pacific
-                                            .maps__item
-                                                span.maps__mark(style="background: #EEECE9;")  
-                                                span.maps__name CEE
-                                            .maps__item
-                                                span.maps__mark(style="background: #EDEDED;") 
-                                                span.maps__name Latin America
-                                            .maps__item
-                                                span.maps__mark(style="background: #ECE2E2;") 
-                                                span.maps__name MENA
-                                            .maps__item
-                                                span.maps__mark(style="background: #F8F6FE;") 
-                                                span.maps__name Russia & CIS
-                                            .maps__item
-                                                span.maps__mark(style="background: #E3D5C0;") 
-                                                span.maps__name Africa
-                                            .maps__item
-                                                span.maps__mark(style="background: #E9E3DA;") 
-                                                span.maps__name Asia Pacific
-                                        .maps__img
-                                            img(src="img/dist/maps.png", alt="Map")
-            
-            //- maps
-            //-section.maps 
-            //-    .container
-            //-        .maps__wrapper.top-line
-            //-            h2.maps__title.title Емкости
-                        
+                                    .maps#chartdiv
+                                        //-.maps__list 
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #E3D5C0;") 
+                                        //-        span.maps__name Africa
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #E9E3DA;") 
+                                        //-        span.maps__name Asia Pacific
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #EEECE9;")  
+                                        //-        span.maps__name CEE
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #EDEDED;") 
+                                        //-        span.maps__name Latin America
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #ECE2E2;") 
+                                        //-        span.maps__name MENA
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #F8F6FE;") 
+                                        //-        span.maps__name Russia & CIS
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #E3D5C0;") 
+                                        //-        span.maps__name Africa
+                                        //-    .maps__item
+                                        //-        span.maps__mark(style="background: #E9E3DA;") 
+                                        //-        span.maps__name Asia Pacific
+                                        //-.maps__img
+                                        //-    img(src="img/dist/maps.png", alt="Map")                
 
             //- marquee
             .marquee 
@@ -189,5 +182,9 @@ html(lang="ru")
             include includes/footer.pug
 
         //- scripts
+        script(src='https://cdn.amcharts.com/lib/4/core.js')
+        script(src='https://cdn.amcharts.com/lib/4/maps.js')
+        script(src='https://cdn.amcharts.com/lib/4/geodata/worldHigh.js')
+        script(src='https://cdn.amcharts.com/lib/4/themes/animated.js')
         script(src='js/vendor.min.js')
         script(src='js/app.min.js')

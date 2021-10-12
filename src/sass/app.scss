@@ -387,6 +387,7 @@
 // maps
 .maps {
     margin-top: 20px;
+    min-height: 606px;
     &__wrapper {
         padding: 24px 0 70px;
         background: $white-color;
@@ -1416,6 +1417,12 @@
     padding: 22px;
     background: $white-color;
     border-top: 3px solid $background-color;
+
+    @media screen and (max-width: 767px) {
+        position: static;
+        padding: 22px 12px;
+    }
+
     &__block + &__block {
         margin-top: 22px;
         padding-top: 22px;

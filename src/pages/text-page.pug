@@ -50,6 +50,15 @@ html(lang="ru")
                                                     a.articles-nav__link.nav-link(href="#section-2-2") Подраздел
                                                 li.articles-nav__item 
                                                     a.articles-nav__link.nav-link(href="#section-2-3") Подраздел
+                                    .dropdown-articles.dropdown 
+                                        a.dropdown-articles__btn#dropdownMenuLink(href="#", data-toggle="dropdown") Раздел
+                                        ul.dropdown-articles__list.dropdown-menu(aria-labelledby="dropdownMenuLink")
+                                            li.dropdown-articles__item
+                                                a.dropdown-articles__link.dropdown-articles__link--main(href="#section-1") Раздел
+                                            li.dropdown-articles__item
+                                                a.dropdown-articles__link(href="#section-1-1") Подраздел
+                                            li.dropdown-articles__item
+                                                a.dropdown-articles__link(href="#section-1-2") Подраздел
                                 .articles__right.articles__right--border
                                     .content 
                                         h2#section-1 Заголовок
@@ -63,48 +72,45 @@ html(lang="ru")
                                             iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
                                             span Подпись
                                         .table-indicators
-                                            .table-indicators__column 
-                                                span.table-indicators__elem 
-                                                    b Заголовок
-                                                span.table-indicators__elem Текст
-                                                span.table-indicators__elem Текст
-                                                span.table-indicators__elem Текст
+                                            table.table-indicators__column 
+                                                tbody
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem 
+                                                            b Заголовок
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
                                             .table-indicators__scroll(data-simplebar)
                                                 table.table-indicators__table
                                                     thead 
                                                         tr.table-indicators__row 
-                                                            td 2020  
-                                                            td 2019  
-                                                            td 2018  
-                                                            td 2017  
-                                                            td 2016  
-                                                            td 2015  
-                                                            td 2014  
+                                                            td.table-indicators__elem 2020  
+                                                            td.table-indicators__elem 2019  
+                                                            td.table-indicators__elem 2018  
+                                                            td.table-indicators__elem 2017  
+                                                            td.table-indicators__elem 2016  
                                                     tbody 
                                                         tr.table-indicators__row 
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст 
-                                                            td Текст 
-                                                            td Текст 
+                                                            td.table-indicators__elem Текст 
+                                                            td.table-indicators__elem Текст 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
                                                         tr.table-indicators__row 
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст 
-                                                            td Текст 
-                                                            td Текст 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
                                                         tr.table-indicators__row 
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст
-                                                            td Текст 
-                                                            td Текст 
-                                                            td Текст 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
                                         blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
                                         a(href="#", class="btn btn--white") 
                                             span.btn__title Переход на внутреннюю страницу

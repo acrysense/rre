@@ -473,6 +473,92 @@ svg {
     }
 }
 
+.dropdown-articles {
+    position: fixed;
+    top: var(--height);
+    right: 10px;
+    left: 10px;
+    display: none;
+    &--active {
+        display: block;
+    }
+    &.show {
+        .dropdown-articles__btn {
+            &::before {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    &__btn {
+        position: relative;
+        padding: 12px 10px;
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: $primary-color;
+        background: $white-color;
+        border-bottom: 4px solid $background-color;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            transform: translateY(-50%);
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-image: url(../img/dist/sprite.svg#icon-select);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &__list {
+        margin: 0;
+        padding: 18px 12px;
+        width: 100%;
+        background: $white-color;
+        border: 0;
+        border-bottom: 3px solid $background-color;
+    }
+    &__link {
+        position: relative;
+        padding: 4px 0;
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: $gray-color;
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1px);
+            left: -12px;
+            transform: translateY(-50%);
+            display: block;
+            width: 2px;
+            height: 12px;
+            transition: background 0.4s;
+        }
+        &--main {
+            font-weight: bold;
+            color: $primary-color;
+        }
+        &.active {
+            color: $red-color;
+            &::before {
+                background: $red-color;
+            }
+        }
+    }
+}
+
 .select {
     min-width: 330px;
     width: fit-content;

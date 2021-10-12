@@ -119,6 +119,12 @@
     }
 }
 
+.heading-title {
+    @media screen and (max-width: 767px) {
+        font-size: 2.8rem;
+    }
+}
+
 // heading
 .heading {
     padding-top: 20px;
@@ -2297,7 +2303,7 @@
     }
     &__item + &__item {
         margin-top: 32px;
-        
+
         @media screen and (max-width: 767px) {
             margin-top: 16px;
         }
@@ -2309,19 +2315,32 @@
             margin-left: auto;
             background: $light-background-color;
         }
+        .retentions-lines__btn {
+            margin-left: auto;
+        }
+    }
+    &__center {
+        padding: 0 10px;
+        max-width: 170px;
+        width: 100%;
+        text-align: center;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            max-width: 146px;
+        }
+        @media screen and (max-width: 767px) {
+            max-width: 68px;
+        }
     }
     &__name {
         display: block;
-        margin: 0 45px;
         font-size: 1.7rem;
         font-weight: normal;
 
         @media screen and (min-width: 768px) and (max-width: 1023px) {
-            margin: 0 37px;
             font-size: 1.5rem;
         }
         @media screen and (max-width: 767px) {
-            margin: 0 10px;
             font-size: 1rem;
         }
     }
@@ -2333,7 +2352,6 @@
     }
     &__block {
         display: block;
-        //width: 100%;
         min-height: 65px;
 
         @media screen and (max-width: 1023px) {

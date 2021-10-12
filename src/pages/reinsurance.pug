@@ -18,12 +18,12 @@ html(lang="ru")
             //- heading
             .heading 
                 .container 
-                    h1 Russian Re is a Specialized Property/Energy/Engineering Underwriter 
+                    h1.heading-title Russian Re is a Specialized Property/Energy/Engineering Underwriter 
                     .content.heading__content 
                         p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
             
             //- information
-            section(class="information")
+            section(class="information information--mt")
                 div(class="container") 
                     div(class="row") 
                         div(class="col-12 mb-4")
@@ -106,6 +106,18 @@ html(lang="ru")
                                                     span.retentions-lines__title.retentions-lines__title--mobile Overseas
                                                     .retentions-lines__block(style="width: 12%;") 
                                                     span.retentions-lines__value EUR 2 000 000
+                                            .retentions-lines__item 
+                                                .retentions-lines__left 
+                                                    a.documents-btn.retentions-lines__btn(href="#")  
+                                                        span.documents-btn__name Название документа.pdf
+                                                        svg(class="documents-btn__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                .retentions-lines__center
+                                                .retentions-lines__right
+                                                    a.documents-btn.retentions-lines__btn(href="#")  
+                                                        svg(class="documents-btn__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                        span.documents-btn__name Название документа.pdf
                         div(class="col-12 mb-4")
                             div(class="information__item top-line")
                                 div(class="information__body") 

@@ -687,14 +687,16 @@ document.addEventListener('DOMContentLoaded', function () {
             chart.zoomControl = new am4maps.ZoomControl();
           
             // Center on the groups by default
-            chart.homeZoomLevel = 3.5;
-            chart.homeGeoPoint = { longitude: 10, latitude: 52 };
+            chart.homeZoomLevel = 0;
+            chart.homeGeoPoint = { longitude: 10, latitude: 42 };
 
             // Zoom control
             chart.zoomControl = new am4maps.ZoomControl();
 
             chart.zoomControl.minusButton.stroke = "#E9E3DA";
             chart.zoomControl.minusButton.fontWeight = 300;
+            chart.zoomControl.minusButton.x = -15;
+            chart.zoomControl.minusButton.marginBottom = 13;
             chart.zoomControl.minusButton.background.cornerRadius(0, 0, 0, 0);
             chart.zoomControl.minusButton.background.fill = "#FAF9F8";
             chart.zoomControl.minusButton.background.stroke = "#E9E3DA";
@@ -703,6 +705,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             chart.zoomControl.plusButton.stroke = "#E9E3DA";
             chart.zoomControl.plusButton.fontWeight = 300;
+            chart.zoomControl.plusButton.x = -15;
+            chart.zoomControl.plusButton.marginBottom = 5;
             chart.zoomControl.plusButton.background.cornerRadius(0, 0, 0, 0);
             chart.zoomControl.plusButton.background.fill = "#FAF9F8";
             chart.zoomControl.plusButton.background.stroke = "#E9E3DA";
@@ -760,6 +764,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Instead of our custom title, we could also use {name} which comes from geodata  
                 mapPolygonTemplate.fill = am4core.color(group.color);
                 mapPolygonTemplate.fillOpacity = 1;
+                mapPolygonTemplate.stroke = "#ADADAD";
+                mapPolygonTemplate.strokeWidth = 0.25;
                 mapPolygonTemplate.nonScalingStroke = true;
                 mapPolygonTemplate.tooltipPosition = "fixed"
                 
@@ -808,9 +814,12 @@ document.addEventListener('DOMContentLoaded', function () {
             worldSeries.name = worldSeriesName;
             worldSeries.useGeodata = true;
             worldSeries.exclude = excludedCountries;
-            worldSeries.fillOpacity = 0.8;
+            worldSeries.fillOpacity = 1;
             worldSeries.hiddenInLegend = true;
             worldSeries.mapPolygons.template.nonScalingStroke = true;
+            worldSeries.mapPolygons.template.fill = "#FFFFFF";
+            worldSeries.mapPolygons.template.stroke = "#ADADAD";
+            worldSeries.mapPolygons.template.strokeWidth = 0.25;
           
         }); // end am4core.ready()
     }

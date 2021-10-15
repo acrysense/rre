@@ -442,6 +442,13 @@
             align-items: flex-start;
             font-size: 1.5rem;
             width: 100%;
+            &--active {
+                .t-group-item__title {
+                    &::after {
+                        content: '—';
+                    }
+                }
+            }
         }
     }
     &__mark {
@@ -462,7 +469,7 @@
             }
         }
         @media screen and (max-width: 767px) {
-            margin-top: 3px;
+            margin-top: 0;
             max-width: 50%;
             min-width: 50%;
             max-height: 14px;
@@ -475,6 +482,11 @@
     &__title {
         @media screen and (max-width: 767px) {
             width: 50%;
+            &::after {
+                content: '+';
+                margin-left: 10px;
+                vertical-align: middle;
+            }
         }
     }
     &__dropdown {

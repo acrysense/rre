@@ -661,7 +661,8 @@ document.addEventListener('DOMContentLoaded', function () {
             item.addEventListener('click', function(event) {
                 event.preventDefault()
 
-                $(this).next().slideToggle(350)
+                $(this).toggleClass('t-group-item__label--active')
+                $(this).next().slideToggle(300)
             })
         })
     }

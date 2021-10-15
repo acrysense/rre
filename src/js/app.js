@@ -691,6 +691,9 @@ document.addEventListener('DOMContentLoaded', function () {
             chart.homeZoomLevel = 0;
             chart.homeGeoPoint = { longitude: 10, latitude: 42 };
 
+            // Disabling mouse wheel zoom
+            chart.chartContainer.wheelable = false;
+
             // Zoom control
             chart.zoomControl = new am4maps.ZoomControl();
 

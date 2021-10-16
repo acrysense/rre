@@ -189,6 +189,12 @@ document.addEventListener('DOMContentLoaded', function () {
             item.addEventListener('click', (event) => {
                 event.preventDefault()
 
+                if (hamburger && mobileMenu && hamburger.classList.contains('hamburger--active') && mobileMenu.classList.contains('mobile-menu--active')) {
+                    hamburger.classList.remove('hamburger--active')
+                    mobileMenu.classList.remove('mobile-menu--active')
+                    document.body.classList.remove('scroll-disabled')
+                }
+
                 headerSearch.classList.add('header-search--active')
                 overlay.classList.add('overlay--active')
                 document.body.classList.add('scroll-disabled')

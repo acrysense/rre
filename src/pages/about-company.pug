@@ -35,6 +35,9 @@ html(lang="ru")
                             li.anchors__item 
                                 a.anchors__link.nav-link(href="#about-structure") 
                                     b Структура
+                            li.anchors__item 
+                                a.anchors__link.nav-link(href="#about-consult") 
+                                    b Консультативный совет
 
                 //- about company
                 .about
@@ -51,10 +54,10 @@ html(lang="ru")
                             h2 Основные акционеры компании
                             .shareholders
                                 .shareholders__wrapper 
-                                    .shareholders__item(style="width: 22.30%") 
+                                    .shareholders__item(style="width: 24.84%") 
                                         span.shareholders__value 23,30 %
                                         p.shareholders__description Chubb Russia Investments Limited (UK), 100% owned by Chubb Limited (Switzerland) 
-                                    .shareholders__item(style="width: 27.38%") 
+                                    .shareholders__item(style="width: 24.84%") 
                                         span.shareholders__value 22,50 %
                                         p.shareholders__description Catlin Underwriting Agencies Limited (UK), 100% owned by AXA SA (France)
                                     .shareholders__item(style="width: 50.32%")  
@@ -81,6 +84,8 @@ html(lang="ru")
                                                 span.structure__name Советник
                                             a.structure__item.structure__item--dark(href="#") 
                                                 span.structure__name Актуарий
+                                            a.structure__item.structure__item--dark(href="#") 
+                                                span.structure__name Юрисконсульт
                                         .structure__column
                                             a.structure__item.structure__item--dark(href="#") 
                                                 span.structure__name Заместитель генерального директора по андеррайтингу
@@ -110,6 +115,31 @@ html(lang="ru")
                                         .structure__column
                                             a.structure__item.structure__item--dark(href="#") 
                                                 span.structure__name Название отдела
+                        
+                        .about__wrapper.section-bordered#about-consult
+                            h2 Консультативный совет
+                            .table-indicators.about__table
+                                table.table-indicators__column 
+                                    tbody
+                                        tr.table-indicators__row 
+                                            td.table-indicators__elem Bengt Westergren
+                                        tr.table-indicators__row 
+                                            td.table-indicators__elem Michael H. P. Handler
+                                        tr.table-indicators__row 
+                                            td.table-indicators__elem Werner Bugl
+                                        tr.table-indicators__row 
+                                            td.table-indicators__elem Christos Adamantiadis
+                                .table-indicators__scroll(data-simplebar)
+                                    table.table-indicators__table
+                                        tbody 
+                                            tr.table-indicators__row 
+                                                td.table-indicators__elem Board Director & Senior Advisor, East West Institute  
+                                            tr.table-indicators__row 
+                                                td.table-indicators__elem Chairman EMEA Advisory Council Guy Carpenter & Company, LLC  
+                                            tr.table-indicators__row 
+                                                td.table-indicators__elem Senior Advisor, Russian Re 
+                                            tr.table-indicators__row 
+                                                td.table-indicators__elem tbc  
 
             //- nav block
             include includes/nav-block.pug

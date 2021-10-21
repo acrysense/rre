@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-family: $ebgaramond;
-    font-size: 7.2rem;
+    font-size: 6.2rem;
     font-weight: normal;
     line-height: 1;
 
@@ -127,6 +127,13 @@ svg {
     }
     &--dark {
         border-top: 5px solid $dark-background-color;
+    }
+    &--no-hover {
+        &:hover {
+            &::before {
+                width: 0;
+            }
+        }
     }
 }
 

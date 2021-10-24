@@ -135,6 +135,9 @@ svg {
             }
         }
     }
+    &--blue {
+        border-top: 5px solid $blue-color;
+    }
 }
 
 .title {

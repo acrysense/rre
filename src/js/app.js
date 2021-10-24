@@ -540,11 +540,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         scales: {
             x: {
-                //title: {
-                //    display: true,
-                //    text: 'единица изм-ия',
-                //    align: 'start',
-                //},
                 ticks: {
                     color: '#ADADAD',
                     padding: ticksPaddingX,

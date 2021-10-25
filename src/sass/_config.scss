@@ -176,7 +176,7 @@ svg {
     padding-top: 18px;
     & + .section-bordered {
         margin-top: 80px;
-        border-top: 3px solid $background-color;
+        border-top: 3px solid $light-background-color;
 
         @media screen and (max-width: 767px) {
             margin-top: 60px;

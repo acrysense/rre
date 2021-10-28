@@ -173,7 +173,7 @@ svg {
 }
 
 .section-bordered {
-    padding-top: 18px;
+    padding-top: 26px;
     & + .section-bordered {
         margin-top: 80px;
         border-top: 3px solid $light-background-color;
@@ -182,6 +182,15 @@ svg {
             margin-top: 60px;
         }
     }
+}
+
+.section-bordered > h2 {
+    margin-bottom: 36px;
+}
+
+.section-bordered > h2 + * {
+    margin-top: 0!important;
+    padding-top: 0!important;
 }
 
 .section-content + .section-content {

@@ -129,7 +129,7 @@
         min-height: calc(100vh - var(--height));
     }
     h1 {
-        padding-top: 12px;
+        padding-top: 20px;
     }
     &__link {
         font-size: 16px;
@@ -157,7 +157,6 @@
         font-size: 2.8rem;
     }
 }
-
 
 .heading-text {
     font-size: 24px;
@@ -192,7 +191,7 @@
 .information {
     margin-top: 32px;
     &--mt {
-        margin-top: 56px;
+        margin-top: 38px;
 
         @media screen and (max-width: 1199px) {
             margin-top: 44px;
@@ -1152,15 +1151,6 @@
 
 // about
 .about {
-    margin-top: 20px;
-
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-        margin-top: 7px;
-    }
-    @media screen and (max-width: 767px) {
-        margin-top: 0;
-    }
-
     &__content {
         margin-top: 36px;
 
@@ -1475,6 +1465,12 @@
         &--line {
             border-top: 3px solid $background-color;
         }
+        &--mt {
+            margin-top: 20px;
+        }
+        &--border {
+            border-top: 1px solid $light-background-color;
+        }
     }
     &__item {
         padding-top: 16px;
@@ -1778,11 +1774,7 @@
         margin: 50px 0 16px;
     }
     &__table {
-        margin-top: 50px;
-
-        @media screen and (max-width: 767px) {
-            margin-top: 30px;
-        }
+        margin-top: 28px;
     }
 }
 
@@ -1804,7 +1796,7 @@
     &__elem {
         padding: 10px;
         min-width: 80px;
-        font-size: 1.7rem;
+        font-size: 2.2rem;
         line-height: 1;
         background: $white-color;
         border-top: 3px solid $primary-background-color;
@@ -1812,8 +1804,11 @@
             font-weight: bold;
         }
 
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            font-size: 1.5rem;
+        }
         @media screen and (max-width: 767px) {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
     }
     &__scroll {
@@ -2044,17 +2039,19 @@
 // raiting
 .raiting {
     &__wrapper {
-        margin-top: 62px;
+        margin-top: 38px;
 
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            margin-top: 42px;
-        }
         @media screen and (min-width: 992px) {
             display: flex;
             align-items: flex-start;
         }
         @media screen and (max-width: 767px) {
             margin-top: 36px;
+        }
+    }
+    &__body {
+        @media screen and (min-width: 992px) {
+            margin-top: -7px;
         }
     }
     &__information {
@@ -2280,16 +2277,13 @@
 
 // charts
 .charts {
-    margin-top: 75px;
     padding: 30px 60px 30px 40px;
     background: $white-color;
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin-top: 45px;
         padding: 24px 30px;
     }
     @media screen and (max-width: 767px) {
-        margin-top: 25px;
         padding: 14px 10px;
     }
 
@@ -2321,7 +2315,7 @@
 }
 
 .charts-legend {
-    margin-bottom: 20px;
+    padding: 25px 0;
     &__list {
         display: flex;
         align-items: center;

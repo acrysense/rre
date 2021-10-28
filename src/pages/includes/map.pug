@@ -1,0 +1,117 @@
+- var primaryColor = '#ecadb6'
+- var secondaryColor = '#8daae7'
+
+-
+    var mainGroups = [
+        { 
+            title: 'Россия и СНГ', 
+            countriesText: 'Армения, Азербайджан, Беларусь, Грузия,  Казахстан, Кыргызстан, Латвия, Литва, Молдавия, Россия, Таджикистан, Туркменистан, Узбекистан, Украина, Эстония',
+            facultative: '58’000’000',
+            treaty: '6’000’000',
+            percent: 58,
+            color: primaryColor
+        },
+        { 
+            title: 'Международный рынок', 
+            countriesText: 'Бангладеш, Вьетнам, Китай, Гонконг, Макао, Лаос, Камбоджа, Индия, Индонезия, Малайзия, Мальдивы, Монголия, Непал, Пакистан,  Сингапур, Тайвань, Тайланд, Шри-Ланка, Филиппины, Южная Корея, Эфиопия, Кения, Маврикий, Нигерия, Танзания, Уганда, Южно-Африканская Республика, Аргентина, Бразилия, Боливия,  Гватемала, Гондурас, Доминиканская Республика, Колумбия, Коста Рика, Мексика, Никарагуа, Панама, Парагвай, Перу, Пуерто Рико, Сальвадор, Тринидад и Тобаго, Уругвай, Чили, Эквадор, Ямайка, Алжир, Бахрейн, Египет, Израиль, Иордания, Катар, Кувейт, Ливан, Марокко,  ОАЭ, Оман, Саудовская Аравия, Тунис, Албания, Босния и Герцеговина, Болгария, Венгрия, Македония, Польша, Румыния, Сербия, Черногория, Словакия, Словения, Хорватия, Чешская Республика',
+            facultative: '100’000’000',
+            treaty: '10’000’000',
+            percent: 100,
+            color: secondaryColor
+        },
+    ]
+
+-
+    var mapGroups = [
+        {
+            title: 'Азия',
+            color: secondaryColor,
+            countries: 'BD,VN,CN,HK,MO,LA,KH,IN,ID,MY,MV,MN,NP,PK,SG,TW,LK,PH,KR',
+            countriesText: 'Бангладеш, Вьетнам, Китай, Гонконг, Макао, Лаос, Камбоджа, Индия, Индонезия, Малайзия, Мальдивы, Монголия, Непал, Пакистан,  Сингапур, Тайвань, Тайланд, Шри-Ланка, Филиппины, Южная Корея',
+            facultative: '20’000’000',
+            treaty: '2’000’000'
+        },
+        {
+            title: 'Африка',
+            color: secondaryColor,
+            countries: 'ET,KE,MU,NG,TZ,UG,ZA',
+            countriesText: 'Эфиопия, Кения, Маврикий, Нигерия, Танзания, Уганда, Южно-Африканская Республика',
+            facultative: '20’000’000',
+            treaty: '2’000’000'
+        },
+        {
+            title: 'Латинская Америка',
+            color: secondaryColor,
+            countries: 'AR,BR,BO,GT,HN,DO,CO,CR,MX,NI,PA,PY,PE,SV,TT,UY,CL,EC,JM',
+            countriesText: 'Аргентина, Бразилия, Боливия,  Гватемала, Гондурас, Доминиканская Республика, Колумбия, Коста Рика, Мексика, Никарагуа, Панама, Парагвай, Перу, Пуерто Рико, Сальвадор, Тринидад и Тобаго, Уругвай, Чили, Эквадор, Ямайка',
+            facultative: '20’000’000',
+            treaty: '2’000’000'
+        },
+        {
+            title: 'Регион МЕНА',
+            color: secondaryColor,
+            countries: 'DZ,BH,EG,IL,JO,QA,KW,LB,MA,AE,OM,SA,TN',
+            countriesText: 'Алжир, Бахрейн, Египет, Израиль, Иордания, Катар, Кувейт, Ливан, Марокко,  ОАЭ, Оман, Саудовская Аравия, Тунис',
+            facultative: '20’000’000',
+            treaty: '2’000’000'
+        },
+        {
+            title: 'Центральная и Восточная Европа',
+            color: secondaryColor,
+            countries: 'AL,BA,BG,HU,MK,PL,RO,RS,ME,SK,SI,HR,CZ',
+            countriesText: 'Албания, Босния и Герцеговина, Болгария, Венгрия, Македония, Польша, Румыния, Сербия, Черногория, Словакия, Словения, Хорватия, Чешская Республика',
+            facultative: '20’000’000',
+            treaty: '2’000’000'
+        },
+        {
+            title: 'Россия и СНГ',
+            color: primaryColor,
+            countries: 'AM,AZ,BY,GE,KZ,KG,LV,LT,MD,RU,TJ,TM,UZ,UA,EE',
+            countriesText: 'Армения, Азербайджан, Беларусь, Грузия,  Казахстан, Кыргызстан, Латвия, Литва, Молдавия, Россия, Таджикистан, Туркменистан, Узбекистан, Украина, Эстония',
+            facultative: '58’000’000',
+            treaty: '6’000’000'
+        },
+    ]
+
+mixin map()
+    .t-map&attributes(attributes)
+
+        .t-map__groups
+        
+            each group in mainGroups
+                .t-group-item
+                    .t-group-item__label
+                        .t-group-item__mark
+                            .t-group-item__mark--value(style=`width: ${group.percent}%; background: ${group.color}`)
+                        span.t-group-item__title= group.title
+                    .t-group-item__dropdown.t-group-dropdown 
+                        span.t-group-dropdown__name= `${group.title} - емкости`
+                        .t-group-dropdown__inner 
+                            span.t-group-dropdown__text ФАКУЛЬТАТИВ
+                            span.t-group-dropdown__text= `EUR ${group.facultative}`
+                        .t-group-dropdown__inner 
+                            span.t-group-dropdown__text ОБЛИГАТОР
+                            span.t-group-dropdown__text= `EUR ${group.treaty}`
+                        p.t-group-dropdown__contries= group.countriesText
+
+            
+        // HIDDEN GROUPS (FOR MAP TOOLTIPS)
+        .js-map-tooltips.d-none
+
+            each group, index in mapGroups
+                .t-group-item(id=`group-${index + 1}` data-countries=group.countries, data-color=group.color)
+                    .t-group-item__label
+                        .t-group-item__mark 
+                            .t-group-item__mark--value(style=`background: ${group.color};`)
+                        span.t-group-item__title= group.title
+                    .t-group-item__dropdown.t-group-dropdown 
+                        span.t-group-dropdown__name= `${group.title} - емкости`
+                        .t-group-dropdown__inner 
+                            span.t-group-dropdown__text ФАКУЛЬТАТИВ
+                            span.t-group-dropdown__text= `EUR ${group.facultative}`
+                        .t-group-dropdown__inner 
+                            span.t-group-dropdown__text ОБЛИГАТОР
+                            span.t-group-dropdown__text= `EUR ${group.treaty}`
+                        p.t-group-dropdown__contries= group.countriesText
+
+        .t-map__main#map

@@ -521,6 +521,7 @@
     padding: 8px 10px;
     background: $primary-background-color;
     border-top: 3px solid $light-background-color;
+    color: $primary-color;
 
     @media screen and (max-width: 767px) {
         padding: 30px 4px;
@@ -532,8 +533,8 @@
         display: block;
         margin-bottom: 18px;
         font-family: $ebgaramond;
-        font-size: 1.4rem;
-        font-weight: normal;
+        font-size: 1.6rem;
+        font-weight: 600;
 
         @media screen and (max-width: 767px) {
             display: none;

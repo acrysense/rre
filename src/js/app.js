@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const maps = [
             {
                 id: 'contacts-map-1',
-                coordinates: [55.7672809,37.6697732],
+                coordinates: [55.75812535,37.652952532062955],
                 zoom: 25,
                 instance: null  
             },
@@ -691,6 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Center on the groups by default
             chart.homeZoomLevel = 0;
             chart.homeGeoPoint = { longitude: 10, latitude: 42 };
+            chart.deltaLongitude = -11;
 
             // Disabling mouse wheel zoom
             chart.chartContainer.wheelable = false;
@@ -721,7 +722,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Основной массив с данными. Каждая группа - это объект, в этот объект дополнительно можно прокидывать свои свойства (например ID, по которому в дальнейшем группу можно будет идентифицировать и показать попап)
             
             let groupData = [];
-            let $groups = $('.t-group-item');
+            let $groups = $('.js-map-tooltips').children('.t-group-item');
             
             // Динамически формируем массив групп и их стран  
             // На основе дата-атрибутов
@@ -793,6 +794,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Tooltip styles
                 series.tooltip.background.filters.clear();
                 series.tooltip.background.strokeWidth = 0;
+                series.tooltip.background.getFillFromObject = false;
+                series.tooltip.background.fill = am4core.color('rgba(0,0,0,0)');
                 series.tooltip.label.padding(0, 0, 0, 0);
                 series.tooltip.label.wrap = true;
             

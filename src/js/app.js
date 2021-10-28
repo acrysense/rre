@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const maps = [
             {
                 id: 'contacts-map-1',
-                coordinates: [55.75812535,37.652952532062955],
+                coordinates: [55.75787,37.65302],
                 zoom: 25,
                 instance: null  
             },
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function () {
           
             // Center on the groups by default
             chart.homeZoomLevel = 0;
-            chart.homeGeoPoint = { longitude: 10, latitude: 42 };
+            chart.homeGeoPoint = { longitude: 10, latitude: 44 };
             chart.deltaLongitude = -11;
 
             // Disabling mouse wheel zoom
@@ -826,8 +826,8 @@ document.addEventListener('DOMContentLoaded', function () {
             worldSeries.hiddenInLegend = true;
             worldSeries.mapPolygons.template.nonScalingStroke = true;
             worldSeries.mapPolygons.template.fill = "#FFFFFF";
-            worldSeries.mapPolygons.template.stroke = "#ADADAD";
-            worldSeries.mapPolygons.template.strokeWidth = 0.25;
+            worldSeries.mapPolygons.template.stroke = "#CCCCCC";
+            worldSeries.mapPolygons.template.strokeWidth = 1;
           
         }); // end am4core.ready()
     }

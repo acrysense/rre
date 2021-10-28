@@ -1465,15 +1465,15 @@
         &--line {
             border-top: 3px solid $background-color;
         }
-        &--mt {
-            margin-top: 20px;
-        }
         &--border {
             border-top: 1px solid $light-background-color;
         }
     }
     &__item {
         padding-top: 16px;
+        &--no-pt {
+            padding-top: 0;
+        }
 
         @media screen and (min-width: 768px) {
             display: flex;

@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
         datasets: [
             {
                 label: 'Profit after taxation',
-                data: [125000, 270000, 390000, 370000, 435000],
+                data: [60899, 84966, 200480, 174012, 315502],
                 backgroundColor: [
                     '#E3D5C0'
                 ],
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 label: 'Share capital and surplus',
-                data: [300000, 580000, 860000, 825000, 975000],
+                data: [672037, 753653, 954648, 1130162, 1449589],
                 backgroundColor: [
                     '#2F2355',
                 ],
@@ -770,8 +770,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Instead of our custom title, we could also use {name} which comes from geodata  
                 mapPolygonTemplate.fill = am4core.color(group.color);
                 mapPolygonTemplate.fillOpacity = 1;
-                mapPolygonTemplate.stroke = "#ADADAD";
-                mapPolygonTemplate.strokeWidth = 0.25;
+                mapPolygonTemplate.stroke = "#3d3d3d";
+                mapPolygonTemplate.strokeWidth = 0.5;
                 mapPolygonTemplate.nonScalingStroke = true;
                 mapPolygonTemplate.tooltipPosition = "fixed"
                 
@@ -826,8 +826,8 @@ document.addEventListener('DOMContentLoaded', function () {
             worldSeries.hiddenInLegend = true;
             worldSeries.mapPolygons.template.nonScalingStroke = true;
             worldSeries.mapPolygons.template.fill = "#FFFFFF";
-            worldSeries.mapPolygons.template.stroke = "#CCCCCC";
-            worldSeries.mapPolygons.template.strokeWidth = 1;
+            worldSeries.mapPolygons.template.stroke = "#3d3d3d";
+            worldSeries.mapPolygons.template.strokeWidth = 0.5;
           
         }); // end am4core.ready()
     }

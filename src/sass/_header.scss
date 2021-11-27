@@ -1,3 +1,9 @@
+.logotype {
+    & > img {
+        width: 254px;
+    }
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -40,11 +46,15 @@
         }
     }
     &__logotype {
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
             max-width: 235px;
         }
-        @media screen and (max-width: 1199px) {
-            max-width: 147px;
+
+        @media screen and (min-width: 500px) and (max-width: 992px) {
+            max-width: 200px;
+        }
+        @media screen and (max-width: 500px) {
+            max-width: 160px;
         }
     }
     &__controls {
@@ -58,10 +68,10 @@
         font-weight: 800;
         color: $red-color;
 
-        @media screen and (min-width: 768px) and (max-width: 1199px) {
-            font-size: 1.7rem;
+        @media screen and (min-width: 500px) and (max-width: 1199px) {
+            font-size: 1.4rem;
         }
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 500px) {
             font-size: 1.1rem;
         }
     }
@@ -168,7 +178,7 @@
         height: 23px;
         color: $primary-color;
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 1199px) {
             display: none;
         }
         @media screen and (max-width: 767px) {
@@ -369,7 +379,7 @@
         }
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1199px) {
         display: none;
     }
     @media screen and (max-width: 767px) {

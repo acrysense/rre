@@ -1,0 +1,234 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Русское Перестраховочное Общество - Заголовок страницы
+        //- styles
+        link(rel="stylesheet", href="css/vendor.min.css")
+        link(rel="stylesheet", href="css/app.min.css")
+    body(data-spy="scroll")
+        //- header
+        include includes/header.pug
+
+        //- wrapper
+        .wrapper 
+    
+            //- heading
+            .heading 
+                .container 
+                    a.heading__link(href="index.html") Родительская страница
+                    h1 Заголовок страницы
+                    .content.heading__content 
+                        p Руководство уделяет большое внимание обеспечению финансовой прозрачности компании и автоматизации всего документооборота. Ежегодно в компании проводится аудит финансовой отчетности с соответствии с российскими и международными стандартами.
+
+                //- articles
+                .articles.articles--mt 
+                    .container 
+                        .articles__wrapper
+                            .articles__item.articles__item--full
+                                .articles__right.articles__right--border
+                                    .content 
+                                        h2#section-1 Заголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        h3#section-1-1 Подзаголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        .image-block
+                                            img(src="img/dist/image.png", alt="Изображение")
+                                            span Подпись
+                                        .image-block
+                                            iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
+                                            span Подпись
+                                        .table-indicators
+                                            table.table-indicators__column 
+                                                tbody
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem 
+                                                            b Заголовок
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
+                                                    tr.table-indicators__row 
+                                                        td.table-indicators__elem Текст
+                                            .table-indicators__scroll(data-simplebar)
+                                                table.table-indicators__table
+                                                    thead 
+                                                        tr.table-indicators__row 
+                                                            td.table-indicators__elem 2020  
+                                                            td.table-indicators__elem 2019  
+                                                            td.table-indicators__elem 2018  
+                                                            td.table-indicators__elem 2017  
+                                                            td.table-indicators__elem 2016  
+                                                    tbody 
+                                                        tr.table-indicators__row 
+                                                            td.table-indicators__elem Текст 
+                                                            td.table-indicators__elem Текст 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
+                                                        tr.table-indicators__row 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
+                                                        tr.table-indicators__row 
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст  
+                                                            td.table-indicators__elem Текст
+                                                            td.table-indicators__elem Текст 
+                                        blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
+                                        a(href="#", class="btn btn--white") 
+                                            span.btn__title Переход на внутреннюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white btn--icon-angle") 
+                                            span.btn__title Переход на внешнюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white" download) 
+                                            span.btn__title Скачать файл
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        .documents.documents--white
+                                            .documents__wrapper 
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                        span.documents__name Название документа.pdf
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text Автор: Сергей Борисов
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-link")
+                                                        span.documents__name Ссылка на страницу
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text http://www.russianre.ru/finance_rep/ra...
+                                        h3#section-1-2 Подзаголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        .image-block
+                                            img(src="img/dist/image.png", alt="Изображение")
+                                            span Подпись
+                                        .image-block
+                                            iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
+                                            span Подпись
+                                        blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
+                                        a(href="#", class="btn btn--white") 
+                                            span.btn__title Переход на внутреннюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white btn--icon-angle") 
+                                            span.btn__title Переход на внешнюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white" download) 
+                                            span.btn__title Скачать файл
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        .documents.documents--white
+                                            .documents__wrapper 
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                        span.documents__name Название документа.pdf
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text Автор: Сергей Борисов
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-link")
+                                                        span.documents__name Ссылка на страницу
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text http://www.russianre.ru/finance_rep/ra...
+                                        h3#section-1-3 Подзаголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        .image-block
+                                            img(src="img/dist/image.png", alt="Изображение")
+                                            span Подпись
+                                        .image-block
+                                            iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
+                                            span Подпись
+                                        blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
+                                        a(href="#", class="btn btn--white") 
+                                            span.btn__title Переход на внутреннюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white btn--icon-angle") 
+                                            span.btn__title Переход на внешнюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white" download) 
+                                            span.btn__title Скачать файл
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        .documents.documents--white
+                                            .documents__wrapper 
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                        span.documents__name Название документа.pdf
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text Автор: Сергей Борисов
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-link")
+                                                        span.documents__name Ссылка на страницу
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text http://www.russianre.ru/finance_rep/ra...
+                                        h2#section-2 Заголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        h3#section-2-1 Подзаголовок
+                                        p The history of the Company began in 1992 when the initiative of the team of industry experts to set up a Russian professional  reinsurer was supported  by 32 Insurance companies - members of the Russian Union of  Insurers.  We gave the name Russian Re to the new market player. This name was dreamed of to become the symbol of professionalism and reliability. We clearly realized that it would take us many years to nurture such a company and took this road.
+                                        .image-block
+                                            img(src="img/dist/image.png", alt="Изображение")
+                                            span Подпись
+                                        .image-block
+                                            iframe(src="https://www.youtube.com/embed/qRTVg8HHzUo", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen) 
+                                            span Подпись
+                                        blockquote.content-quote Пример важного текста. This name was dreamed of to become the symbol of professionalism and reliability.
+                                        a(href="#", class="btn btn--white") 
+                                            span.btn__title Переход на внутреннюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white btn--icon-angle") 
+                                            span.btn__title Переход на внешнюю страницу
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        a(href="#", class="btn btn--white" download) 
+                                            span.btn__title Скачать файл
+                                            svg.btn__icon
+                                                use(xlink:href="img/dist/sprite.svg#icon-arrow-more")
+                                        .documents.documents--white
+                                            .documents__wrapper 
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-file")
+                                                        span.documents__name Название документа.pdf
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text Автор: Сергей Борисов
+                                                a.documents__item(href="#")  
+                                                    .documents__group 
+                                                        svg(class="documents__icon")
+                                                            use(xlink:href="img/dist/sprite.svg#icon-link")
+                                                        span.documents__name Ссылка на страницу
+                                                    span.documents__text Опубликован: 12 марта 2021 года, 19:00
+                                                    span.documents__text http://www.russianre.ru/finance_rep/ra...
+                
+            //- nav block
+            include includes/nav-block.pug
+            
+            //- footer
+            include includes/footer.pug
+
+        //- scripts
+        script(src='js/vendor.min.js')
+        script(src='js/app.min.js')

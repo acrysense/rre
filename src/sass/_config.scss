@@ -281,8 +281,11 @@ svg {
 
 .red-link {
     color: $red-color;
-    &:hover {
-        color: $gray-color;
+
+    @at-root a#{&} {
+        &:hover {
+            color: $gray-color;
+        }
     }
 }
 
